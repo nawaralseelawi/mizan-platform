@@ -1,0 +1,270 @@
+import { motion } from "framer-motion";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+import { Trophy, ShieldCheck } from "lucide-react";
+import { trpc } from "@/lib/trpc";
+import { TRACK_AXES, TRACK_ORDER, useLatestVersion } from "@/lib/benchmark";
+import { useI18n, useLabels } from "@/i18n";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
+
+function toPct(score: number): number {
+  return Math.round(score * 1000) / 10;
+}
+
+export default function Leaderboard() {
+  const { t } = useI18n();
+  const L = useLabels();
+  const { label } = useLatestVersion();
+  const board = trpc.leaderboard.table.useQuery(
+    { versionLabel: label ?? "" },
+    { enabled: label !== null },
+  );
+
+  const entries = board.data?.entries ?? [];
+  const chartData = entries.slice(0, 8).map((e) => ({
+    name: e.model,
+    average: e.macroAverage !== null ? toPct(e.macroAverage) : 0,
+  }));
+
+  return (
+    <div className="w-full">
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-600 to-emerald-600 text-white">
+        <div className="container mx-auto text-center">
+          <motion.div
+            className="space-y-6"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.h1
+              variants={itemVariants}
+              className="text-5xl md:text-6xl font-bold flex items-center justify-center gap-3"
+            >
+              <Trophy className="w-12 h-12" />
+              {t("lb.title")}
+            </motion.h1>
+            <motion.p
+              variants={itemVariants}
+              className="text-xl opacity-90 max-w-2xl mx-auto"
+            >
+              {t("lb.subtitle")}
+            </motion.p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4">
+        <div className="container mx-auto space-y-10">
+          {entries.length === 0 && !board.isLoading && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <Card className="p-12 text-center max-w-2xl mx-auto space-y-4">
+                <ShieldCheck className="w-10 h-10 mx-auto text-muted-foreground" />
+                <h2 className="text-2xl font-semibold">
+                  {t("lb.empty.title")}
+                </h2>
+                <p className="text-muted-foreground">
+                  {t("lb.empty.body")}
+                </p>
+              </Card>
+            </motion.div>
+          )}
+
+          {entries.length > 0 && (
+            <>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                <Card className="p-6 overflow-x-auto">
+                  <h2 className="text-xl font-semibold mb-4">
+                    {t("lb.rankings")}
+                  </h2>
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b text-muted-foreground">
+                        <th className="py-3 px-3 text-center">{t("lb.col.rank")}</th>
+                        <th className="py-3 px-3 text-start">{t("lb.col.model")}</th>
+                        <th className="py-3 px-3 text-start">{t("lb.col.developer")}</th>
+                        <th className="py-3 px-3 text-center">{t("lb.col.overall")}</th>
+                        <th className="py-3 px-3 text-center">{t("lb.col.arabic")}</th>
+                        <th className="py-3 px-3 text-center">{t("lb.col.iraqi")}</th>
+                        <th className="py-3 px-3 text-center">{t("lb.col.set")}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {entries.map((entry, i) => (
+                        <tr
+                          key={`${entry.model}-${entry.developer}`}
+                          className="border-b last:border-0"
+                        >
+                          <td className="py-3 px-3 text-center">
+                            {i === 0 ? (
+                              <Badge className="bg-amber-500 hover:bg-amber-500">
+                                1
+                              </Badge>
+                            ) : (
+                              i + 1
+                            )}
+                          </td>
+                          <td className="py-3 px-3 text-start font-medium">
+                            {entry.model}
+                          </td>
+                          <td className="py-3 px-3 text-start text-muted-foreground">
+                            {entry.developer}
+                          </td>
+                          <td className="py-3 px-3 text-center font-semibold">
+                            {entry.macroAverage !== null
+                              ? toPct(entry.macroAverage).toFixed(1)
+                              : "-"}
+                          </td>
+                          <td className="py-3 px-3 text-center">
+                            {entry.arabicAverage !== null
+                              ? toPct(entry.arabicAverage).toFixed(1)
+                              : "-"}
+                          </td>
+                          <td className="py-3 px-3 text-center">
+                            {entry.iraqiAverage !== null
+                              ? toPct(entry.iraqiAverage).toFixed(1)
+                              : "-"}
+                          </td>
+                          <td className="py-3 px-3 text-center">
+                            <Badge
+                              variant={
+                                entry.scoredTier === "private_test"
+                                  ? "default"
+                                  : "secondary"
+                              }
+                            >
+                              {entry.scoredTier === "private_test"
+                                ? t("lb.tier.private")
+                                : t("lb.tier.dev")}
+                            </Badge>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+
+                  {TRACK_ORDER.map((track) => (
+                    <div key={track} className="mt-8">
+                      <h3 className="font-semibold mb-2">
+                        {track === "arabic" ? t("lb.peraxis.arabic") : t("lb.peraxis.iraqi")}
+                      </h3>
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                          <thead>
+                            <tr className="border-b text-muted-foreground">
+                              <th className="py-2 px-3 text-start">{t("lb.col.model")}</th>
+                              {TRACK_AXES[track].map((a) => (
+                                <th
+                                  key={a}
+                                  className="py-2 px-3 text-center whitespace-nowrap"
+                                >
+                                  {L.axis(a)}
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {entries.map((entry) => {
+                              const byAxis = new Map(
+                                entry.axisScores
+                                  .filter((r) => r.track === track)
+                                  .map((r) => [r.axis, r]),
+                              );
+                              return (
+                                <tr
+                                  key={`${track}-${entry.model}-${entry.developer}`}
+                                  className="border-b last:border-0"
+                                >
+                                  <td className="py-2 px-3 text-start">{entry.model}</td>
+                                  {TRACK_AXES[track].map((a) => {
+                                    const r = byAxis.get(a);
+                                    return (
+                                      <td key={a} className="py-2 px-3 text-center">
+                                        {r ? (
+                                          <span>
+                                            {toPct(r.score).toFixed(1)}
+                                            {r.ciLow !== null &&
+                                              r.ciHigh !== null && (
+                                                <span className="block text-xs text-muted-foreground">
+                                                  [{toPct(r.ciLow).toFixed(1)},{" "}
+                                                  {toPct(r.ciHigh).toFixed(1)}]
+                                                </span>
+                                              )}
+                                          </span>
+                                        ) : (
+                                          "-"
+                                        )}
+                                      </td>
+                                    );
+                                  })}
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  ))}
+
+                  <p className="text-xs text-muted-foreground mt-4">
+                    {t("lb.note")}
+                  </p>
+                </Card>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 }}
+              >
+                <Card className="p-6">
+                  <h2 className="text-xl font-semibold mb-4">
+                    {t("lb.chart.title")}
+                  </h2>
+                  <div className="h-72">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <BarChart data={chartData}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="name" />
+                        <YAxis domain={[0, 100]} />
+                        <Tooltip />
+                        <Bar dataKey="average" fill="#2563eb" radius={[4, 4, 0, 0]} />
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+                </Card>
+              </motion.div>
+            </>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+}
+

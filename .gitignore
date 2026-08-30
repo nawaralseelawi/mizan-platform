@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.env
+drizzle/meta/
+*.log
+
+
+# Secrets - NEVER commit these
+.env.*
+!.env.example
+*.pem
+*.key
+# Local data / results (may contain private material)
+data/results-*.json
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

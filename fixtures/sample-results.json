@@ -1,0 +1,29 @@
+{
+  "schema_version": "mizan-results-v1",
+  "model": {
+    "name": "example-model-8b",
+    "developer": "Example Lab",
+    "parameters": "8B",
+    "license": "apache-2.0",
+    "source": "local"
+  },
+  "benchmark_version": "pilot-0.1",
+  "run": {
+    "completed_at": "2026-07-20T12:00:00Z",
+    "harness_commit": "0000000000000000000000000000000000000000",
+    "config": {
+      "temperature": 0,
+      "num_fewshot": 0,
+      "note": "demo fixture"
+    }
+  },
+  "results": [
+    {
+      "track": "iraqi",
+      "axis": "comprehension",
+      "score": 0.0,
+      "n_items": 1,
+      "tier": "public_dev"
+    }
+  ]
+}
