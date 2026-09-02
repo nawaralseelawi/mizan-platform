@@ -20,6 +20,7 @@ import Governance from "./pages/Governance";
 import ApiDocs from "./pages/ApiDocs";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
+import SubmitModel from "./pages/SubmitModel";
 
 function Router() {
   return (
@@ -38,6 +39,7 @@ function Router() {
       <Route path="/api-docs" component={ApiDocs} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/login" component={Login} />
+      <Route path="/submit" component={SubmitModel} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
@@ -64,4 +66,5 @@ function App() {
 }
 
 export default App;
+
 

@@ -335,6 +335,51 @@ const dict = {
   "ev.cta.body": { ar: "راسل فريق ميزان وسنرسل لك دليل التشغيل خطوة بخطوة.", en: "Email the Mizan team and we will send the step-by-step runner guide." },
   "ev.cta.button": { ar: "راسل الفريق", en: "Email the team" },
   "ev.cta.leaderboard": { ar: "استعرض لوحة النتائج", en: "View the leaderboard" },
+
+  // Submit-your-model page (on-platform guide + submission form)
+  "sub.title": { ar: "قدّم نموذجك", en: "Submit Your Model" },
+  "sub.subtitle": {
+    ar: "شغّل التقييم على أجهزتك أو بمفاتيحك باتباع الخطوات أدناه، ثم املأ النموذج — وسيفتح بريدك برسالة جاهزة لفريق ميزان.",
+    en: "Run the evaluation on your own hardware or API keys using the steps below, then fill the form — your email client opens with a ready message to the Mizan team.",
+  },
+  "sub.prereq.title": { ar: "المتطلبات", en: "Prerequisites" },
+  "sub.prereq.body": {
+    ar: "بيئة Node.js 20+ وgit، والوصول إلى مستودع mizan-platform (علني عند نشر الورقة؛ وقبل ذلك يُطلب عبر نموذج التقديم أدناه)، ثم أحد الخيارين: مفتاح مزوّد سحابي، أو نموذج ذاتي الاستضافة عبر خادم متوافق مع واجهة OpenAI (vLLM أو Ollama أو LM Studio).",
+    en: "Node.js 20+ and git, access to the mizan-platform repository (public at paper release; request it via the form below before that), then either a cloud provider API key, or a self-hosted model behind an OpenAI-compatible server (vLLM, Ollama, LM Studio).",
+  },
+  "sub.setup.title": { ar: "الإعداد", en: "Setup" },
+  "sub.setup.note": {
+    ar: "بنك البنود data/pilot-0.2-all.jsonl — يقيّم المشغّل 190 بنداً آلياً ويعلّم 150 بنداً توليدياً للتحكيم البشري.",
+    en: "Item bank data/pilot-0.2-all.jsonl — the runner auto-scores 190 items and flags 150 open-generation items for human judging.",
+  },
+  "sub.pathA.title": { ar: "المسار الأول — نموذج عبر واجهة برمجية", en: "Path A — API-hosted model" },
+  "sub.pathB.title": { ar: "المسار الثاني — نموذج ذاتي الاستضافة (بلا حدّ حجم)", en: "Path B — Self-hosted model (no size limit)" },
+  "sub.pathB.note": {
+    ar: "المفتاح اختياري للنقاط المحلية؛ أي عدد معلمات يعمل لأن الاستدلال كله على أجهزتك.",
+    en: "The API key is optional for local endpoints; any parameter count works since inference runs on your hardware.",
+  },
+  "sub.out.title": { ar: "مخرجات المشغّل", en: "Runner output" },
+  "sub.out.body": {
+    ar: "ملف نتائج يتضمن الدرجات المجمّعة لكل (مسار، محور) مع بصمة تحقّق SHA-256 — هذا الملف هو ما تقدّمه لنا.",
+    en: "A results file with per-(track, axis) aggregate scores and a SHA-256 verification hash — this is the file you submit to us.",
+  },
+  "sub.form.title": { ar: "نموذج التقديم", en: "Submission form" },
+  "sub.form.model": { ar: "اسم النموذج", en: "Model name" },
+  "sub.form.version": { ar: "النسخة / التاريخ", en: "Version / date" },
+  "sub.form.developer": { ar: "الجهة المطوّرة", en: "Developer" },
+  "sub.form.params": { ar: "عدد المعلمات (مثال: 13B)", en: "Parameter count (e.g. 13B)" },
+  "sub.form.hosting": { ar: "طريقة الاستضافة", en: "Hosting" },
+  "sub.form.hostingApi": { ar: "واجهة برمجية سحابية", en: "Cloud API" },
+  "sub.form.hostingSelf": { ar: "ذاتية الاستضافة", en: "Self-hosted" },
+  "sub.form.name": { ar: "اسم الباحث", en: "Researcher name" },
+  "sub.form.affiliation": { ar: "الانتماء المؤسسي", en: "Affiliation" },
+  "sub.form.notes": { ar: "ملاحظات (اختياري)", en: "Notes (optional)" },
+  "sub.form.attach": {
+    ar: "بعد الضغط سيُفتح بريدك برسالة جاهزة — أرفق ملف النتائج JSON قبل الإرسال.",
+    en: "Your email client opens with a ready message — attach the results JSON before sending.",
+  },
+  "sub.form.submit": { ar: "إرسال التقديم عبر البريد", en: "Send submission by email" },
+  "ev.cta.submit": { ar: "قدّم نموذجك", en: "Submit your model" },
 } satisfies Dict;
 
 export type TKey = keyof typeof dict;

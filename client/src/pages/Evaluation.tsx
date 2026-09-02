@@ -134,10 +134,10 @@ export default function Evaluation() {
             <p className="text-muted-foreground">{t("ev.cta.body")}</p>
             <div className="flex flex-wrap justify-center gap-3">
               <Button size="lg" asChild>
-                <a href={`mailto:${CONTACT_EMAIL}?subject=Mizan%20Model%20Evaluation`}>
+                <Link href="/submit">
                   <Mail className="w-4 h-4 me-2" />
-                  {t("ev.cta.button")}
-                </a>
+                  {t("ev.cta.submit")}
+                </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <Link href="/leaderboard">
