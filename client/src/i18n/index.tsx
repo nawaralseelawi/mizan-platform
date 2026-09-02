@@ -299,6 +299,42 @@ const dict = {
   "dash.cleanup.confirm": { ar: "سيُبقى أحدث تشغيل لكل نموذج ويُنشر، وتُحذف بقية التشغيلات المكررة نهائياً. متابعة؟", en: "This keeps and publishes the newest run per model and permanently deletes the older duplicate runs. Continue?" },
   "dash.cleanup.done": { ar: "تم: أُبقي {kept} نموذج، وحُذف {deleted} تشغيل مكرر.", en: "Done: kept {kept} models, deleted {deleted} duplicate runs." },
   "lang.toggle": { ar: "EN", en: "عربي" },
+
+  // Evaluate-your-model page (honest replacement of the old decorative stub)
+  "ev.title": { ar: "قيّم نموذجك", en: "Evaluate Your Model" },
+  "ev.subtitle": {
+    ar: "ميزان منصة تقييم وسجلّ نتائج — لا يستضيف النماذج ولا يستقبل ملفات أوزان. كل نموذج يُقيَّم عبر واجهته البرمجية، وتُنشر نتيجته بشهادة تحقّق.",
+    en: "Mizan is an evaluation harness and results registry — it does not host models or accept weight uploads. Every model is evaluated through its API, and results are published with a verification certificate.",
+  },
+  "ev.noupload.title": { ar: "لماذا لا يوجد «رفع نموذج»؟", en: "Why is there no model upload?" },
+  "ev.noupload.body": {
+    ar: "المنصة لا تشغّل الاستدلال على خوادمها. هذا يجعل التقييم قابلاً لإعادة الإنتاج بلا حدود حجم: أي نموذج يمكن تشغيله لديك يمكن تقييمه على ميزان.",
+    en: "The platform runs no inference on its servers. This keeps evaluation reproducible with no size limits: any model you can serve, Mizan can evaluate.",
+  },
+  "ev.path.a.title": { ar: "المسار الأول — نماذج الواجهات البرمجية", en: "Path A — API-hosted models" },
+  "ev.path.a.body": {
+    ar: "النماذج المتاحة عبر مزوّد سحابي (مثل OpenRouter أو Anthropic أو OpenAI) يقيّمها فريق ميزان مباشرة بمشغّل التقييم على بنك البنود الكامل.",
+    en: "Models available through a cloud provider (e.g. OpenRouter, Anthropic, OpenAI) are evaluated directly by the Mizan team using the evaluation runner over the full item bank.",
+  },
+  "ev.path.b.title": { ar: "المسار الثاني — النماذج ذاتية الاستضافة", en: "Path B — Self-hosted models" },
+  "ev.path.b.body": {
+    ar: "شغّل نموذجك على أجهزتك بخادم متوافق مع واجهة OpenAI (مثل vLLM أو Ollama أو LM Studio)، ويتصل به مشغّل ميزان عبر نقطة نهاية مخصّصة. لا حدّ لحجم النموذج — 13 مليار معلمة أو أكثر.",
+    en: "Serve your model on your own hardware with an OpenAI-compatible server (e.g. vLLM, Ollama, LM Studio); the Mizan runner connects to your custom endpoint. No size limit — 13B parameters or beyond.",
+  },
+  "ev.steps.title": { ar: "خطوات التقديم والتحقّق", en: "Submission & verification steps" },
+  "ev.step1": { ar: "شغّل جولة التقييم محلياً بمشغّل ميزان على بنك البنود العلني.", en: "Run the evaluation locally with the Mizan runner over the public item bank." },
+  "ev.step2": { ar: "يولّد المشغّل ملف نتائج مع بصمة تحقّق (SHA-256).", en: "The runner produces a results file with a SHA-256 verification hash." },
+  "ev.step3": { ar: "قدّم النتائج إلى فريق ميزان عبر البريد المعتمد.", en: "Submit the results to the Mizan team via the official email." },
+  "ev.step4": { ar: "يتحقّق الفريق بإعادة تشغيل عيّنة تدقيق ومطابقة البصمات.", en: "The team verifies by re-running an audit sample and matching hashes." },
+  "ev.step5": { ar: "تُنشر النتيجة على اللوحة الرسمية كلقطة مؤرَّخة غير قابلة للاستبدال.", en: "The result is published on the official leaderboard as a dated, immutable snapshot." },
+  "ev.principles.title": { ar: "مبادئ ثابتة", en: "Standing principles" },
+  "ev.p1": { ar: "كل تقييم لقطة مؤرَّخة: النسخ الجديدة للنماذج تُضاف كتشغيلات جديدة ولا تستبدل التاريخ.", en: "Every evaluation is a dated snapshot: new model versions are added as new runs and never overwrite history." },
+  "ev.p2": { ar: "النشر على اللوحة يمرّ ببوابة تحقّق بشرية دائماً.", en: "Leaderboard publication always passes a human verification gate." },
+  "ev.p3": { ar: "إعادة الإنتاج مفتوحة: الكود والبنك العلني يُتاحان للباحثين مع الورقة العلمية.", en: "Reproduction is open: the code and public bank are released with the paper." },
+  "ev.cta.title": { ar: "جاهز لتقييم نموذجك؟", en: "Ready to evaluate your model?" },
+  "ev.cta.body": { ar: "راسل فريق ميزان وسنرسل لك دليل التشغيل خطوة بخطوة.", en: "Email the Mizan team and we will send the step-by-step runner guide." },
+  "ev.cta.button": { ar: "راسل الفريق", en: "Email the team" },
+  "ev.cta.leaderboard": { ar: "استعرض لوحة النتائج", en: "View the leaderboard" },
 } satisfies Dict;
 
 export type TKey = keyof typeof dict;
@@ -373,3 +409,4 @@ export function useLabels() {
     format: (f: string) => t(`fmt.${f}` as TKey),
   };
 }
+

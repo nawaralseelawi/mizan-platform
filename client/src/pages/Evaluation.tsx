@@ -1,178 +1,154 @@
+/**
+ * Evaluate Your Model - honest description of how models are evaluated on
+ * Mizan. The platform is an evaluation harness and results registry: it never
+ * hosts model weights and runs no inference. This page replaces an earlier
+ * decorative scaffold that implied weight uploads.
+ */
 import { motion } from "framer-motion";
 import { useI18n } from "@/i18n";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import { Upload, CheckCircle2, Clock, AlertCircle } from "lucide-react";
+import {
+  Cloud,
+  Server,
+  ShieldCheck,
+  CalendarClock,
+  Users,
+  BookOpenCheck,
+  Mail,
+  Trophy,
+} from "lucide-react";
+import { Link } from "wouter";
+
+const CONTACT_EMAIL = "nawar.alseelawi@gmail.com";
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
 };
-
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
-
-const evaluations: {
-  id: number;
-  model: string;
-  status: string;
-  progress: number;
-  accuracy: number | null;
-  date: string;
-}[] = [];
 
 export default function Evaluation() {
   const { t } = useI18n();
-  const getStatusIcon = (status: string) => {
-    switch (status) {
-      case "completed":
-        return <CheckCircle2 className="w-5 h-5 text-green-600" />;
-      case "running":
-        return <Clock className="w-5 h-5 text-blue-600" />;
-      case "queued":
-        return <AlertCircle className="w-5 h-5 text-yellow-600" />;
-      default:
-        return null;
-    }
-  };
+
+  const steps = ["ev.step1", "ev.step2", "ev.step3", "ev.step4", "ev.step5"] as const;
+  const principles = [
+    { icon: CalendarClock, key: "ev.p1" },
+    { icon: Users, key: "ev.p2" },
+    { icon: BookOpenCheck, key: "ev.p3" },
+  ] as const;
 
   return (
-    <div className="w-full">
-      {/* Hero Section */}
+    <div className="min-h-screen">
+      {/* Hero */}
       <section className="py-20 px-4 bg-gradient-to-br from-blue-600 to-emerald-600 text-white">
-        <div className="container mx-auto text-center">
-          <motion.div
-            className="space-y-6"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
+        <div className="max-w-4xl mx-auto text-center space-y-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl font-bold"
           >
-            <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl font-bold flex items-center justify-center gap-3">
-              <Upload className="w-12 h-12" />
-              {t("eval.title")}
-            </motion.h1>
-            <motion.p variants={itemVariants} className="text-xl opacity-90 max-w-2xl mx-auto">
-              {t("eval.subtitle")}
-            </motion.p>
-          </motion.div>
+            {t("ev.title")}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-lg opacity-95 leading-relaxed"
+          >
+            {t("ev.subtitle")}
+          </motion.p>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-20 px-4 bg-background">
-        <div className="container mx-auto">
-          <motion.div
-            className="space-y-12"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {/* Upload Section */}
-            <motion.div variants={itemVariants}>
-              <Card className="p-8 border-2 border-dashed border-blue-200 hover:border-blue-400 transition-colors">
-                <div className="text-center space-y-4">
-                  <Upload className="w-12 h-12 mx-auto text-blue-600" />
-                  <div>
-                    <h3 className="text-lg font-bold">Upload Your Model</h3>
-                    <p className="text-muted-foreground">Drag and drop or click to select a model file</p>
-                  </div>
-                  <Button size="lg">Select File</Button>
-                </div>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="max-w-5xl mx-auto px-4 py-14 space-y-10"
+      >
+        {/* Why no upload */}
+        <motion.div variants={itemVariants}>
+          <Card className="p-6 border-2 border-amber-200 bg-amber-50/50">
+            <div className="flex items-start gap-4">
+              <ShieldCheck className="w-8 h-8 text-amber-600 shrink-0" />
+              <div className="space-y-1">
+                <h2 className="text-xl font-bold">{t("ev.noupload.title")}</h2>
+                <p className="text-muted-foreground leading-relaxed">{t("ev.noupload.body")}</p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Two paths */}
+        <motion.div variants={itemVariants} className="grid md:grid-cols-2 gap-6">
+          <Card className="p-6 space-y-3">
+            <Cloud className="w-9 h-9 text-blue-600" />
+            <h3 className="text-lg font-bold">{t("ev.path.a.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">{t("ev.path.a.body")}</p>
+          </Card>
+          <Card className="p-6 space-y-3">
+            <Server className="w-9 h-9 text-emerald-600" />
+            <h3 className="text-lg font-bold">{t("ev.path.b.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">{t("ev.path.b.body")}</p>
+          </Card>
+        </motion.div>
+
+        {/* Steps */}
+        <motion.div variants={itemVariants}>
+          <Card className="p-6">
+            <h3 className="text-xl font-bold mb-5">{t("ev.steps.title")}</h3>
+            <ol className="space-y-4">
+              {steps.map((key, i) => (
+                <li key={key} className="flex items-start gap-4">
+                  <span className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shrink-0">
+                    {i + 1}
+                  </span>
+                  <p className="leading-relaxed pt-1">{t(key)}</p>
+                </li>
+              ))}
+            </ol>
+          </Card>
+        </motion.div>
+
+        {/* Principles */}
+        <motion.div variants={itemVariants}>
+          <h3 className="text-xl font-bold mb-4">{t("ev.principles.title")}</h3>
+          <div className="grid md:grid-cols-3 gap-4">
+            {principles.map(({ icon: Icon, key }) => (
+              <Card key={key} className="p-5 space-y-2">
+                <Icon className="w-7 h-7 text-blue-600" />
+                <p className="text-sm text-muted-foreground leading-relaxed">{t(key)}</p>
               </Card>
-            </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
-            {/* Pipeline Steps */}
-            <motion.div variants={itemVariants} className="space-y-4">
-              <h3 className="text-2xl font-bold">Evaluation Pipeline</h3>
-              <div className="space-y-3">
-                {[
-                  { step: 1, name: "Model Upload", status: "completed" },
-                  { step: 2, name: "Validation", status: "completed" },
-                  { step: 3, name: "Benchmark Execution", status: "running" },
-                  { step: 4, name: "Results Analysis", status: "pending" },
-                  { step: 5, name: "Report Generation", status: "pending" },
-                ].map((item) => (
-                  <div key={item.step} className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-lg">
-                    <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
-                      {item.step}
-                    </div>
-                    <div className="flex-1">
-                      <p className="font-semibold">{item.name}</p>
-                      <p className="text-sm text-muted-foreground capitalize">{item.status}</p>
-                    </div>
-                    {item.status === "completed" && <CheckCircle2 className="w-5 h-5 text-green-600" />}
-                    {item.status === "running" && <Clock className="w-5 h-5 text-blue-600 animate-spin" />}
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Recent Evaluations */}
-            <motion.div variants={itemVariants} className="space-y-4">
-              <h3 className="text-2xl font-bold">Recent Evaluations</h3>
-              <div className="space-y-4">
-                {evaluations.length === 0 && (
-                  <Card className="p-8 text-center text-muted-foreground">
-                    No evaluation runs yet. Runs are executed offline in the
-                    isolated harness environment and imported here for review;
-                    the pilot runs will appear once the item bank is approved.
-                  </Card>
-                )}
-                {evaluations.map((evaluation) => (
-                  <Card key={evaluation.id} className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center gap-3 flex-1">
-                        {getStatusIcon(evaluation.status)}
-                        <div>
-                          <h4 className="font-bold">{evaluation.model}</h4>
-                          <p className="text-sm text-muted-foreground">{evaluation.date}</p>
-                        </div>
-                      </div>
-                      {evaluation.accuracy && (
-                        <div className="text-right">
-                          <p className="text-2xl font-bold text-blue-600">{evaluation.accuracy}%</p>
-                          <p className="text-xs text-muted-foreground">Accuracy</p>
-                        </div>
-                      )}
-                    </div>
-                    <Progress value={evaluation.progress} className="mb-4" />
-                    <div className="flex gap-2">
-                      {evaluation.status === "completed" && (
-                        <div className="flex gap-2">
-                          <Button size="sm" variant="outline">View Report</Button>
-                          <Button size="sm" variant="outline">Download Results</Button>
-                        </div>
-                      )}
-                      {evaluation.status === "running" && (
-                        <Button size="sm" variant="outline">View Logs</Button>
-                      )}
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Export Formats */}
-            <motion.div variants={itemVariants} className="p-8 bg-slate-50 dark:bg-slate-900/50 rounded-lg">
-              <h3 className="text-2xl font-bold mb-4">Export Results</h3>
-              <p className="text-muted-foreground mb-6">Download evaluation results in your preferred format:</p>
-              <div className="flex flex-wrap gap-3">
-                <Button variant="outline">PDF Report</Button>
-                <Button variant="outline">CSV Data</Button>
-                <Button variant="outline">JSON Export</Button>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+        {/* CTA */}
+        <motion.div variants={itemVariants}>
+          <Card className="p-8 text-center space-y-4 bg-gradient-to-br from-blue-50 to-emerald-50">
+            <h3 className="text-2xl font-bold">{t("ev.cta.title")}</h3>
+            <p className="text-muted-foreground">{t("ev.cta.body")}</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Button size="lg" asChild>
+                <a href={`mailto:${CONTACT_EMAIL}?subject=Mizan%20Model%20Evaluation`}>
+                  <Mail className="w-4 h-4 me-2" />
+                  {t("ev.cta.button")}
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link href="/leaderboard">
+                  <Trophy className="w-4 h-4 me-2" />
+                  {t("ev.cta.leaderboard")}
+                </Link>
+              </Button>
+            </div>
+          </Card>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
-
