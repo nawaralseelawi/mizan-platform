@@ -41,9 +41,13 @@ async function callAnthropic(opts: CallOptions): Promise<string> {
 }
 
 async function callOpenAI(opts: CallOptions): Promise<string> {
-  const key = process.env.OPENAI_API_KEY;
-  if (!key) throw new Error("OPENAI_API_KEY is not set");
-  const res = await fetch("https://api.openai.com/v1/chat/completions", {
+  // OPENAI_BASE_URL enables any OpenAI-compatible endpoint (vLLM, Ollama,
+  // LM Studio, self-hosted gateways). Local servers rarely check the key,
+  // so a placeholder is used when only a custom base URL is configured.
+  const baseUrl = (process.env.OPENAI_BASE_URL ?? "https://api.openai.com/v1").replace(/\/+$/, "");
+  const key = process.env.OPENAI_API_KEY ?? (process.env.OPENAI_BASE_URL ? "local-no-key" : undefined);
+  if (!key) throw new Error("OPENAI_API_KEY is not set (or set OPENAI_BASE_URL for a local endpoint)");
+  const res = await fetch(`${baseUrl}/chat/completions`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -151,4 +155,5 @@ export async function callModel(
       throw new Error(`Unknown provider: ${provider}`);
   }
 }
+
 

@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 
-const CONTACT_EMAIL = "nawar.alseelawi@gmail.com";
+const CONTACT_EMAIL = "mizan.iraqllm@gmail.com";
 
 const containerVariants = {
   hidden: { opacity: 0 },
