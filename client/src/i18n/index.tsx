@@ -409,6 +409,346 @@ const dict = {
   "sub.after.s2": { ar: "تدقيق مستقل: نعيد تشغيل عيّنة من البنود على نموذجك نفسه ونطابق الدرجات والبصمات.", en: "Independent audit: we re-run a sample of items against your model and match scores and hashes." },
   "sub.after.s3": { ar: "الاستيراد والنشر: تُستورد النتيجة وتُنشر على اللوحة الرسمية كلقطة مؤرَّخة غير قابلة للاستبدال مع شهادتها.", en: "Import and publish: the result is imported and published on the official leaderboard as a dated, immutable snapshot with its certificate." },
   "sub.after.s4": { ar: "الإشعار: يصلك ردّ بريدي برابط نتيجتك المنشورة وبصمة شهادتها — خلال أيام عمل قليلة من التقديم.", en: "Notification: you receive an email with your published result link and certificate hash - within a few working days." },
+  // Architecture page (honest replacement of the decorative Manus scaffold)
+  "arch.title": { ar: "البنية التقنية", en: "System Architecture" },
+  "arch.subtitle": {
+    ar: "كيف يتحوّل بند تقييم مؤلَّف أصلاً إلى نتيجة منشورة بشهادة تحقّق — البنية الفعلية الموثَّقة للمنصة، لا مخططات زخرفية.",
+    en: "How an originally authored evaluation item becomes a published, certificate-backed score — the platform's actual, documented architecture, not decorative diagrams.",
+  },
+  "arch.pipeline.title": { ar: "خط التقييم: من التأليف إلى النشر", en: "The pipeline: from authoring to publication" },
+  "arch.pipe1": {
+    ar: "التأليف والمراجعة: تُؤلَّف البنود أصلاً بالعربية والعراقية (لا ترجمة إطلاقاً) وتُراجَع مراجعة بشرية مزدوجة على منصة سومر للتأليف — منصة مستقلة عن ميزان.",
+    en: "Authoring and review: items are originally composed in Arabic and Iraqi Arabic (never translated) and dual human-reviewed on the Sumer authoring platform — a system separate from Mizan.",
+  },
+  "arch.pipe2": {
+    ar: "عقد JSONL أحادي الاتجاه: تصل البنود المعتمدة إلى ميزان بصيغة JSONL موحّدة تحمل المسار والمحور وصيغة السؤال ووسوم المنطقة اللهجية ومستوى السرية.",
+    en: "One-way JSONL contract: approved items reach Mizan as standardized JSONL carrying track, axis, question format, dialect-region tags, and contamination tier.",
+  },
+  "arch.pipe3": {
+    ar: "الاستيراد: مستورد آمن التكرار يتحقّق من المخطط ويفصل البنود بين مجموعة تطوير علنية ومجموعة اختبار سرية لا يُخزَّن محتواها على المنصة إطلاقاً (بصمات فقط).",
+    en: "Import: an idempotent importer validates the schema and splits items between a public development set and a sealed private test set whose content is never stored on the platform (hash manifest only).",
+  },
+  "arch.pipe4": {
+    ar: "التشغيل: مشغّل تقييم بسطر الأوامر يعمل على أجهزة الباحث — المنصة لا تشغّل أي استدلال على خوادمها. يدعم المزوّدات السحابية (OpenRouter وAnthropic وOpenAI) وأي نموذج ذاتي الاستضافة عبر نقطة نهاية متوافقة مع واجهة OpenAI.",
+    en: "Evaluation run: a CLI runner executes on the researcher's hardware — the platform itself runs no inference. It supports cloud providers (OpenRouter, Anthropic, OpenAI) and any self-hosted model behind an OpenAI-compatible endpoint.",
+  },
+  "arch.pipe5": {
+    ar: "التصحيح: بنود الاختيار من متعدد والاستخراج تُصحَّح آلياً؛ أما البنود التوليدية (الإنتاج والترجمة والسلامة) فتُعلَّم للتحكيم البشري بمعايير مرقّمة — ولا تُنشر لها درجات آلية.",
+    en: "Scoring: multiple-choice and extraction items are auto-scored; open-generation items (generation, translation, safety) are flagged for human judging with numbered rubrics — no automatic scores are published for them.",
+  },
+  "arch.pipe6": {
+    ar: "النشر: تُستورد الدرجات المجمّعة لكل (مسار، محور)، ثم تمرّ ببوابة نشر بشرية تُصدر شهادة تحقّق SHA-256 وتضع التشغيل على لوحة النتائج لقطةً مؤرَّخة.",
+    en: "Publication: per-(track, axis) aggregates are imported, then pass a human publication gate that issues a SHA-256 verification certificate and places the run on the leaderboard as a dated snapshot.",
+  },
+  "arch.contamination.title": { ar: "قاعدة مكافحة التلوث", en: "Contamination-control invariant" },
+  "arch.contamination.body": {
+    ar: "محتوى المجموعة السرية لا يمرّ عبر هذه المنصة ولا يُخزَّن فيها بأي شكل. تحتفظ المنصة ببصمات البنود السرية فقط للتحقّق من التغطية، ويُدار المحتوى نفسه خارجها بالكامل.",
+    en: "Private test content never passes through or is stored on this platform in any form. The platform keeps only hash manifests of private items for coverage verification; the content itself is managed entirely offline.",
+  },
+  "arch.components.title": { ar: "المكوّنات الفعلية", en: "Actual components" },
+  "arch.c1.title": { ar: "بنك البنود", en: "Item bank" },
+  "arch.c1.body": {
+    ar: "بنود JSONL ثنائية المسار (فصحى + عراقية) على ستة محاور، موسومة بالمنطقة اللهجية وصيغة السؤال ومستوى الصعوبة.",
+    en: "Dual-track JSONL items (MSA + Iraqi Arabic) across six axes, tagged with dialect region, question format, and difficulty.",
+  },
+  "arch.c2.title": { ar: "مشغّل التقييم", en: "Evaluation runner" },
+  "arch.c2.body": {
+    ar: "أداة TypeScript بسطر الأوامر تشغّل النموذج على البنك وتُنتج ملف نتائج ببصمة تحقّق.",
+    en: "A TypeScript CLI that runs a model over the bank and produces a results file with a verification hash.",
+  },
+  "arch.c3.title": { ar: "مستورد النتائج", en: "Results importer" },
+  "arch.c3.body": {
+    ar: "يستورد الدرجات المجمّعة لكل (مسار، محور) استيراداً آمن التكرار، محافظاً على كل تشغيل سجلاً مستقلاً.",
+    en: "Imports per-(track, axis) aggregate scores idempotently, preserving every run as an independent record.",
+  },
+  "arch.c4.title": { ar: "بوابة النشر والشهادات", en: "Publication gate & certificates" },
+  "arch.c4.body": {
+    ar: "النشر قرار بشري يُصدر شهادة SHA-256؛ والسحب يُلغي الشهادة ويبقى تاريخاً علنياً.",
+    en: "Publishing is a human decision that issues a SHA-256 certificate; retraction revokes the certificate and remains public history.",
+  },
+  "arch.c5.title": { ar: "لوحة النتائج", en: "Leaderboard" },
+  "arch.c5.body": {
+    ar: "تعرض التشغيلات المنشورة فقط — أحدث تشغيل منشور لكل نموذج، وبلا أرقام وهمية بأي حال.",
+    en: "Shows published runs only — the latest published run per model, with no placeholder numbers under any circumstances.",
+  },
+  "arch.c6.title": { ar: "لوحة تحكم المشرفين", en: "Maintainer dashboard" },
+  "arch.c6.body": {
+    ar: "إدارة النشر والسحب وتنظيف المكررات وتركيب البنك — بحسابات تُمنح من إدارة المشروع.",
+    en: "Publication, retraction, duplicate cleanup, and bank composition — with accounts issued by the project administration.",
+  },
+  "arch.stack.title": { ar: "التقنيات المستخدمة فعلاً", en: "The stack actually in use" },
+  "arch.stack1.label": { ar: "الواجهة", en: "Frontend" },
+  "arch.stack1.value": {
+    ar: "React + Tailwind CSS + shadcn/ui، ثنائية الاتجاه (RTL/LTR) بالكامل",
+    en: "React + Tailwind CSS + shadcn/ui, fully bidirectional (RTL/LTR)",
+  },
+  "arch.stack2.label": { ar: "الخلفية", en: "Backend" },
+  "arch.stack2.value": {
+    ar: "tRPC فوق Express بلغة TypeScript",
+    en: "tRPC over Express, in TypeScript",
+  },
+  "arch.stack3.label": { ar: "قاعدة البيانات", en: "Database" },
+  "arch.stack3.value": {
+    ar: "PostgreSQL (استضافة Neon) عبر Drizzle ORM",
+    en: "PostgreSQL (hosted on Neon) via Drizzle ORM",
+  },
+  "arch.stack4.label": { ar: "التشغيل", en: "Runtime" },
+  "arch.stack4.value": {
+    ar: "المنصة على Render — والاستدلال كله على أجهزة الباحثين، لا على المنصة",
+    en: "Platform on Render — all inference on researchers' hardware, never on the platform",
+  },
+  "arch.boundary.title": { ar: "حدّ معماري صارم", en: "A strict architectural boundary" },
+  "arch.boundary.body": {
+    ar: "سومر مصنع البنود وميزان مختبر التقييم: لا يحتوي ميزان أي أنظمة تأليف أو رفع أو مراجعة بنود — يستقبل البنود المعتمدة فقط.",
+    en: "Sumer is the item factory; Mizan is the evaluation laboratory. Mizan contains no authoring, upload, or review systems — it receives approved items only.",
+  },
+
+  // Metrics page (real per-axis scoring methodology)
+  "met.title": { ar: "المقاييس", en: "Evaluation Metrics" },
+  "met.subtitle": {
+    ar: "كيف تُحتسب الدرجات محوراً محوراً — المنهجية المعلنة نفسها التي توثّقها الورقة العلمية.",
+    en: "How scores are computed, axis by axis — the same disclosed methodology the scientific paper documents.",
+  },
+  "met.axes.title": { ar: "طريقة القياس لكل محور", en: "Scoring method per axis" },
+  "met.method.auto": { ar: "تصحيح آلي", en: "Automatic" },
+  "met.method.human": { ar: "تحكيم بشري", en: "Human judging" },
+  "met.method.hybrid": { ar: "هجين", en: "Hybrid" },
+  "met.method.extraction": { ar: "استخراج مقارن", en: "Ground-truth extraction" },
+  "met.a1.title": { ar: "المحور 1 — فهم اللهجة", en: "Axis 1 — Dialect comprehension" },
+  "met.a1.body": {
+    ar: "اختيار من متعدد؛ الدرجة نسبة الإجابات الصحيحة. مواضع الإجابات موزونة عبر البنك لتحييد انحياز الموضع.",
+    en: "Multiple choice; the score is the proportion of correct answers. Answer positions are balanced across the bank to neutralize position bias.",
+  },
+  "met.a2.title": { ar: "المحور 2 — التوليد باللهجة", en: "Axis 2 — Dialect generation" },
+  "met.a2.body": {
+    ar: "توليد حر يُقيَّم بمعيار مرقّم من 10 (gen-rubric-v1) تكون فيه أصالة اللهجة (0–4) حاسمة — فالفشل المحوري المرصود هو «الفصحى المتنكّرة». يُقاس اتفاق المحكّمين بمعامل كريبندورف ألفا.",
+    en: "Open generation scored on a numbered /10 rubric (gen-rubric-v1) where dialect authenticity (0–4) is decisive — the central failure mode is \"disguised MSA\". Inter-annotator agreement is measured with Krippendorff's alpha.",
+  },
+  "met.a3.title": { ar: "المحور 3 — الترجمة فصحى ↔ عراقية", en: "Axis 3 — Translation MSA ↔ Iraqi" },
+  "met.a3.body": {
+    ar: "الاتجاهان بالتساوي؛ التحكيم البشري بمعيار trans-rubric-v1 هو الحاسم، ويُرفَق مقياس chrF الآلي مؤشراً ثانوياً — فالمقاييس الآلية وحدها تعجز عن تمييز الفصحى المتنكّرة من العراقية الأصيلة.",
+    en: "Both directions equally; human judging with trans-rubric-v1 is decisive, with automatic chrF attached as a secondary indicator — automatic metrics alone cannot distinguish disguised MSA from authentic Iraqi.",
+  },
+  "met.a4.title": { ar: "المحور 4 — المعرفة العراقية", en: "Axis 4 — Iraqi knowledge" },
+  "met.a4.body": {
+    ar: "اختيار من متعدد بتصحيح آلي يغطي التاريخ والجغرافيا والدستور والمؤسسات والثقافة الشعبية. البنود ذات المفاتيح المتنازَع عليها تُرفض في التأليف، والحقائق الزمنية تحمل وسم time_sensitive.",
+    en: "Auto-scored multiple choice covering history, geography, constitution and institutions, and popular culture. Items with contested keys are rejected at authoring, and time-bound facts carry a time_sensitive tag.",
+  },
+  "met.a5.title": { ar: "المحور 5 — الوثائق الرسمية", en: "Axis 5 — Official documents" },
+  "met.a5.body": {
+    ar: "يقرأ النموذج كتاباً رسمياً محاكى ويستخرج الحقول (الجهة المُصدِرة، الرقم، التاريخ، المُرسَل إليه، الموضوع، المطلوب)، وتُقارَن آلياً بالحقيقة الأرضية حقلاً حقلاً — بما فيها الحقول الغائبة عمداً.",
+    en: "The model reads a simulated official letter and extracts its fields (issuing authority, number, date, addressee, subject, required action), compared automatically to ground truth field by field — including deliberately absent fields.",
+  },
+  "met.a6.title": { ar: "المحور 6 — السلامة والحساسية المجتمعية", en: "Axis 6 — Safety & societal sensitivity" },
+  "met.a6.body": {
+    ar: "تحكيم بشري بمعيار safety-rubric-v1 يرصد فشلَين متعاكسَين: الامتثال المؤذي والإفراط في الرفض، مع محفّزات سقف صارم للمحتوى الكاره تُصفّر الدرجة.",
+    en: "Human judging with safety-rubric-v1 tracking two opposite failure modes: harmful compliance and over-refusal, with hard-cap triggers for hate content that zero the score.",
+  },
+  "met.agg.title": { ar: "التجميع والدرجة الكلية", en: "Aggregation and the overall score" },
+  "met.agg.body": {
+    ar: "تُحتسب درجة من 0 إلى 100 لكل زوج (مسار، محور)، والإجمالي متوسط كلّي بأوزان متساوية عبر المحاور. يُنشر المساران منفصلين دائماً — فالفصحى شبه مشبعة لدى النماذج الحديثة، والمسار العراقي هو ساحة التمييز الفعلية.",
+    en: "A 0–100 score is computed per (track, axis) pair; the overall score is an unweighted macro average across axes. The two tracks are always published separately — MSA is near saturation for modern models, and the Iraqi track is where the real discrimination happens.",
+  },
+  "met.judge.title": { ar: "موقع «النموذج الحَكَم»", en: "Where LLM-as-judge stands" },
+  "met.judge.body": {
+    ar: "التحكيم البشري بمعايير مرقّمة هو الأساس في المحاور التوليدية؛ ويُستخدم تقييم نموذجٍ لنموذجٍ مؤشراً ثانوياً فقط ولا يُعتمد وحده أبداً، نظراً لانحياز النماذج الحَكَم الموثَّق لأسلوب بعضها.",
+    en: "Human judging with numbered rubrics is the basis for generative axes; model-as-judge is used only as a secondary indicator and never on its own, given the documented bias of judge models toward each other's style.",
+  },
+  "met.stats.title": { ar: "الصرامة الإحصائية", en: "Statistical rigor" },
+  "met.stats.body": {
+    ar: "تُرفَق فواصل ثقة 95% بالدرجات على لوحة النتائج حيثما نُشرت، ويُفحص انحياز مواضع الإجابات ضمن بروتوكول التقييم، ويُذكر حجم العينة لكل محور صراحة مع كل نتيجة.",
+    en: "95% confidence intervals accompany published leaderboard scores, answer-position bias is checked as part of the evaluation protocol, and the per-axis sample size is reported explicitly with every result.",
+  },
+  "met.pending.title": { ar: "المحاور التوليدية في النسخة التجريبية", en: "Generative axes in the pilot" },
+  "met.pending.body": {
+    ar: "في النسخة التجريبية الحالية تُنشر درجات المحاور الآلية، بينما تخضع بنود التوليد والترجمة والسلامة لحملة التحكيم البشري — وستُضاف درجاتها فور اكتمالها، بدل نشر أرقام آلية مضلّلة عنها.",
+    en: "In the current pilot, auto-scored axes are published while generation, translation, and safety items undergo the human-judging campaign — their scores will be added when it completes, rather than publishing misleading automatic numbers for them.",
+  },
+
+  // Certification page (live verification + issued certificates)
+  "cert.title": { ar: "الشهادات", en: "Certification" },
+  "cert.subtitle": {
+    ar: "كل نتيجة منشورة على ميزان تحمل شهادة تحقّق ببصمة SHA-256 يستطيع أي طرف التثبّت منها هنا.",
+    en: "Every published Mizan result carries a SHA-256 verification certificate that anyone can check here.",
+  },
+  "cert.how.title": { ar: "كيف تعمل الشهادات", en: "How certificates work" },
+  "cert.how1": {
+    ar: "عند نشر تشغيلٍ ما على اللوحة تُصدر المنصة شهادة ببصمة SHA-256 تربط النموذج ونسخة البنك وتاريخ التشغيل ونتائجه.",
+    en: "When a run is published, the platform issues a certificate whose SHA-256 hash binds the model, bank version, run date, and results.",
+  },
+  "cert.how2": {
+    ar: "التقييمات لقطات مؤرَّخة غير قابلة للاستبدال: النسخ الجديدة من النماذج تُضاف تشغيلاتٍ جديدة، ولا يُعاد كتابة التاريخ أبداً.",
+    en: "Evaluations are dated, immutable snapshots: new model versions are added as new runs, and history is never rewritten.",
+  },
+  "cert.how3": {
+    ar: "سحب نتيجةٍ ما يُلغي شهادتها لكنه لا يخفيها — الشهادة الملغاة تظهر ملغاةً عند التحقّق، لأن السحب تاريخ علني.",
+    en: "Retracting a result revokes its certificate but does not hide it — a revoked certificate reports as revoked on verification, because retraction is public history.",
+  },
+  "cert.principle": {
+    ar: "«التشغيل حرّ، والنشر موثَّق ببوابة بشرية» — لا يظهر رقم على اللوحة الرسمية قبل تحقّق بشري صريح.",
+    en: "\"Running is free; publication is attested through a human gate\" — no number appears on the official board before explicit human verification.",
+  },
+  "cert.verify.title": { ar: "تحقّق من شهادة", en: "Verify a certificate" },
+  "cert.verify.hint": {
+    ar: "ألصق بصمة الشهادة (64 خانة سداسية عشرية) للتثبّت من صحتها.",
+    en: "Paste the certificate hash (64 hexadecimal characters) to verify it.",
+  },
+  "cert.verify.placeholder": { ar: "بصمة SHA-256...", en: "SHA-256 hash..." },
+  "cert.verify.button": { ar: "تحقّق", en: "Verify" },
+  "cert.verify.invalid": {
+    ar: "الصيغة غير صحيحة — البصمة 64 خانة سداسية عشرية.",
+    en: "Invalid format — the hash is 64 hexadecimal characters.",
+  },
+  "cert.verify.valid": { ar: "شهادة صحيحة", en: "Valid certificate" },
+  "cert.verify.revoked": { ar: "شهادة ملغاة", en: "Revoked certificate" },
+  "cert.verify.notfound": { ar: "لا توجد شهادة بهذه البصمة", en: "No certificate matches this hash" },
+  "cert.verify.model": { ar: "النموذج", en: "Model" },
+  "cert.verify.developer": { ar: "المطوّر", en: "Developer" },
+  "cert.verify.version": { ar: "نسخة البنك", en: "Bank version" },
+  "cert.verify.issued": { ar: "تاريخ الإصدار", en: "Issued" },
+  "cert.verify.revokedAt": { ar: "تاريخ الإلغاء", en: "Revoked" },
+  "cert.list.title": { ar: "الشهادات الصادرة", en: "Issued certificates" },
+  "cert.list.empty": {
+    ar: "لا توجد شهادات نشطة بعد — تصدر الشهادات تلقائياً مع نشر التشغيلات.",
+    en: "No active certificates yet — certificates are issued automatically as runs are published.",
+  },
+  "cert.list.hash": { ar: "البصمة", en: "Hash" },
+
+  // Governance page (real institutional anchor + binding policies)
+  "gov.title": { ar: "الحوكمة", en: "Governance" },
+  "gov.subtitle": {
+    ar: "من يقود ميزان، وكيف تُتّخذ قراراته، وما السياسات الملزمة التي تحكم بياناته ونتائجه.",
+    en: "Who leads Mizan, how its decisions are made, and the binding policies that govern its data and results.",
+  },
+  "gov.inst.title": { ar: "الإطار المؤسسي", en: "Institutional anchor" },
+  "gov.inst.body": {
+    ar: "يقود المشروع علمياً الدكتور مصطفى صادق لطيف (شركة نفط ميسان) والدكتور نوار السيلاوي (جامعة ميسان)، عضوا الفريق الوطني للنموذج اللغوي العراقي المشكَّل بالأمر الديواني 251482 لسنة 2025 وتعديله 251692، بإشراف مكتب رئيس الوزراء. ويُطرح ميزان بوصفه الإطار الوطني الذي يُقاس عليه أولاً أي نموذج يُقترح لاستخدام الدولة — محلياً كان أم عالمياً.",
+    en: "The project is scientifically led by Dr. Mustafa Sadiq Latif (Missan Oil Company) and Dr. Nawar Al-Seelawi (University of Misan), members of Iraq's National LLM Team formed by Prime Ministerial Diwani Order 251482 of 2025 and its amendment 251692, under the Prime Minister's Office. Mizan is positioned as the national framework on which any model proposed for state use — local or global — is measured first.",
+  },
+  "gov.access.title": { ar: "نموذج الوصول", en: "Access model" },
+  "gov.access1": {
+    ar: "القراءة مفتوحة للجميع: المنهجية والنتائج واللوحة علنية بلا حسابات.",
+    en: "Reading is open to all: methodology, results, and the leaderboard are public with no accounts.",
+  },
+  "gov.access2": {
+    ar: "إعادة الإنتاج بالكود العلني على موارد الباحث نفسه — المنصة لا تموّل أي استدلال.",
+    en: "Reproduction uses the public code on the researcher's own resources — the platform funds no inference.",
+  },
+  "gov.access3": {
+    ar: "النشر على اللوحة الرسمية يمرّ دائماً بتقديم نتائج عبر بوابة تحقّق بشرية.",
+    en: "Official leaderboard publication always passes through result submission with a human verification gate.",
+  },
+  "gov.method.title": { ar: "حوكمة المنهجية", en: "Methodological governance" },
+  "gov.m1": {
+    ar: "تأليف أصلي حصراً: البنود تُكتب بالعربية والعراقية من مؤلفين عراقيين — والترجمة من معايير أجنبية ممنوعة منعاً باتاً.",
+    en: "Original authorship only: items are written in Arabic and Iraqi Arabic by Iraqi authors — translation from foreign benchmarks is strictly prohibited.",
+  },
+  "gov.m2": {
+    ar: "مراجعة بشرية مزدوجة لكل بند قبل اعتماده، وفق أدلة تأليف ملزمة للمحاور الستة.",
+    en: "Dual human review of every item before approval, under binding item-writing guidelines for all six axes.",
+  },
+  "gov.m3": {
+    ar: "مكافحة التلوث: مجموعة تطوير علنية ومجموعة اختبار سرية لا يُنشر محتواها أبداً ولا يُخزَّن على المنصة.",
+    en: "Contamination control: a public development set and a sealed private test set whose content is never published nor stored on the platform.",
+  },
+  "gov.m4": {
+    ar: "توسيم المنطقة اللهجية إلزامي لكل بند — فـ«العراقية» ليست لهجة واحدة.",
+    en: "Dialect-region tagging is mandatory for every item — \"Iraqi\" is not a single dialect.",
+  },
+  "gov.ethics.title": { ar: "أخلاقيات البيانات", en: "Data ethics" },
+  "gov.e1": {
+    ar: "بنود الوثائق الرسمية محاكاة بالكامل بأسماء وهمية — لا تدخل البنك أي وثيقة حقيقية أو بيانات شخصية.",
+    en: "Official-document items are fully simulated with fictitious names — no real documents or personal data ever enter the bank.",
+  },
+  "gov.e2": {
+    ar: "في محور السلامة يُوصَف المحتوى المؤذي ولا يُكتب، وتُصاغ المحفّزات بصيغ عامة لا تستهدف أي جهة.",
+    en: "In the safety axis, harmful content is described, never written, and prompts use generic framings that target no group.",
+  },
+  "gov.e3": {
+    ar: "الحيادية تجاه المكوّنات والمحافظات والرموز معيار قياس صريح، لا شعاراً.",
+    en: "Neutrality across communities, governorates, and symbols is an explicit measured criterion, not a slogan.",
+  },
+  "gov.integrity.title": { ar: "نزاهة النتائج والنسخ", en: "Result and version integrity" },
+  "gov.i1": {
+    ar: "كل تقييم لقطة مؤرَّخة بنسخة بنك وبصمة؛ واللوحة سجل طولي لتطوّر النماذج، لا صورة تُستبدل.",
+    en: "Every evaluation is a snapshot dated with a bank version and hash; the leaderboard is a longitudinal record of model progress, not a replaceable picture.",
+  },
+  "gov.i2": {
+    ar: "جولات إعادة التقييم المجدولة ستستورد النتائج آلياً — ويبقى النشر قراراً بشرياً.",
+    en: "Scheduled re-evaluation rounds will import results automatically — publication remains a human decision.",
+  },
+  "gov.release.title": { ar: "الإتاحة والترخيص", en: "Release and licensing" },
+  "gov.r1": {
+    ar: "مع نشر الورقة العلمية: الكود برخصة Apache-2.0، وبنك التطوير العلني على GitHub وHugging Face Datasets مع بطاقة بيانات.",
+    en: "At paper release: the code under Apache-2.0, and the public development bank on GitHub and Hugging Face Datasets with a datasheet.",
+  },
+  "gov.r2": {
+    ar: "المجموعة السرية المستقبلية بوصول مقيّد بالطلب لأغراض التدقيق العلمي.",
+    en: "The future private test set will have restricted, on-request access for scientific auditing.",
+  },
+  "gov.contact.title": { ar: "تواصل", en: "Contact" },
+  "gov.contact.body": {
+    ar: "للاستفسارات العلمية وتقديم النماذج والتعاون البحثي:",
+    en: "For scientific inquiries, model submissions, and research collaboration:",
+  },
+
+  // API docs page (honest: small public read API + the runner as the real interface)
+  "api.title": { ar: "توثيق الواجهة", en: "API Documentation" },
+  "api.subtitle": {
+    ar: "توصيف صادق لما تتيحه المنصة برمجياً اليوم: واجهة قراءة علنية صغيرة، ومشغّل تقييم بسطر الأوامر هو واجهة التقييم الفعلية.",
+    en: "An honest account of what the platform exposes programmatically today: a small public read API, and a CLI evaluation runner that is the real evaluation interface.",
+  },
+  "api.read.title": { ar: "واجهة القراءة العلنية (tRPC عبر HTTP)", en: "Public read API (tRPC over HTTP)" },
+  "api.read.body": {
+    ar: "تُخدَم الإجراءات على المسار ‎/api/trpc/‎ وتُستدعى إجراءات القراءة بطلبات GET مع مُدخل JSON مرمَّز في الرابط، وتُعيد JSON. لا توجد واجهة كتابة علنية — فالنشر والإدارة بحسابات المشرفين فقط.",
+    en: "Procedures are served under /api/trpc/. Read procedures are called with GET requests carrying a URL-encoded JSON input, and return JSON. There is no public write API — publication and administration are maintainer-only.",
+  },
+  "api.ep.lb.body": {
+    ar: "يُعيد مدخلات اللوحة لنسخة بنك محددة: أحدث تشغيل منشور لكل نموذج، بدرجات كل (مسار، محور) وحقول فاصل الثقة وعدد البنود، والمتوسطات العربية والعراقية والكلية.",
+    en: "Returns leaderboard entries for a given bank version: the latest published run per model, with per-(track, axis) scores, confidence-interval fields, item counts, and the Arabic, Iraqi, and macro averages.",
+  },
+  "api.ep.cl.body": {
+    ar: "يُعيد الشهادات النشطة (غير الملغاة) مع النموذج والمطوّر ونسخة البنك وتاريخ الإصدار.",
+    en: "Returns active (non-revoked) certificates with model, developer, bank version, and issue date.",
+  },
+  "api.ep.cv.body": {
+    ar: "يستقبل بصمة SHA-256 ويُعيد إحدى الحالات: صحيحة أو ملغاة أو غير موجودة — فالشهادات الملغاة تُعلن ملغاةً ولا تُخفى.",
+    en: "Takes a SHA-256 hash and returns one of: valid, revoked, or not found — revoked certificates are reported as revoked, never hidden.",
+  },
+  "api.ep.note": {
+    ar: "إجراءات قراءة إضافية تغذّي مستكشف البنود وسجل النماذج بالبيانات نفسها الظاهرة في الواجهة.",
+    en: "Additional read procedures power the Dataset Explorer and the Model Registry with the same data shown in the UI.",
+  },
+  "api.example.title": { ar: "مثال استدعاء", en: "Example call" },
+  "api.runner.title": { ar: "واجهة التقييم الفعلية: المشغّل", en: "The real evaluation interface: the runner" },
+  "api.runner.body": {
+    ar: "التقييم لا يجري عبر HTTP على المنصة، بل بمشغّل سطر الأوامر على أجهزتك: يقرأ بنك JSONL، ويستدعي النموذج عبر مزوّد سحابي أو نقطة نهاية متوافقة مع OpenAI تحددها بالمتغير OPENAI_BASE_URL (لأي نموذج ذاتي الاستضافة)، ثم يُنتج ملف نتائج ببصمة SHA-256 جاهزاً للتقديم.",
+    en: "Evaluation does not happen over HTTP on the platform; it runs through the CLI runner on your machines: it reads the JSONL bank, calls the model through a cloud provider or an OpenAI-compatible endpoint set via OPENAI_BASE_URL (for any self-hosted model), and produces a results file with a SHA-256 hash ready for submission.",
+  },
+  "api.runner.cta": {
+    ar: "دليل التشغيل الكامل خطوة بخطوة على صفحة «قدّم نموذجك».",
+    en: "The full step-by-step runner guide lives on the Submit Your Model page.",
+  },
+  "api.schema.title": { ar: "مخطط البنود (JSONL)", en: "Item schema (JSONL)" },
+  "api.schema.body": {
+    ar: "كل بند سطر JSON يحمل: المعرّف، والمسار (arabic أو iraqi)، والمحور (ست قيم قانونية)، وصيغة السؤال (multiple_choice أو open_generation أو extraction)، والمنطقة اللهجية، ومستوى السرية، ثم المحتوى بحسب الصيغة.",
+    en: "Each item is a JSON line carrying: id, track (arabic or iraqi), axis (six canonical values), question format (multiple_choice, open_generation, or extraction), dialect region, contamination tier, then format-specific content.",
+  },
+  "api.roadmap.title": { ar: "على الخارطة", en: "On the roadmap" },
+  "api.roadmap.body": {
+    ar: "واجهة قراءة REST مُنسَّخة رسمياً وتصدير آلي للنتائج والشهادات — بعد نشر الورقة، حين يُتاح المستودع علنياً برخصة Apache-2.0.",
+    en: "A formally versioned REST read API and machine-readable exports of results and certificates — after paper release, when the repository goes public under Apache-2.0.",
+  },
+  "api.gotoSubmit": { ar: "قدّم نموذجك", en: "Submit your model" },
+
+  // Not-found page
+  "nf.title": { ar: "الصفحة غير موجودة", en: "Page not found" },
+  "nf.body": {
+    ar: "الرابط الذي طلبته غير موجود أو نُقل. جرّب العودة إلى الرئيسية أو استعراض لوحة النتائج.",
+    en: "The link you requested does not exist or has moved. Try heading home or browsing the leaderboard.",
+  },
+  "nf.home": { ar: "العودة للرئيسية", en: "Back to home" },
+  "nf.leaderboard": { ar: "لوحة النتائج", en: "View leaderboard" },
 } satisfies Dict;
 
 export type TKey = keyof typeof dict;

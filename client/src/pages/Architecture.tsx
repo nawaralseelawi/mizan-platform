@@ -1,257 +1,165 @@
-import { useState } from "react";
+/**
+ * System Architecture — honest description of the actual Mizan pipeline and
+ * stack. Replaces the earlier decorative scaffold that claimed Kubernetes,
+ * MySQL, Redis, and microservices, none of which exist in this system.
+ * Fully bilingual through the central i18n dictionary.
+ */
 import { motion } from "framer-motion";
+import { useI18n, type TKey } from "@/i18n";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ZoomIn, ZoomOut } from "lucide-react";
+import {
+  Layers,
+  FileJson,
+  Terminal,
+  Database,
+  ShieldCheck,
+  Award,
+  Trophy,
+  LayoutDashboard,
+  Lock,
+} from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
 };
-
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
 export default function Architecture() {
-  const [zoom, setZoom] = useState(100);
+  const { t } = useI18n();
 
-  const handleZoomIn = () => setZoom((z) => Math.min(z + 20, 200));
-  const handleZoomOut = () => setZoom((z) => Math.max(z - 20, 50));
+  const pipeline: TKey[] = [
+    "arch.pipe1",
+    "arch.pipe2",
+    "arch.pipe3",
+    "arch.pipe4",
+    "arch.pipe5",
+    "arch.pipe6",
+  ];
 
-  const DiagramViewer = ({ title }: { title: string }) => (
-    <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <h3 className="text-lg font-bold">{title}</h3>
-        <div className="flex gap-2">
-          <Button size="sm" variant="outline" onClick={handleZoomOut}>
-            <ZoomOut className="w-4 h-4" />
-          </Button>
-          <span className="px-3 py-2 text-sm font-medium">{zoom}%</span>
-          <Button size="sm" variant="outline" onClick={handleZoomIn}>
-            <ZoomIn className="w-4 h-4" />
-          </Button>
-        </div>
-      </div>
+  const components: { icon: typeof Layers; title: TKey; body: TKey }[] = [
+    { icon: FileJson, title: "arch.c1.title", body: "arch.c1.body" },
+    { icon: Terminal, title: "arch.c2.title", body: "arch.c2.body" },
+    { icon: Database, title: "arch.c3.title", body: "arch.c3.body" },
+    { icon: Award, title: "arch.c4.title", body: "arch.c4.body" },
+    { icon: Trophy, title: "arch.c5.title", body: "arch.c5.body" },
+    { icon: LayoutDashboard, title: "arch.c6.title", body: "arch.c6.body" },
+  ];
 
-      <div className="bg-slate-100 dark:bg-slate-900 rounded-lg p-8 overflow-auto h-96">
-        <div style={{ transform: `scale(${zoom / 100})`, transformOrigin: "top left" }}>
-          <svg viewBox="0 0 800 600" className="w-full h-auto">
-            <defs>
-              <style>{`
-                .diagram-box { fill: #3b82f6; stroke: #1e40af; stroke-width: 2; }
-                .diagram-text { fill: white; font-family: Arial; font-size: 14px; text-anchor: middle; }
-                .diagram-line { stroke: #1e40af; stroke-width: 2; fill: none; }
-              `}</style>
-            </defs>
-
-            <text x="400" y="30" className="diagram-text" fontSize="18" fontWeight="bold">
-              Mizan System Architecture
-            </text>
-
-            <rect x="50" y="80" width="700" height="80" fill="none" stroke="#10b981" strokeWidth="2" strokeDasharray="5,5" />
-            <text x="400" y="70" className="diagram-text" fontSize="12" fill="#10b981">
-              User Interface Layer
-            </text>
-
-            <rect x="80" y="100" width="120" height="50" className="diagram-box" rx="5" />
-            <text x="140" y="130" className="diagram-text">Web Portal</text>
-
-            <rect x="240" y="100" width="120" height="50" className="diagram-box" rx="5" />
-            <text x="300" y="130" className="diagram-text">API Client</text>
-
-            <rect x="400" y="100" width="120" height="50" className="diagram-box" rx="5" />
-            <text x="460" y="130" className="diagram-text">Dashboard</text>
-
-            <rect x="560" y="100" width="120" height="50" className="diagram-box" rx="5" />
-            <text x="620" y="130" className="diagram-text">CLI Tool</text>
-
-            <rect x="50" y="200" width="700" height="100" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="5,5" />
-            <text x="400" y="190" className="diagram-text" fontSize="12" fill="#f59e0b">
-              Application Layer
-            </text>
-
-            <rect x="80" y="220" width="140" height="60" className="diagram-box" rx="5" />
-            <text x="150" y="245" className="diagram-text">Benchmark</text>
-            <text x="150" y="265" className="diagram-text">Manager</text>
-
-            <rect x="260" y="220" width="140" height="60" className="diagram-box" rx="5" />
-            <text x="330" y="245" className="diagram-text">Evaluation</text>
-            <text x="330" y="265" className="diagram-text">Engine</text>
-
-            <rect x="440" y="220" width="140" height="60" className="diagram-box" rx="5" />
-            <text x="510" y="245" className="diagram-text">Model</text>
-            <text x="510" y="265" className="diagram-text">Registry</text>
-
-            <rect x="620" y="220" width="80" height="60" className="diagram-box" rx="5" />
-            <text x="660" y="245" className="diagram-text">Analytics</text>
-            <text x="660" y="265" className="diagram-text">Engine</text>
-
-            <rect x="50" y="340" width="700" height="100" fill="none" stroke="#8b5cf6" strokeWidth="2" strokeDasharray="5,5" />
-            <text x="400" y="330" className="diagram-text" fontSize="12" fill="#8b5cf6">
-              Data Layer
-            </text>
-
-            <rect x="80" y="360" width="140" height="60" className="diagram-box" rx="5" />
-            <text x="150" y="385" className="diagram-text">Benchmark</text>
-            <text x="150" y="405" className="diagram-text">Database</text>
-
-            <rect x="260" y="360" width="140" height="60" className="diagram-box" rx="5" />
-            <text x="330" y="385" className="diagram-text">Model</text>
-            <text x="330" y="405" className="diagram-text">Database</text>
-
-            <rect x="440" y="360" width="140" height="60" className="diagram-box" rx="5" />
-            <text x="510" y="385" className="diagram-text">Results</text>
-            <text x="510" y="405" className="diagram-text">Cache</text>
-
-            <rect x="620" y="360" width="80" height="60" className="diagram-box" rx="5" />
-            <text x="660" y="385" className="diagram-text">File</text>
-            <text x="660" y="405" className="diagram-text">Storage</text>
-
-            <rect x="50" y="480" width="700" height="80" fill="none" stroke="#ec4899" strokeWidth="2" strokeDasharray="5,5" />
-            <text x="400" y="470" className="diagram-text" fontSize="12" fill="#ec4899">
-              Infrastructure Layer
-            </text>
-
-            <rect x="100" y="500" width="150" height="50" className="diagram-box" rx="5" />
-            <text x="175" y="530" className="diagram-text">Kubernetes</text>
-
-            <rect x="300" y="500" width="150" height="50" className="diagram-box" rx="5" />
-            <text x="375" y="530" className="diagram-text">Monitoring</text>
-
-            <rect x="500" y="500" width="150" height="50" className="diagram-box" rx="5" />
-            <text x="575" y="530" className="diagram-text">Security</text>
-          </svg>
-        </div>
-      </div>
-    </div>
-  );
+  const stack: { label: TKey; value: TKey }[] = [
+    { label: "arch.stack1.label", value: "arch.stack1.value" },
+    { label: "arch.stack2.label", value: "arch.stack2.value" },
+    { label: "arch.stack3.label", value: "arch.stack3.value" },
+    { label: "arch.stack4.label", value: "arch.stack4.value" },
+  ];
 
   return (
-    <div className="w-full">
+    <div className="min-h-screen">
+      {/* Hero */}
       <section className="py-20 px-4 bg-gradient-to-br from-blue-600 to-emerald-600 text-white">
-        <div className="container mx-auto text-center">
-          <motion.div
-            className="space-y-6"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
+        <div className="max-w-4xl mx-auto text-center space-y-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3"
           >
-            <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl font-bold">
-              System Architecture
-            </motion.h1>
-            <motion.p variants={itemVariants} className="text-xl opacity-90 max-w-2xl mx-auto">
-              Comprehensive technical architecture and infrastructure design.
-            </motion.p>
-          </motion.div>
+            <Layers className="w-10 h-10" />
+            {t("arch.title")}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-lg opacity-95 leading-relaxed"
+          >
+            {t("arch.subtitle")}
+          </motion.p>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-background">
-        <div className="container mx-auto">
-          <motion.div
-            className="space-y-12"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.div variants={itemVariants}>
-              <Tabs defaultValue="overview" className="w-full">
-                <TabsList className="grid w-full grid-cols-3 lg:grid-cols-5">
-                  <TabsTrigger value="overview">Overview</TabsTrigger>
-                  <TabsTrigger value="microservices">Microservices</TabsTrigger>
-                  <TabsTrigger value="database">Database</TabsTrigger>
-                  <TabsTrigger value="pipeline">Pipeline</TabsTrigger>
-                  <TabsTrigger value="deployment">Deployment</TabsTrigger>
-                </TabsList>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="max-w-5xl mx-auto px-4 py-14 space-y-10"
+      >
+        {/* Pipeline: authoring -> publication */}
+        <motion.div variants={itemVariants}>
+          <Card className="p-6">
+            <h2 className="text-xl font-bold mb-5">{t("arch.pipeline.title")}</h2>
+            <ol className="space-y-4">
+              {pipeline.map((key, i) => (
+                <li key={key} className="flex items-start gap-4">
+                  <span className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shrink-0">
+                    {i + 1}
+                  </span>
+                  <p className="leading-relaxed pt-1">{t(key)}</p>
+                </li>
+              ))}
+            </ol>
+          </Card>
+        </motion.div>
 
-                <TabsContent value="overview" className="mt-6">
-                  <Card className="p-6">
-                    <DiagramViewer title="System Overview" />
-                  </Card>
-                </TabsContent>
-
-                <TabsContent value="microservices" className="mt-6">
-                  <Card className="p-6">
-                    <DiagramViewer title="Microservices Architecture" />
-                  </Card>
-                </TabsContent>
-
-                <TabsContent value="database" className="mt-6">
-                  <Card className="p-6">
-                    <DiagramViewer title="Database Schema" />
-                  </Card>
-                </TabsContent>
-
-                <TabsContent value="pipeline" className="mt-6">
-                  <Card className="p-6">
-                    <DiagramViewer title="Evaluation Pipeline" />
-                  </Card>
-                </TabsContent>
-
-                <TabsContent value="deployment" className="mt-6">
-                  <Card className="p-6">
-                    <DiagramViewer title="Deployment Architecture" />
-                  </Card>
-                </TabsContent>
-              </Tabs>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="space-y-4">
-              <h2 className="text-3xl font-bold">Key Components</h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                {[
-                  {
-                    name: "Benchmark Manager",
-                    description: "Manages benchmark definitions, versions, and configurations",
-                  },
-                  {
-                    name: "Evaluation Engine",
-                    description: "Executes model evaluations against benchmarks",
-                  },
-                  {
-                    name: "Model Registry",
-                    description: "Stores and manages AI model metadata and versions",
-                  },
-                  {
-                    name: "Results Cache",
-                    description: "High-performance caching for evaluation results",
-                  },
-                ].map((component, i) => (
-                  <Card key={i} className="p-4">
-                    <h3 className="font-bold mb-2">{component.name}</h3>
-                    <p className="text-sm text-muted-foreground">{component.description}</p>
-                  </Card>
-                ))}
+        {/* Contamination invariant */}
+        <motion.div variants={itemVariants}>
+          <Card className="p-6 border-2 border-amber-200 bg-amber-50/50">
+            <div className="flex items-start gap-4">
+              <Lock className="w-8 h-8 text-amber-600 shrink-0" />
+              <div className="space-y-1">
+                <h2 className="text-xl font-bold">{t("arch.contamination.title")}</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  {t("arch.contamination.body")}
+                </p>
               </div>
-            </motion.div>
+            </div>
+          </Card>
+        </motion.div>
 
-            <motion.div variants={itemVariants} className="p-8 bg-slate-50 dark:bg-slate-900/50 rounded-lg">
-              <h3 className="text-2xl font-bold mb-6">Technology Stack</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                {[
-                  { category: "Backend", tech: "Node.js, Express, TypeScript" },
-                  { category: "Database", tech: "MySQL, Redis" },
-                  { category: "Frontend", tech: "React 19, TypeScript, Tailwind CSS" },
-                  { category: "Infrastructure", tech: "Kubernetes, Docker, Cloud Run" },
-                ].map((item, i) => (
-                  <div key={i}>
-                    <p className="font-bold text-blue-600">{item.category}</p>
-                    <p className="text-muted-foreground">{item.tech}</p>
-                  </div>
-                ))}
+        {/* Actual components */}
+        <motion.div variants={itemVariants}>
+          <h2 className="text-xl font-bold mb-4">{t("arch.components.title")}</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            {components.map(({ icon: Icon, title, body }) => (
+              <Card key={title} className="p-5 space-y-2">
+                <Icon className="w-7 h-7 text-blue-600" />
+                <h3 className="font-bold">{t(title)}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{t(body)}</p>
+              </Card>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Honest stack */}
+        <motion.div variants={itemVariants}>
+          <Card className="p-6">
+            <h2 className="text-xl font-bold mb-4">{t("arch.stack.title")}</h2>
+            <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
+              {stack.map(({ label, value }) => (
+                <div key={label}>
+                  <p className="font-bold text-blue-600">{t(label)}</p>
+                  <p className="text-muted-foreground leading-relaxed">{t(value)}</p>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Sumer boundary */}
+        <motion.div variants={itemVariants}>
+          <Card className="p-6 bg-gradient-to-br from-blue-50 to-emerald-50">
+            <div className="flex items-start gap-4">
+              <ShieldCheck className="w-8 h-8 text-emerald-600 shrink-0" />
+              <div className="space-y-1">
+                <h2 className="text-xl font-bold">{t("arch.boundary.title")}</h2>
+                <p className="text-muted-foreground leading-relaxed">{t("arch.boundary.body")}</p>
               </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+            </div>
+          </Card>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
-

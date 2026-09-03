@@ -1,158 +1,170 @@
+/**
+ * API Documentation — an honest account of what the platform exposes today:
+ * the small public tRPC read API (leaderboard, certificates) and the CLI
+ * evaluation runner as the real evaluation interface (including the
+ * OPENAI_BASE_URL custom-endpoint path for self-hosted models). Replaces
+ * the earlier decorative scaffold that implied SDKs and endpoints that do
+ * not exist. Fully bilingual through the central i18n dictionary.
+ */
 import { motion } from "framer-motion";
+import { Link } from "wouter";
+import { useI18n, type TKey } from "@/i18n";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Code } from "lucide-react";
+import { Code2, Globe, Terminal, FileJson, Rocket, Send } from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
 };
-
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const endpoints = [
-  {
-    method: "GET",
-    path: "/api/benchmarks",
-    description: "List all available benchmarks",
-  },
-  {
-    method: "GET",
-    path: "/api/models",
-    description: "List all registered models",
-  },
-  {
-    method: "POST",
-    path: "/api/evaluations",
-    description: "Submit a new evaluation",
-  },
-  {
-    method: "GET",
-    path: "/api/leaderboard",
-    description: "Get current leaderboard rankings",
-  },
-];
-
-export default function ApiDocs() {
+/** Always-LTR monospace block for endpoint names and examples. */
+function CodeBlock({ children }: { children: string }) {
   return (
-    <div className="w-full">
-      {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-600 to-emerald-600 text-white">
-        <div className="container mx-auto text-center">
-          <motion.div
-            className="space-y-6"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl font-bold flex items-center justify-center gap-3">
-              <BookOpen className="w-12 h-12" />
-              API Documentation
-            </motion.h1>
-            <motion.p variants={itemVariants} className="text-xl opacity-90 max-w-2xl mx-auto">
-              Complete API reference for integrating with Mizan.
-            </motion.p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Main Content */}
-      <section className="py-20 px-4 bg-background">
-        <div className="container mx-auto">
-          <motion.div
-            className="space-y-12"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {/* Quick Start */}
-            <motion.div variants={itemVariants} className="space-y-4">
-              <h2 className="text-3xl font-bold">Quick Start</h2>
-              <Card className="p-6">
-                <p className="text-muted-foreground mb-4">Get started with the Mizan API in minutes:</p>
-                <div className="bg-slate-900 text-slate-100 p-4 rounded font-mono text-sm overflow-x-auto">
-                  {`curl -X GET https://api.iraqllm-bench.io/v1/benchmarks \\
-  -H "Authorization: Bearer YOUR_API_KEY"`}
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* Endpoints */}
-            <motion.div variants={itemVariants} className="space-y-4">
-              <h2 className="text-3xl font-bold">API Endpoints</h2>
-              <div className="space-y-3">
-                {endpoints.map((endpoint, i) => (
-                  <Card key={i} className="p-4">
-                    <div className="flex items-center gap-4">
-                      <Badge className="bg-blue-600 font-mono">{endpoint.method}</Badge>
-                      <div className="flex-1">
-                        <p className="font-mono font-semibold">{endpoint.path}</p>
-                        <p className="text-sm text-muted-foreground">{endpoint.description}</p>
-                      </div>
-                      <Button size="sm" variant="outline">
-                        <Code className="w-4 h-4 mr-2" />
-                        Try It
-                      </Button>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Authentication */}
-            <motion.div variants={itemVariants} className="space-y-4">
-              <h2 className="text-3xl font-bold">Authentication</h2>
-              <Card className="p-6">
-                <p className="text-muted-foreground mb-4">
-                  All API requests require an API key in the Authorization header:
-                </p>
-                <div className="bg-slate-900 text-slate-100 p-4 rounded font-mono text-sm">
-                  Authorization: Bearer YOUR_API_KEY
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* SDKs */}
-            <motion.div variants={itemVariants} className="space-y-4">
-              <h2 className="text-3xl font-bold">SDKs & Libraries</h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                {["Python", "JavaScript", "Go"].map((sdk) => (
-                  <Card key={sdk} className="p-4 text-center">
-                    <h3 className="font-bold mb-2">{sdk}</h3>
-                    <Button size="sm" variant="outline" className="w-full">
-                      View on GitHub
-                    </Button>
-                  </Card>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Rate Limits */}
-            <motion.div variants={itemVariants} className="p-8 bg-slate-50 dark:bg-slate-900/50 rounded-lg">
-              <h3 className="text-2xl font-bold mb-4">Rate Limits</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <p className="font-bold">Free Tier</p>
-                  <p className="text-muted-foreground">100 requests per hour</p>
-                </div>
-                <div>
-                  <p className="font-bold">Pro Tier</p>
-                  <p className="text-muted-foreground">10,000 requests per hour</p>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-    </div>
+    <pre
+      dir="ltr"
+      className="bg-slate-950 text-slate-100 rounded-lg p-4 overflow-x-auto text-sm font-mono leading-relaxed"
+    >
+      {children}
+    </pre>
   );
 }
 
+export default function ApiDocs() {
+  const { t } = useI18n();
+
+  const endpoints: { name: string; body: TKey }[] = [
+    { name: "leaderboard.table", body: "api.ep.lb.body" },
+    { name: "certificates.list", body: "api.ep.cl.body" },
+    { name: "certificates.verify", body: "api.ep.cv.body" },
+  ];
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero */}
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-600 to-emerald-600 text-white">
+        <div className="max-w-4xl mx-auto text-center space-y-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3"
+          >
+            <Code2 className="w-10 h-10" />
+            {t("api.title")}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-lg opacity-95 leading-relaxed"
+          >
+            {t("api.subtitle")}
+          </motion.p>
+        </div>
+      </section>
+
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="max-w-5xl mx-auto px-4 py-14 space-y-10"
+      >
+        {/* Public read API */}
+        <motion.div variants={itemVariants}>
+          <Card className="p-6 space-y-4">
+            <div className="flex items-center gap-3">
+              <Globe className="w-7 h-7 text-blue-600 shrink-0" />
+              <h2 className="text-xl font-bold">{t("api.read.title")}</h2>
+            </div>
+            <p className="text-muted-foreground leading-relaxed">{t("api.read.body")}</p>
+            <div className="space-y-3">
+              {endpoints.map(({ name, body }) => (
+                <div key={name} className="rounded-lg border border-border p-4 space-y-2">
+                  <Badge variant="outline" className="font-mono" dir="ltr">
+                    GET {name}
+                  </Badge>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{t(body)}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">{t("api.ep.note")}</p>
+            <div className="space-y-2">
+              <h3 className="font-bold">{t("api.example.title")}</h3>
+              <CodeBlock>
+{`# Verify a certificate hash (URL-encoded JSON input):
+GET /api/trpc/certificates.verify?input=%7B%22hash%22%3A%22<64-hex-hash>%22%7D
+
+# Leaderboard for a bank version:
+GET /api/trpc/leaderboard.table?input=%7B%22versionLabel%22%3A%22pilot-0.2%22%7D`}
+              </CodeBlock>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Runner as the real evaluation interface */}
+        <motion.div variants={itemVariants}>
+          <Card className="p-6 space-y-4">
+            <div className="flex items-center gap-3">
+              <Terminal className="w-7 h-7 text-emerald-600 shrink-0" />
+              <h2 className="text-xl font-bold">{t("api.runner.title")}</h2>
+            </div>
+            <p className="text-muted-foreground leading-relaxed">{t("api.runner.body")}</p>
+            <CodeBlock>
+{`# Cloud provider (choose the one matching the model):
+OPENROUTER_API_KEY / ANTHROPIC_API_KEY / OPENAI_API_KEY
+
+# Self-hosted model behind an OpenAI-compatible server
+# (vLLM, Ollama, LM Studio) - no size limit:
+OPENAI_BASE_URL=http://localhost:11434/v1`}
+            </CodeBlock>
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="text-sm text-muted-foreground">{t("api.runner.cta")}</p>
+              <Button size="sm" variant="outline" asChild>
+                <Link href="/submit">
+                  <Send className="w-4 h-4 me-2" />
+                  {t("api.gotoSubmit")}
+                </Link>
+              </Button>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Item schema */}
+        <motion.div variants={itemVariants}>
+          <Card className="p-6 space-y-4">
+            <div className="flex items-center gap-3">
+              <FileJson className="w-7 h-7 text-blue-600 shrink-0" />
+              <h2 className="text-xl font-bold">{t("api.schema.title")}</h2>
+            </div>
+            <p className="text-muted-foreground leading-relaxed">{t("api.schema.body")}</p>
+            <CodeBlock>
+{`track:  arabic | iraqi
+axis:   comprehension | generation | translation |
+        knowledge | official_documents | safety
+format: multiple_choice | open_generation | extraction
+tier:   public_dev | private_test`}
+            </CodeBlock>
+          </Card>
+        </motion.div>
+
+        {/* Roadmap */}
+        <motion.div variants={itemVariants}>
+          <Card className="p-6 border-2 border-amber-200 bg-amber-50/50">
+            <div className="flex items-start gap-4">
+              <Rocket className="w-8 h-8 text-amber-600 shrink-0" />
+              <div className="space-y-1">
+                <h2 className="text-xl font-bold">{t("api.roadmap.title")}</h2>
+                <p className="text-muted-foreground leading-relaxed">{t("api.roadmap.body")}</p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+      </motion.div>
+    </div>
+  );
+}

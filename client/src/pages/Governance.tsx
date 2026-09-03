@@ -1,115 +1,164 @@
+/**
+ * Governance — the real governance of Mizan: institutional anchor (National
+ * LLM Team, Diwani Order 251482/2025), the ratified access model, binding
+ * methodological rules, data ethics, result/version integrity, and the
+ * release & licensing plan. Replaces the earlier decorative scaffold with
+ * its fictional boards. Fully bilingual through the central i18n dictionary.
+ */
 import { motion } from "framer-motion";
+import { useI18n, type TKey } from "@/i18n";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Shield } from "lucide-react";
+import {
+  Shield,
+  Landmark,
+  KeyRound,
+  BookOpenCheck,
+  Scale,
+  History,
+  Rocket,
+  Mail,
+} from "lucide-react";
+
+const CONTACT_EMAIL = "mizan.iraqllm@gmail.com";
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
 };
-
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-export default function Governance() {
+function PolicySection({
+  icon: Icon,
+  title,
+  items,
+}: {
+  icon: typeof Shield;
+  title: TKey;
+  items: TKey[];
+}) {
+  const { t } = useI18n();
   return (
-    <div className="w-full">
-      {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-600 to-emerald-600 text-white">
-        <div className="container mx-auto text-center">
-          <motion.div
-            className="space-y-6"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl font-bold flex items-center justify-center gap-3">
-              <Shield className="w-12 h-12" />
-              Governance
-            </motion.h1>
-            <motion.p variants={itemVariants} className="text-xl opacity-90 max-w-2xl mx-auto">
-              Policies, guidelines, and governance structure for Mizan.
-            </motion.p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Main Content */}
-      <section className="py-20 px-4 bg-background">
-        <div className="container mx-auto">
-          <motion.div
-            className="space-y-12"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {/* Governance Structure */}
-            <motion.div variants={itemVariants} className="space-y-4">
-              <h2 className="text-3xl font-bold">Governance Structure</h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                {[
-                  {
-                    title: "Executive Board",
-                    description: "Strategic oversight and policy decisions",
-                  },
-                  {
-                    title: "Technical Committee",
-                    description: "Benchmark design and implementation",
-                  },
-                  {
-                    title: "Review Board",
-                    description: "Quality assurance and certification",
-                  },
-                  {
-                    title: "Community Council",
-                    description: "Stakeholder representation and feedback",
-                  },
-                ].map((item, i) => (
-                  <Card key={i} className="p-6">
-                    <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </Card>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Policies */}
-            <motion.div variants={itemVariants} className="space-y-4">
-              <h2 className="text-3xl font-bold">Key Policies</h2>
-              <div className="space-y-3">
-                {[
-                  "Data Privacy and Protection",
-                  "Intellectual Property Rights",
-                  "Conflict of Interest",
-                  "Transparency and Accountability",
-                  "Research Ethics",
-                  "Contributor Guidelines",
-                ].map((policy, i) => (
-                  <Card key={i} className="p-4">
-                    <h3 className="font-bold">{policy}</h3>
-                  </Card>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Contributing Guidelines */}
-            <motion.div variants={itemVariants} className="p-8 bg-slate-50 dark:bg-slate-900/50 rounded-lg">
-              <h3 className="text-2xl font-bold mb-4">Contributing Guidelines</h3>
-              <p className="text-muted-foreground mb-6">
-                Learn how to contribute datasets, benchmarks, or models to Mizan.
-              </p>
-              <Button>View Guidelines</Button>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-    </div>
+    <Card className="p-6">
+      <div className="flex items-center gap-3 mb-4">
+        <Icon className="w-7 h-7 text-blue-600 shrink-0" />
+        <h2 className="text-xl font-bold">{t(title)}</h2>
+      </div>
+      <ul className="space-y-3">
+        {items.map((key) => (
+          <li key={key} className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 mt-2 shrink-0" />
+            <p className="leading-relaxed text-muted-foreground">{t(key)}</p>
+          </li>
+        ))}
+      </ul>
+    </Card>
   );
 }
 
+export default function Governance() {
+  const { t } = useI18n();
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero */}
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-600 to-emerald-600 text-white">
+        <div className="max-w-4xl mx-auto text-center space-y-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3"
+          >
+            <Shield className="w-10 h-10" />
+            {t("gov.title")}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-lg opacity-95 leading-relaxed"
+          >
+            {t("gov.subtitle")}
+          </motion.p>
+        </div>
+      </section>
+
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="max-w-5xl mx-auto px-4 py-14 space-y-8"
+      >
+        {/* Institutional anchor */}
+        <motion.div variants={itemVariants}>
+          <Card className="p-6 border-2 border-blue-200 bg-blue-50/50">
+            <div className="flex items-start gap-4">
+              <Landmark className="w-8 h-8 text-blue-600 shrink-0" />
+              <div className="space-y-1">
+                <h2 className="text-xl font-bold">{t("gov.inst.title")}</h2>
+                <p className="text-muted-foreground leading-relaxed">{t("gov.inst.body")}</p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        <motion.div variants={itemVariants}>
+          <PolicySection
+            icon={KeyRound}
+            title="gov.access.title"
+            items={["gov.access1", "gov.access2", "gov.access3"]}
+          />
+        </motion.div>
+
+        <motion.div variants={itemVariants}>
+          <PolicySection
+            icon={BookOpenCheck}
+            title="gov.method.title"
+            items={["gov.m1", "gov.m2", "gov.m3", "gov.m4"]}
+          />
+        </motion.div>
+
+        <motion.div variants={itemVariants}>
+          <PolicySection
+            icon={Scale}
+            title="gov.ethics.title"
+            items={["gov.e1", "gov.e2", "gov.e3"]}
+          />
+        </motion.div>
+
+        <motion.div variants={itemVariants}>
+          <PolicySection
+            icon={History}
+            title="gov.integrity.title"
+            items={["gov.i1", "gov.i2"]}
+          />
+        </motion.div>
+
+        <motion.div variants={itemVariants}>
+          <PolicySection
+            icon={Rocket}
+            title="gov.release.title"
+            items={["gov.r1", "gov.r2"]}
+          />
+        </motion.div>
+
+        {/* Contact */}
+        <motion.div variants={itemVariants}>
+          <Card className="p-8 text-center space-y-4 bg-gradient-to-br from-blue-50 to-emerald-50">
+            <h2 className="text-2xl font-bold">{t("gov.contact.title")}</h2>
+            <p className="text-muted-foreground">{t("gov.contact.body")}</p>
+            <Button size="lg" asChild>
+              <a href={`mailto:${CONTACT_EMAIL}`}>
+                <Mail className="w-4 h-4 me-2" />
+                <span dir="ltr">{CONTACT_EMAIL}</span>
+              </a>
+            </Button>
+          </Card>
+        </motion.div>
+      </motion.div>
+    </div>
+  );
+}
