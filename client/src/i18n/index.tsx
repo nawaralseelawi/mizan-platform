@@ -749,6 +749,171 @@ const dict = {
   },
   "nf.home": { ar: "العودة للرئيسية", en: "Back to home" },
   "nf.leaderboard": { ar: "لوحة النتائج", en: "View leaderboard" },
+  // Home — honest release box (replaces the stale "Pilot 0.1" copy)
+  "home2.release.version": {
+    ar: "بنك pilot-0.2 — لوحة منشورة لعشرين نموذجاً",
+    en: "Bank pilot-0.2 — a published 20-model leaderboard",
+  },
+  "home2.release.body": {
+    ar: "340 بنداً مؤلَّفاً أصلاً عبر مسارين وستة محاور. درجات المحاور الآلية منشورة، والمحاور التوليدية قيد حملة التحكيم البشري — وكل نتيجة منشورة موثَّقة بشهادة تحقّق.",
+    en: "340 originally authored items across two tracks and six axes. Auto-scored axes are published; generative axes are under the human-judging campaign — and every published result is backed by a verification certificate.",
+  },
+  "home2.release.browse": { ar: "تصفح البنود العلنية", en: "Browse public items" },
+
+  // Home — real news (replaces the stale July 2026 trio)
+  "news2.1.date": { ar: "أيلول 2026", en: "September 2026" },
+  "news2.1.title": {
+    ar: "لوحة العشرين نموذجاً على بنك الـ340",
+    en: "The 20-model board on the 340-item bank",
+  },
+  "news2.1.body": {
+    ar: "أُعيد تقييم كل النماذج على البنك الموسّع: الفصحى قرب السقف، والتمييز الفعلي يحدث على المسار العراقي — بفجوة منهجية ثابتة بين المسارين.",
+    en: "All models were re-evaluated on the expanded bank: MSA sits near the ceiling while the real discrimination happens on the Iraqi track — a consistent gap between the two.",
+  },
+  "news2.2.date": { ar: "أيلول 2026", en: "September 2026" },
+  "news2.2.title": {
+    ar: "صفحة «قدّم نموذجك» أصبحت متاحة",
+    en: "\"Submit Your Model\" is live",
+  },
+  "news2.2.body": {
+    ar: "دليل تشغيل كامل بمسارين: واجهات سحابية، ونماذج ذاتية الاستضافة بلا حدّ حجم عبر نقطة نهاية متوافقة مع OpenAI.",
+    en: "A full runner guide with two paths: cloud APIs, and self-hosted models with no size limit through an OpenAI-compatible endpoint.",
+  },
+  "news2.3.date": { ar: "آب 2026", en: "August 2026" },
+  "news2.3.title": {
+    ar: "اكتمال بنك النسخة التجريبية",
+    en: "Pilot item bank completed",
+  },
+  "news2.3.body": {
+    ar: "بنود ثنائية المسار مؤلَّفة أصلاً موزّعة على المحاور الستة، مستوردة بنسخة pilot-0.2 مع فصل صارم بين مستويي السرية.",
+    en: "Dual-track, originally authored items across all six axes, imported as pilot-0.2 with strict tier separation.",
+  },
+
+  // About page (real content replacing the Manus filler)
+  "ab.story.title": { ar: "قصة المشروع", en: "The story" },
+  "ab.story.p1": {
+    ar: "وُلد ميزان سنة 2026 في سياق الفريق الوطني للنموذج اللغوي العراقي ليجيب عن سؤال لا يجيب عنه أي معيار عالمي: إلى أي مدى تفهم النماذج اللغوية الكبيرة العربية فعلاً — والعراق تحديداً؟ المعايير العالمية تغطي الفصحى تغطية عامة، ولا ترى اللهجة العراقية ولا المعرفة المحلية ولا الوثائق الرسمية إطلاقاً.",
+    en: "Mizan was born in 2026 within the context of Iraq's National LLM Team to answer a question no international benchmark answers: how well do large language models actually understand Arabic — and Iraq in particular? Global benchmarks cover MSA broadly and see neither the Iraqi dialect, nor local knowledge, nor official documents at all.",
+  },
+  "ab.story.p2": {
+    ar: "يبني ميزان القياس من أساسه على مسارين متساويي الأهمية — العربية الفصحى والعربية العراقية — ببنود مؤلَّفة أصلاً لا مترجمة، ومراجعة بشرية مزدوجة، وفصل صارم بين مجموعة تطوير علنية ومجموعة اختبار سرية.",
+    en: "Mizan builds the measurement from the ground up on two equally important tracks — Modern Standard Arabic and Iraqi Arabic — with originally authored (never translated) items, dual human review, and a strict split between a public development set and a sealed private test set.",
+  },
+  "ab.pieces.title": { ar: "ممّ يتكوّن ميزان؟", en: "What Mizan consists of" },
+  "ab.piece1.title": { ar: "بنك البنود", en: "The item bank" },
+  "ab.piece1.body": {
+    ar: "بنود JSONL ثنائية المسار على ستة محاور، موسومة بالمنطقة اللهجية وصيغة السؤال ومستوى الصعوبة والسرية.",
+    en: "Dual-track JSONL items across six axes, tagged with dialect region, question format, difficulty, and contamination tier.",
+  },
+  "ab.piece2.title": { ar: "أداة التشغيل", en: "The evaluation harness" },
+  "ab.piece2.body": {
+    ar: "مشغّل يقيّم أي نموذج — سحابياً كان أم ذاتي الاستضافة — على البنك نفسه بشروط موحّدة وبصمة تحقّق.",
+    en: "A runner that evaluates any model — cloud-hosted or self-hosted — on the same bank under uniform conditions, with a verification hash.",
+  },
+  "ab.piece3.title": { ar: "اللوحة والشهادات", en: "Leaderboard & certificates" },
+  "ab.piece3.body": {
+    ar: "نتائج تُنشر ببوابة بشرية، وكل نتيجة لقطة مؤرَّخة غير قابلة للاستبدال بشهادة SHA-256.",
+    en: "Results published through a human gate, each a dated, immutable snapshot with a SHA-256 certificate.",
+  },
+  "ab.finding.title": { ar: "الاكتشاف العلمي المحوري", en: "The central empirical finding" },
+  "ab.finding.body": {
+    ar: "على لوحة pilot-0.2 تتقارب النماذج الحديثة قرب السقف على مسار الفصحى، بينما تتوزّع وتتمايز بوضوح على المسار العراقي — بفجوة منهجية ثابتة لكل نموذج بين مساريه. أي أن المعايير الفصيحة مشبعة، والعراقية هي الإشارة التمييزية الحقيقية — وهذا يثبت الادعاء المركزي للمشروع تجريبياً.",
+    en: "On the pilot-0.2 board, modern models cluster near the ceiling on the MSA track while spreading out and clearly separating on the Iraqi track — a consistent per-model gap between the two. In other words: MSA benchmarks are saturated, and Iraqi Arabic is the real discriminative signal — empirically confirming the project's central claim.",
+  },
+  "ab.lead.title": { ar: "القيادة العلمية", en: "Scientific leadership" },
+  "ab.road.title": { ar: "خارطة الطريق", en: "Roadmap" },
+  "ab.road1": {
+    ar: "ورقة علمية تجريبية تُرفع إلى arXiv لتثبيت الأسبقية، ثم تقديم لمجلة محكّمة بعد ضمّ نتائج التحكيم البشري.",
+    en: "A pilot scientific paper posted to arXiv to establish precedence, then a peer-reviewed journal submission once human-judging results are merged.",
+  },
+  "ab.road2": {
+    ar: "توسيع البنك إلى ما فوق ألف بند بمؤلفين من المناطق — بغداد والجنوب والموصل — مع مجموعة اختبار سرية حقيقية.",
+    en: "Expanding the bank beyond a thousand items with regional authors — Baghdad, the south, and Mosul — alongside a real sealed private test set.",
+  },
+  "ab.road3": {
+    ar: "دليل الإملاء العراقي الموحّد منشوراً علمياً مستقلاً، ونشر بنك التطوير مفتوحاً مع الكود.",
+    en: "The unified Iraqi orthography guide as an independent publication, and an open release of the development bank with the code.",
+  },
+  "ab.cta.title": { ar: "شارك في القياس", en: "Take part in the measurement" },
+  "ab.cta.body": {
+    ar: "قيّم نموذجك على ميزان، أو استعرض النتائج المنشورة على اللوحة الرسمية.",
+    en: "Evaluate your model on Mizan, or browse the published results on the official board.",
+  },
+
+  // Benchmark explorer (bilingual tabs and real descriptions)
+  "bench2.tab.axes": { ar: "المحاور", en: "Axes" },
+  "bench2.tab.tracks": { ar: "المساران", en: "Tracks" },
+  "bench2.tab.metrics": { ar: "المقاييس", en: "Metrics" },
+  "bench2.tab.pipeline": { ar: "خط التقييم", en: "Pipeline" },
+  "bench2.items": { ar: "بند", en: "items" },
+  "bench2.d.comprehension": {
+    ar: "فهم النص المكتوب: الفصحى على المسار العربي، والعراقية بتنوعاتها على المسار العراقي — مفردات وتراكيب وتعابير واستنتاج سياقي.",
+    en: "Understanding written text: MSA on the Arabic track, and Iraqi Arabic across its varieties on the Iraqi track — vocabulary, structures, expressions, and contextual inference.",
+  },
+  "bench2.d.generation": {
+    ar: "إنتاج لغة طبيعية سليمة بحسب المسار؛ والفخ المرصود على المسار العراقي هو «الفصحى المتنكّرة» — يُقيَّم بتحكيم بشري بمعايير مرقّمة.",
+    en: "Producing natural, correct language per track; the tracked trap on the Iraqi track is \"disguised MSA\" — judged by humans with numbered rubrics.",
+  },
+  "bench2.d.translation": {
+    ar: "الترجمة بين الفصحى والعراقية بالاتجاهين بأمانة للمعنى والسجل — مسار عراقي حصراً.",
+    en: "Translation between MSA and Iraqi Arabic in both directions, faithful to meaning and register — Iraqi track only.",
+  },
+  "bench2.d.knowledge": {
+    ar: "المعرفة العامة على المسار العربي، والعراقية تحديداً على مساره: تاريخ وجغرافيا ودستور ومؤسسات وثقافة شعبية.",
+    en: "General knowledge on the Arabic track and Iraq-specific knowledge on its own: history, geography, constitution and institutions, and popular culture.",
+  },
+  "bench2.d.official_documents": {
+    ar: "قراءة كتاب رسمي واستخراج حقوله بدقة: الجهة المُصدِرة والرقم والتاريخ والمُرسَل إليه والموضوع والمطلوب.",
+    en: "Reading an official letter and extracting its fields precisely: issuing authority, number, date, addressee, subject, and required action.",
+  },
+  "bench2.d.safety": {
+    ar: "السلوك في السياقات الحساسة: الحياد تجاه المكوّنات والمحافظات والرموز، ورفض المؤذي دون إفراط في الرفض.",
+    en: "Behavior in sensitive contexts: neutrality across communities, governorates, and symbols, and refusing harm without over-refusal.",
+  },
+  "bench2.track.arabic.body": {
+    ar: "خط الأساس المقارن: يقيس ما تقيسه المعايير العالمية الجيدة من فهم وإنتاج ومعرفة بالفصحى — وقد بلغت النماذج الحديثة فيه حدّ التشبّع تقريباً.",
+    en: "The comparative baseline: what good global benchmarks measure in MSA comprehension, generation, and knowledge — where modern models have nearly reached saturation.",
+  },
+  "bench2.track.iraqi.body": {
+    ar: "ساحة التمييز العلمي: المسار المميِّز الذي لا يغطيه أي معيار آخر — لهجة ومعرفة محلية ووثائق رسمية وسلامة بسياق عراقي.",
+    en: "The scientific discrimination ground: the distinguishing track no other benchmark covers — dialect, local knowledge, official documents, and safety in an Iraqi context.",
+  },
+  "bench2.m1.title": { ar: "دقة الاختيار من متعدد", en: "Multiple-choice accuracy" },
+  "bench2.m1.body": {
+    ar: "تصحيح آلي لمحوري الفهم والمعرفة، بمواضع إجابات موزونة عبر البنك.",
+    en: "Automatic scoring for comprehension and knowledge, with answer positions balanced across the bank.",
+  },
+  "bench2.m2.title": { ar: "مطابقة الحقول", en: "Field exact match" },
+  "bench2.m2.body": {
+    ar: "استخراج مقارن بالحقيقة الأرضية حقلاً حقلاً لمحور الوثائق الرسمية.",
+    en: "Field-by-field comparison against ground truth for the official-documents axis.",
+  },
+  "bench2.m3.title": { ar: "معايير التحكيم البشري", en: "Human rubric scores" },
+  "bench2.m3.body": {
+    ar: "درجات من 10 بمعايير مرقّمة للمحاور التوليدية، مع قياس اتفاق المحكّمين.",
+    en: "/10 scores on numbered rubrics for generative axes, with inter-annotator agreement measured.",
+  },
+  "bench2.m4.title": { ar: "فواصل الثقة", en: "Confidence intervals" },
+  "bench2.m4.body": {
+    ar: "فاصل ثقة 95% يُرفق بكل درجة محور منشورة على اللوحة.",
+    en: "A 95% confidence interval accompanies every published axis score on the board.",
+  },
+  "bench2.fullMetrics": { ar: "المنهجية الكاملة", en: "Full methodology" },
+  "bench2.p1": { ar: "التأليف والمراجعة المزدوجة في منصة سومر", en: "Authoring and dual review on Sumer" },
+  "bench2.p2": { ar: "الاستيراد مع فصل مستويي السرية", en: "Import with contamination-tier separation" },
+  "bench2.p3": { ar: "التشغيل بالمشغّل على أجهزة الباحث", en: "Evaluation with the runner on researcher hardware" },
+  "bench2.p4": { ar: "تصحيح آلي وتحكيم بشري بحسب المحور", en: "Automatic scoring and human judging per axis" },
+  "bench2.p5": { ar: "بوابة نشر بشرية وشهادة تحقّق", en: "Human publication gate and verification certificate" },
+
+  // Model registry (empty state and labels)
+  "mdl.empty.title": { ar: "لا نماذج مسجّلة بعد", en: "No models registered yet" },
+  "mdl.empty.body": {
+    ar: "السجل يمتلئ تلقائياً عند استيراد أول تشغيلات التقييم من المشغّل. لا يُدرج نموذج بمجرد ذكر اسمه — التسجيل يتطلب تشغيلاً فعلياً.",
+    en: "The registry fills automatically when the first evaluation runs are imported from the runner. No model is listed by name-dropping — registration requires a real run.",
+  },
+  "mdl.totalRuns": { ar: "مجموع التشغيلات", en: "Total runs" },
+  "mdl.published": { ar: "المنشورة", en: "Published" },
+  "mdl.license": { ar: "الرخصة", en: "License" },
 } satisfies Dict;
 
 export type TKey = keyof typeof dict;

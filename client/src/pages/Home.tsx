@@ -1,3 +1,10 @@
+/**
+ * Home — landing page. This revision replaces the stale release box
+ * ("Pilot 0.1 - in production") with the honest pilot-0.2 state, wires the
+ * previously dead release and news buttons to real pages, and refreshes the
+ * news cards with real dated milestones. All chrome text flows through the
+ * central i18n dictionary.
+ */
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { trpc } from "@/lib/trpc";
@@ -270,7 +277,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Latest Benchmark Version */}
+      {/* Latest Benchmark Version - honest pilot-0.2 state, working buttons */}
       <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-emerald-600 text-white">
         <div className="container mx-auto text-center">
           <motion.div
@@ -284,25 +291,35 @@ export default function Home() {
               {t("home.release.title")}
             </motion.h2>
             <motion.div variants={itemVariants} className="space-y-2">
-              <p className="text-xl opacity-90">{t("home.release.version")}</p>
-              <p className="text-lg opacity-80">
-                {t("home.release.body")}
+              <p className="text-xl opacity-90">{t("home2.release.version")}</p>
+              <p className="text-lg opacity-80 max-w-3xl mx-auto">
+                {t("home2.release.body")}
               </p>
             </motion.div>
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" variant="secondary" className="gap-2">
-                {t("home.release.notes")}
+              <Button
+                size="lg"
+                variant="secondary"
+                className="gap-2"
+                onClick={() => (window.location.href = "/leaderboard")}
+              >
+                {t("home.cta.leaderboard")}
                 <ArrowRight className="w-4 h-4" />
               </Button>
-              <Button size="lg" variant="outline" className="bg-white/10 border-white/20 hover:bg-white/20 text-white gap-2">
-                {t("home.release.download")}
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-white/10 border-white/20 hover:bg-white/20 text-white gap-2"
+                onClick={() => (window.location.href = "/dataset")}
+              >
+                {t("home2.release.browse")}
               </Button>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* News Section */}
+      {/* News Section - real dated milestones with working links */}
       <section className="py-20 px-4 bg-background">
         <div className="container mx-auto">
           <motion.div
@@ -327,19 +344,22 @@ export default function Home() {
           >
             {[
               {
-                date: t("news.date"),
-                title: t("news.1.title"),
-                excerpt: t("news.1.body"),
+                date: t("news2.1.date"),
+                title: t("news2.1.title"),
+                excerpt: t("news2.1.body"),
+                href: "/leaderboard",
               },
               {
-                date: t("news.date"),
-                title: t("news.2.title"),
-                excerpt: t("news.2.body"),
+                date: t("news2.2.date"),
+                title: t("news2.2.title"),
+                excerpt: t("news2.2.body"),
+                href: "/submit",
               },
               {
-                date: t("news.date"),
-                title: t("news.3.title"),
-                excerpt: t("news.3.body"),
+                date: t("news2.3.date"),
+                title: t("news2.3.title"),
+                excerpt: t("news2.3.body"),
+                href: "/dataset",
               },
             ].map((news, i) => (
               <motion.div key={i} variants={itemVariants}>
@@ -347,7 +367,11 @@ export default function Home() {
                   <p className="text-sm text-muted-foreground mb-2">{news.date}</p>
                   <h3 className="text-lg font-bold mb-3">{news.title}</h3>
                   <p className="text-muted-foreground flex-1">{news.excerpt}</p>
-                  <Button variant="ghost" className="justify-start pl-0 mt-4 text-blue-600 hover:text-blue-700">
+                  <Button
+                    variant="ghost"
+                    className="justify-start ps-0 mt-4 text-blue-600 hover:text-blue-700"
+                    onClick={() => (window.location.href = news.href)}
+                  >
                     {t("news.readmore")}
                   </Button>
                 </Card>
@@ -394,4 +418,3 @@ export default function Home() {
     </div>
   );
 }
-

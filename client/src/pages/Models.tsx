@@ -1,3 +1,8 @@
+/**
+ * Model Registry — every model that has entered the evaluation pipeline,
+ * with its run history. This revision moves the last hardcoded English
+ * strings (empty state and card labels) into the central i18n dictionary.
+ */
 import { motion } from "framer-motion";
 import { useI18n } from "@/i18n";
 import { Card } from "@/components/ui/card";
@@ -59,14 +64,8 @@ export default function Models() {
             >
               <Card className="p-12 text-center max-w-2xl mx-auto space-y-3">
                 <Cpu className="w-10 h-10 mx-auto text-muted-foreground" />
-                <h2 className="text-2xl font-semibold">
-                  No models registered yet
-                </h2>
-                <p className="text-muted-foreground">
-                  The registry fills automatically when the first evaluation
-                  runs are imported from the offline harness. No model is
-                  listed by name-dropping - registration requires a run.
-                </p>
+                <h2 className="text-2xl font-semibold">{t("mdl.empty.title")}</h2>
+                <p className="text-muted-foreground">{t("mdl.empty.body")}</p>
               </Card>
             </motion.div>
           )}
@@ -82,29 +81,25 @@ export default function Models() {
                 <motion.div key={model.id} variants={itemVariants}>
                   <Card className="p-6 h-full hover:shadow-lg transition-all flex flex-col gap-3">
                     <div className="flex items-start justify-between gap-2">
-                      <h3 className="text-lg font-bold">{model.name}</h3>
-                      {model.parameters && <Badge>{model.parameters}</Badge>}
+                      <h3 className="text-lg font-bold" dir="ltr">{model.name}</h3>
+                      {model.parameters && <Badge dir="ltr">{model.parameters}</Badge>}
                     </div>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground" dir="ltr">
                       {model.developer}
                     </p>
                     <div className="mt-auto pt-3 border-t grid grid-cols-2 gap-3 text-sm">
                       <div>
-                        <p className="text-xs text-muted-foreground">
-                          Total runs
-                        </p>
+                        <p className="text-xs text-muted-foreground">{t("mdl.totalRuns")}</p>
                         <p className="font-semibold">{model.totalRuns}</p>
                       </div>
                       <div>
-                        <p className="text-xs text-muted-foreground">
-                          Published
-                        </p>
+                        <p className="text-xs text-muted-foreground">{t("mdl.published")}</p>
                         <p className="font-semibold">{model.publishedRuns}</p>
                       </div>
                     </div>
                     {model.license && (
                       <p className="text-xs text-muted-foreground">
-                        License: {model.license}
+                        {t("mdl.license")}: <span dir="ltr">{model.license}</span>
                       </p>
                     )}
                   </Card>
@@ -117,4 +112,3 @@ export default function Models() {
     </div>
   );
 }
-

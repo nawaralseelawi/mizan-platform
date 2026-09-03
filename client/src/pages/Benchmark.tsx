@@ -1,30 +1,39 @@
+/**
+ * Benchmark Explorer — the six evaluation axes with live item counts from
+ * the platform, plus the two tracks, real metrics, and the real pipeline.
+ * This revision makes every tab and description bilingual through the
+ * central i18n dictionary, removes the auto-generated filler sentences,
+ * and wires the previously dead "View Benchmark Details" button to the
+ * Dataset Explorer.
+ */
 import { useState } from "react";
 import { trpc } from "@/lib/trpc";
-import { AXIS_LABELS, AXIS_ORDER, useLatestVersion } from "@/lib/benchmark";
+import { AXIS_ORDER, useLatestVersion } from "@/lib/benchmark";
 import { motion } from "framer-motion";
-import { useI18n } from "@/i18n";
+import { useI18n, useLabels, type TKey } from "@/i18n";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { ChevronRight } from "lucide-react";
+import { ChevronLeft, ArrowRight } from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
 export default function Benchmark() {
-  const { t } = useI18n();
-  const [selectedDomain, setSelectedDomain] = useState<string>("dialect_comprehension");
+  const { t, dir } = useI18n();
+  const labels = useLabels();
+  const [selectedAxis, setSelectedAxis] = useState<string>("comprehension");
   const { label: latestVersion } = useLatestVersion();
 
   const composition = trpc.benchmark.composition.useQuery(
@@ -40,26 +49,25 @@ export default function Benchmark() {
   };
   const countsByAxis = sumByAxis(composition.data?.publicByAxis);
   const privateByAxis = sumByAxis(composition.data?.privateByAxis);
-  const domains = AXIS_ORDER.map((axis) => ({
+  const axes = AXIS_ORDER.map((axis) => ({
     id: axis,
-    name: AXIS_LABELS[axis].name,
-    tasks: (countsByAxis.get(axis) ?? 0) + (privateByAxis.get(axis) ?? 0),
+    name: labels.axis(axis),
+    items: (countsByAxis.get(axis) ?? 0) + (privateByAxis.get(axis) ?? 0),
   }));
 
-  const capabilities = [
-    "Iraqi Dialect Understanding",
-    "Iraqi Dialect Generation",
-    "MSA-Iraqi Translation",
-    "Iraqi Cultural Knowledge",
-    "Official Document Extraction",
-    "Context-Aware Safety",
+  const metrics: { title: TKey; body: TKey }[] = [
+    { title: "bench2.m1.title", body: "bench2.m1.body" },
+    { title: "bench2.m2.title", body: "bench2.m2.body" },
+    { title: "bench2.m3.title", body: "bench2.m3.body" },
+    { title: "bench2.m4.title", body: "bench2.m4.body" },
   ];
 
-  const metrics = [
-    { name: "Accuracy", description: "Automatic scoring for multiple-choice items" },
-    { name: "Field Exact Match", description: "Per-field accuracy on official-document extraction" },
-    { name: "Human Rubric Score", description: "Unified-rubric human judging for open generation" },
-    { name: "95% Confidence Interval", description: "Statistical uncertainty reported with every published axis score" },
+  const pipeline: TKey[] = [
+    "bench2.p1",
+    "bench2.p2",
+    "bench2.p3",
+    "bench2.p4",
+    "bench2.p5",
   ];
 
   return (
@@ -93,86 +101,96 @@ export default function Benchmark() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {/* Tabs */}
-            <Tabs defaultValue="domains" className="w-full">
+            <Tabs defaultValue="axes" className="w-full" dir={dir}>
               <TabsList className="grid w-full max-w-md grid-cols-4">
-                <TabsTrigger value="domains">Domains</TabsTrigger>
-                <TabsTrigger value="capabilities">Capabilities</TabsTrigger>
-                <TabsTrigger value="metrics">Metrics</TabsTrigger>
-                <TabsTrigger value="tasks">Tasks</TabsTrigger>
+                <TabsTrigger value="axes">{t("bench2.tab.axes")}</TabsTrigger>
+                <TabsTrigger value="tracks">{t("bench2.tab.tracks")}</TabsTrigger>
+                <TabsTrigger value="metrics">{t("bench2.tab.metrics")}</TabsTrigger>
+                <TabsTrigger value="pipeline">{t("bench2.tab.pipeline")}</TabsTrigger>
               </TabsList>
 
-              {/* Domains Tab */}
-              <TabsContent value="domains" className="space-y-6 mt-8">
+              {/* Axes Tab - live item counts */}
+              <TabsContent value="axes" className="space-y-6 mt-8">
                 <motion.div
                   className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
                   variants={containerVariants}
                   initial="hidden"
                   animate="visible"
                 >
-                  {domains.map((domain) => (
+                  {axes.map((axis) => (
                     <motion.div
-                      key={domain.id}
+                      key={axis.id}
                       variants={itemVariants}
-                      onClick={() => setSelectedDomain(domain.id)}
+                      onClick={() => setSelectedAxis(axis.id)}
                       className="cursor-pointer"
                     >
                       <Card
                         className={`p-6 h-full transition-all ${
-                          selectedDomain === domain.id
+                          selectedAxis === axis.id
                             ? "ring-2 ring-blue-600 shadow-lg"
                             : "hover:shadow-lg"
                         }`}
                       >
-                        <h3 className="text-lg font-bold mb-2">{domain.name}</h3>
+                        <h3 className="text-lg font-bold mb-2">{axis.name}</h3>
                         <div className="flex items-center justify-between">
-                          <Badge variant="secondary">{domain.tasks} Tasks</Badge>
-                          <ChevronRight className="w-4 h-4 text-muted-foreground" />
+                          <Badge variant="secondary">
+                            {axis.items} {t("bench2.items")}
+                          </Badge>
+                          <ChevronLeft className="w-4 h-4 text-muted-foreground rtl:rotate-0 ltr:rotate-180" />
                         </div>
                       </Card>
                     </motion.div>
                   ))}
                 </motion.div>
 
-                {/* Domain Details */}
-                {selectedDomain && (
+                {/* Axis Details */}
+                {selectedAxis && (
                   <motion.div
                     variants={itemVariants}
-                    className="mt-12 p-8 bg-slate-50 dark:bg-slate-900/50 rounded-lg"
+                    className="mt-12 p-8 bg-slate-50 dark:bg-slate-900/50 rounded-lg space-y-4"
                   >
-                    <h3 className="text-2xl font-bold mb-4">
-                      {domains.find((d) => d.id === selectedDomain)?.name}
+                    <h3 className="text-2xl font-bold">
+                      {axes.find((a) => a.id === selectedAxis)?.name}
                     </h3>
-                    <p className="text-muted-foreground mb-6">
-                      {AXIS_LABELS[selectedDomain as keyof typeof AXIS_LABELS]?.description ?? ""}
+                    <p className="text-muted-foreground leading-relaxed">
+                      {t(`bench2.d.${selectedAxis}` as TKey)}
                     </p>
-                    <Button>View Benchmark Details</Button>
+                    <Button onClick={() => (window.location.href = "/dataset")} className="gap-2">
+                      {t("home2.release.browse")}
+                      <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+                    </Button>
                   </motion.div>
                 )}
               </TabsContent>
 
-              {/* Capabilities Tab */}
-              <TabsContent value="capabilities" className="space-y-6 mt-8">
+              {/* Tracks Tab - the dual-track core of Mizan */}
+              <TabsContent value="tracks" className="space-y-6 mt-8">
                 <motion.div
                   className="grid md:grid-cols-2 gap-6"
                   variants={containerVariants}
                   initial="hidden"
                   animate="visible"
                 >
-                  {capabilities.map((capability, i) => (
-                    <motion.div key={i} variants={itemVariants}>
-                      <Card className="p-6 hover:shadow-lg transition-all">
-                        <h3 className="text-lg font-bold mb-2">{capability}</h3>
-                        <p className="text-muted-foreground text-sm">
-                          Comprehensive evaluation of {capability.toLowerCase()} capabilities.
-                        </p>
-                      </Card>
-                    </motion.div>
-                  ))}
+                  <motion.div variants={itemVariants}>
+                    <Card className="p-6 h-full space-y-3">
+                      <h3 className="text-lg font-bold">{t("track.arabic")}</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {t("bench2.track.arabic.body")}
+                      </p>
+                    </Card>
+                  </motion.div>
+                  <motion.div variants={itemVariants}>
+                    <Card className="p-6 h-full space-y-3 border-2 border-emerald-200">
+                      <h3 className="text-lg font-bold">{t("track.iraqi")}</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {t("bench2.track.iraqi.body")}
+                      </p>
+                    </Card>
+                  </motion.div>
                 </motion.div>
               </TabsContent>
 
-              {/* Metrics Tab */}
+              {/* Metrics Tab - real scoring summary */}
               <TabsContent value="metrics" className="space-y-6 mt-8">
                 <motion.div
                   className="grid md:grid-cols-2 gap-6"
@@ -180,62 +198,44 @@ export default function Benchmark() {
                   initial="hidden"
                   animate="visible"
                 >
-                  {metrics.map((metric, i) => (
-                    <motion.div key={i} variants={itemVariants}>
+                  {metrics.map(({ title, body }) => (
+                    <motion.div key={title} variants={itemVariants}>
                       <Card className="p-6 hover:shadow-lg transition-all">
-                        <h3 className="text-lg font-bold mb-2">{metric.name}</h3>
-                        <p className="text-muted-foreground text-sm">{metric.description}</p>
+                        <h3 className="text-lg font-bold mb-2">{t(title)}</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{t(body)}</p>
                       </Card>
                     </motion.div>
                   ))}
                 </motion.div>
+                <motion.div variants={itemVariants}>
+                  <Button
+                    variant="outline"
+                    onClick={() => (window.location.href = "/metrics")}
+                    className="gap-2"
+                  >
+                    {t("bench2.fullMetrics")}
+                    <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+                  </Button>
+                </motion.div>
               </TabsContent>
 
-              {/* Tasks Tab */}
-              <TabsContent value="tasks" className="space-y-6 mt-8">
-                <motion.div variants={itemVariants} className="space-y-4">
-                  <p className="text-muted-foreground">
-                    Explore individual benchmark tasks and their specifications.
-                  </p>
-                  <Button onClick={() => (window.location.href = "/dataset")}>Browse Public Items</Button>
+              {/* Pipeline Tab - the real path from authoring to publication */}
+              <TabsContent value="pipeline" className="space-y-6 mt-8">
+                <motion.div variants={itemVariants} className="space-y-4 max-w-2xl">
+                  {pipeline.map((key, i) => (
+                    <div key={key} className="flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shrink-0">
+                        {i + 1}
+                      </div>
+                      <h3 className="font-bold leading-relaxed">{t(key)}</h3>
+                    </div>
+                  ))}
                 </motion.div>
               </TabsContent>
             </Tabs>
           </motion.div>
         </div>
       </section>
-
-      {/* Evaluation Pipeline Preview */}
-      <section className="py-20 px-4 bg-slate-50 dark:bg-slate-900/50">
-        <div className="container mx-auto">
-          <motion.div
-            className="max-w-3xl mx-auto space-y-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.h2 variants={itemVariants} className="text-4xl font-bold">
-              Evaluation Pipeline
-            </motion.h2>
-
-            <motion.div variants={itemVariants} className="space-y-4">
-              {["Data Preparation", "Model Submission", "Evaluation Execution", "Results Analysis", "Certification"].map((step, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
-                    {i + 1}
-                  </div>
-                  <div>
-                    <h3 className="font-bold">{step}</h3>
-                    <p className="text-sm text-muted-foreground">Step {i + 1} of 5</p>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }
-
