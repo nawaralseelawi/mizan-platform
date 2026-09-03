@@ -24,6 +24,19 @@ function CodeBlock({ lines }: { lines: string[] }) {
   );
 }
 
+function Steps({ keys, t }: { keys: readonly string[]; t: (k: any) => string }) {
+  return (
+    <ol className="space-y-3">
+      {keys.map((k, i) => (
+        <li key={k} className="flex items-start gap-3">
+          <span className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold shrink-0">{i + 1}</span>
+          <p className="leading-relaxed pt-0.5 text-sm">{t(k)}</p>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 export default function SubmitModel() {
   const { t } = useI18n();
   const [f, setF] = useState({
@@ -75,6 +88,22 @@ export default function SubmitModel() {
           <p className="text-muted-foreground leading-relaxed">{t("sub.prereq.body")}</p>
         </Card>
 
+
+        {/* Which path fits you */}
+        <div className="space-y-3">
+          <h2 className="text-2xl font-bold">{t("sub.choose.title")}</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <Card className="p-5 space-y-2 border-blue-200">
+              <h3 className="font-bold flex items-center gap-2"><Cloud className="w-5 h-5 text-blue-600" />{t("sub.choose.api.title")}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t("sub.choose.api.body")}</p>
+            </Card>
+            <Card className="p-5 space-y-2 border-emerald-200">
+              <h3 className="font-bold flex items-center gap-2"><Server className="w-5 h-5 text-emerald-600" />{t("sub.choose.self.title")}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t("sub.choose.self.body")}</p>
+            </Card>
+          </div>
+        </div>
+
         {/* Setup */}
         <Card className="p-6 space-y-3">
           <h2 className="text-xl font-bold">{t("sub.setup.title")}</h2>
@@ -89,6 +118,7 @@ export default function SubmitModel() {
         {/* Path A */}
         <Card className="p-6 space-y-3">
           <h2 className="text-xl font-bold flex items-center gap-2"><Cloud className="w-5 h-5 text-blue-600" />{t("sub.pathA.title")}</h2>
+          <Steps t={t} keys={["sub.a.s1", "sub.a.s2", "sub.a.s3", "sub.a.s4", "sub.a.s5"] as const} />
           <CodeBlock lines={[
             '$env:OPENROUTER_API_KEY="sk-or-..."',
             'npx tsx runner/run.ts --items data/pilot-0.2-all.jsonl \\',
@@ -100,6 +130,7 @@ export default function SubmitModel() {
         {/* Path B */}
         <Card className="p-6 space-y-3">
           <h2 className="text-xl font-bold flex items-center gap-2"><Server className="w-5 h-5 text-emerald-600" />{t("sub.pathB.title")}</h2>
+          <Steps t={t} keys={["sub.b.s1", "sub.b.s2", "sub.b.s3", "sub.b.s4", "sub.b.s5", "sub.b.s6"] as const} />
           <CodeBlock lines={[
             '$env:OPENAI_BASE_URL="http://localhost:11434/v1"',
             'npx tsx runner/run.ts --items data/pilot-0.2-all.jsonl \\',
@@ -113,6 +144,13 @@ export default function SubmitModel() {
         <Card className="p-6 space-y-2">
           <h2 className="text-xl font-bold flex items-center gap-2"><FileJson className="w-5 h-5 text-amber-600" />{t("sub.out.title")}</h2>
           <p className="text-muted-foreground leading-relaxed">{t("sub.out.body")}</p>
+        </Card>
+
+
+        {/* What happens after you submit */}
+        <Card className="p-6 space-y-4">
+          <h2 className="text-xl font-bold">{t("sub.after.title")}</h2>
+          <Steps t={t} keys={["sub.after.s1", "sub.after.s2", "sub.after.s3", "sub.after.s4"] as const} />
         </Card>
 
         {/* Form */}

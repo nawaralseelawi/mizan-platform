@@ -380,6 +380,35 @@ const dict = {
   },
   "sub.form.submit": { ar: "إرسال التقديم عبر البريد", en: "Send submission by email" },
   "ev.cta.submit": { ar: "قدّم نموذجك", en: "Submit your model" },
+
+  // Submit page - expanded step-by-step content
+  "sub.choose.title": { ar: "أي مسار يناسبك؟", en: "Which path fits you?" },
+  "sub.choose.api.title": { ar: "اختر المسار الأول إذا:", en: "Choose Path A if:" },
+  "sub.choose.api.body": {
+    ar: "نموذجك متاح عبر مزوّد سحابي عام (OpenRouter أو OpenAI أو Anthropic). لا تحتاج أي عتاد — يكفي مفتاح API ورصيد بسيط (بضعة دولارات للجولة الكاملة)، والتقييم ينتهي خلال 30–60 دقيقة.",
+    en: "Your model is available through a public cloud provider (OpenRouter, OpenAI, or Anthropic). No hardware needed — just an API key and a small credit (a few dollars for the full run); evaluation completes in 30-60 minutes.",
+  },
+  "sub.choose.self.title": { ar: "اختر المسار الثاني إذا:", en: "Choose Path B if:" },
+  "sub.choose.self.body": {
+    ar: "نموذجك خاص أو مدرَّب محلياً وغير منشور لدى مزوّد سحابي. تشغّله على عتادك أنت (معالج رسومي بذاكرة كافية)، بلا أي حدّ لعدد المعلمات وبلا كلفة API — الاستدلال كله عندك.",
+    en: "Your model is private or locally trained and not served by a cloud provider. You run it on your own hardware (a GPU with enough memory), with no parameter limit and no API cost - all inference happens on your side.",
+  },
+  "sub.a.s1": { ar: "أنشئ حساباً لدى المزوّد واحصل على مفتاح API (مثلاً openrouter.ai ← Keys)، واشحن رصيداً بسيطاً.", en: "Create a provider account and get an API key (e.g. openrouter.ai -> Keys), and add a small credit." },
+  "sub.a.s2": { ar: "عرّف المفتاح في جلسة الطرفية (السطر الأول في الكتلة أدناه).", en: "Set the key in your terminal session (first line in the block below)." },
+  "sub.a.s3": { ar: "شغّل أمر التقييم مع تعديل خانة النموذج والمطوّر (السطر الثاني).", en: "Run the evaluation command, editing the model slug and developer fields (second line)." },
+  "sub.a.s4": { ar: "انتظر اكتمال الجولة — يعرض المشغّل تقدّماً حياً كل خمسة بنود.", en: "Wait for the run to finish - the runner prints live progress every five items." },
+  "sub.a.s5": { ar: "ستجد ملف النتائج في مجلد data باسم الملف الذي حدّدته في --out.", en: "Find the results file in the data folder under the name you set in --out." },
+  "sub.b.s1": { ar: "ثبّت خادماً متوافقاً مع واجهة OpenAI: أسهلها Ollama (ollama.com) أو LM Studio، وللخوادم البحثية vLLM.", en: "Install an OpenAI-compatible server: easiest are Ollama (ollama.com) or LM Studio; for research servers, vLLM." },
+  "sub.b.s2": { ar: "حمّل نموذجك في الخادم (مثلاً ollama pull أو فتح ملف الأوزان في LM Studio) وتأكد أنه يستجيب محلياً.", en: "Load your model into the server (e.g. ollama pull, or open the weights in LM Studio) and confirm it responds locally." },
+  "sub.b.s3": { ar: "اعرف عنوان النقطة المحلية: Ollama يعمل على http://localhost:11434/v1 وvLLM على المنفذ الذي تحدده.", en: "Note your local endpoint: Ollama serves at http://localhost:11434/v1; vLLM at the port you choose." },
+  "sub.b.s4": { ar: "عرّف المتغيّر OPENAI_BASE_URL بعنوان نقطتك (السطر الأول في الكتلة أدناه) — المفتاح غير مطلوب للنقاط المحلية.", en: "Set OPENAI_BASE_URL to your endpoint (first line in the block below) - no API key is required for local endpoints." },
+  "sub.b.s5": { ar: "شغّل أمر التقييم باسم النموذج كما يعرفه خادمك (السطر الثاني).", en: "Run the evaluation command with the model name as your server knows it (second line)." },
+  "sub.b.s6": { ar: "مدة الجولة تعتمد على سرعة عتادك؛ وستجد ملف النتائج في مجلد data.", en: "Run time depends on your hardware; the results file appears in the data folder." },
+  "sub.after.title": { ar: "ماذا يحدث بعد التقديم؟", en: "What happens after you submit?" },
+  "sub.after.s1": { ar: "فحص أولي: نتأكد من سلامة ملف النتائج ووجود بصمة التحقّق واكتمال العدّادات.", en: "Initial check: we validate the results file, its verification hash, and the item counts." },
+  "sub.after.s2": { ar: "تدقيق مستقل: نعيد تشغيل عيّنة من البنود على نموذجك نفسه ونطابق الدرجات والبصمات.", en: "Independent audit: we re-run a sample of items against your model and match scores and hashes." },
+  "sub.after.s3": { ar: "الاستيراد والنشر: تُستورد النتيجة وتُنشر على اللوحة الرسمية كلقطة مؤرَّخة غير قابلة للاستبدال مع شهادتها.", en: "Import and publish: the result is imported and published on the official leaderboard as a dated, immutable snapshot with its certificate." },
+  "sub.after.s4": { ar: "الإشعار: يصلك ردّ بريدي برابط نتيجتك المنشورة وبصمة شهادتها — خلال أيام عمل قليلة من التقديم.", en: "Notification: you receive an email with your published result link and certificate hash - within a few working days." },
 } satisfies Dict;
 
 export type TKey = keyof typeof dict;
