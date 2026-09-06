@@ -341,7 +341,7 @@ export default function Leaderboard() {
                                             {toPct(r.score).toFixed(1)}
                                             {r.ciLow !== null &&
                                               r.ciHigh !== null && (
-                                                <span className="block text-xs text-muted-foreground">
+                                                <span dir="ltr" className="block text-xs text-muted-foreground">
                                                   [{toPct(r.ciLow).toFixed(1)},{" "}
                                                   {toPct(r.ciHigh).toFixed(1)}]
                                                 </span>
@@ -397,7 +397,7 @@ export default function Leaderboard() {
                         margin={{ top: 4, right: 24, bottom: 4, left: 8 }}
                       >
                         <CartesianGrid strokeDasharray="3 3" horizontal={false} />
-                        <XAxis type="number" domain={[50, 100]} tickCount={6} />
+                        <XAxis type="number" domain={[0, 100]} ticks={[0, 20, 40, 60, 80, 100]} allowDataOverflow />
                         <YAxis
                           type="category"
                           dataKey="name"
@@ -453,7 +453,7 @@ export default function Leaderboard() {
                         margin={{ top: 4, right: 24, bottom: 4, left: 8 }}
                       >
                         <CartesianGrid strokeDasharray="3 3" horizontal={false} />
-                        <XAxis type="number" domain={[50, 100]} tickCount={6} />
+                        <XAxis type="number" domain={[0, 100]} ticks={[0, 20, 40, 60, 80, 100]} allowDataOverflow />
                         <YAxis
                           type="category"
                           dataKey="name"
@@ -545,7 +545,7 @@ export default function Leaderboard() {
                         <LineChart data={slopeData} margin={{ top: 8, right: 24, bottom: 4, left: 0 }}>
                           <CartesianGrid strokeDasharray="3 3" />
                           <XAxis dataKey="stage" padding={{ left: 40, right: 40 }} />
-                          <YAxis domain={[60, 100]} />
+                          <YAxis domain={[0, 100]} ticks={[0, 20, 40, 60, 80, 100]} allowDataOverflow />
                           <Tooltip
                             itemSorter={(item) => -(item.value as number)}
                             contentStyle={{ fontSize: 11 }}
