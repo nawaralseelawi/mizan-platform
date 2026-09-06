@@ -914,6 +914,44 @@ const dict = {
   "mdl.totalRuns": { ar: "مجموع التشغيلات", en: "Total runs" },
   "mdl.published": { ar: "المنشورة", en: "Published" },
   "mdl.license": { ar: "الرخصة", en: "License" },
+  // Leaderboard - visual analysis section (sprint item 3)
+  "lb2.analysis.title": { ar: "التحليل البصري", en: "Visual analysis" },
+  "lb2.gap.title": {
+    ar: "فجوة المسارين: الفصحى مقابل العراقية",
+    en: "The two-track gap: MSA vs Iraqi",
+  },
+  "lb2.gap.caption": {
+    ar: "لكل نموذج شريط يمتد من درجته العراقية إلى درجته الفصيحة على المحاور الآلية — طول الشريط هو الفجوة. لاحظ ثباتها المنهجي عبر النماذج: الفصحى مضغوطة قرب السقف والتمييز كله عراقي.",
+    en: "Each model's bar spans from its Iraqi score to its MSA score on the auto-scored axes - the bar length is the gap. Note how consistent it is across models: MSA is compressed near the ceiling while all the discrimination is Iraqi.",
+  },
+  "lb2.ci.title": {
+    ar: "المسار العراقي بفواصل ثقة 95%",
+    en: "Iraqi track with 95% confidence intervals",
+  },
+  "lb2.ci.caption": {
+    ar: "النقطة متوسط النموذج على المحاور العراقية الآلية، والشريط فاصل Wilson 95% محسوب من عدد البنود. تداخل الفواصل يعني أن الفرق بين النموذجين غير محسوم إحصائياً على حجم العينة الحالي.",
+    en: "The dot is the model's mean over the Iraqi auto-scored axes; the whisker is a 95% Wilson interval computed from the item counts. Overlapping intervals mean the difference between two models is not statistically settled at the current sample size.",
+  },
+  "lb2.axes.title": {
+    ar: "تفكيك المحاور العراقية (أعلى 8 نماذج)",
+    en: "Iraqi per-axis breakdown (top 8 models)",
+  },
+  "lb2.axes.caption": {
+    ar: "المقارنة محوراً محوراً تكشف مواطن القوة والضعف: أين يفهم النموذج اللهجة، وأين يعرف العراق، وأين يقرأ الكتاب الرسمي.",
+    en: "The per-axis comparison exposes strengths and weaknesses: where a model understands the dialect, where it knows Iraq, and where it can read an official letter.",
+  },
+  "lb2.sat.title": {
+    ar: "كسر التشبّع: من البنك الأول إلى البنك الحالي",
+    en: "Breaking saturation: first bank vs current bank",
+  },
+  "lb2.sat.caption": {
+    ar: "خط لكل نموذج بين تقييمه على النسخة الأولى (43 بنداً) والنسخة الحالية (340 بنداً): القمة المتكدسة انفرشت — البنك الأصعب صار أداة تمييز فعلية.",
+    en: "One line per model from its first-bank (43 items) evaluation to the current bank (340 items): the crowded ceiling spread out - the harder bank became a real discriminator.",
+  },
+  "lb2.note.ci": {
+    ar: "فواصل الثقة تُحسب للمحاور الآلية فقط بطريقة Wilson عند مستوى 95%؛ ولمحور الوثائق الرسمية تُعدّ تقديراً متحفظاً (تباين برنولي هو الحد الأعلى للمتغيرات المحصورة بين 0 و1). المحاور التوليدية تُقاس بالتحكيم البشري ولا تُعطى فواصل ثنائية الحدين.",
+    en: "Confidence intervals are computed for auto-scored axes only, using the Wilson method at the 95% level; for the official-documents axis this is a conservative estimate (Bernoulli variance is the upper bound for [0,1]-bounded variables). Human-judged axes are not given binomial intervals.",
+  },
 } satisfies Dict;
 
 export type TKey = keyof typeof dict;

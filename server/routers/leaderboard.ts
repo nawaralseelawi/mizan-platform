@@ -2,13 +2,31 @@ import { desc, eq, inArray } from "drizzle-orm";
 import { z } from "zod";
 import { db, schema } from "../db";
 import { publicProcedure, router } from "../trpc";
+import { wilsonFromScore, wilsonInterval } from "../lib/stats";
+
+/**
+ * Axes whose per-item outcomes are auto-scored and treated as binomial for
+ * interval purposes. Comprehension and knowledge are exact Bernoulli
+ * (multiple choice). Official-documents extraction scores are per-item
+ * field-match fractions in [0, 1]; the binomial treatment is a documented
+ * CONSERVATIVE approximation (Bernoulli variance is maximal for bounded
+ * variables). Human-rubric axes are never given Wilson intervals here.
+ */
+const AUTO_AXES = new Set(["comprehension", "knowledge", "official_documents"]);
 
 export const leaderboardRouter = router({
   /**
-   * Published runs only, private-test scores only. Returns per-model
-   * per-axis scores plus the unweighted macro average across axes -
-   * the headline Mizan score. If no run is published yet, the client
-   * renders the honest empty state, never placeholder numbers.
+   * Published runs only. Returns per-model per-axis scores plus the
+   * unweighted macro average across axes - the headline Mizan score.
+   * If no run is published yet, the client renders the honest empty
+   * state, never placeholder numbers.
+   *
+   * Confidence intervals: stored ciLow/ciHigh are used when present
+   * (future bootstrap/import-time values take precedence). When absent,
+   * a 95% Wilson interval is computed on the fly for auto-scored axes
+   * from (score, nItems). Pooled per-track intervals over the auto axes
+   * are also returned; with equal per-axis item counts the pooled
+   * proportion equals the unweighted track mean over those axes.
    */
   table: publicProcedure
     .input(z.object({ versionLabel: z.string() }))
@@ -70,16 +88,33 @@ export const leaderboardRouter = router({
         // private set exists.
         const hasPrivate = runResults.some((r) => r.tier === "private_test");
         const tier = hasPrivate ? "private_test" : "public_dev";
+
         const axisScores = runResults
           .filter((r) => r.tier === tier)
-          .map((r) => ({
-            track: r.track,
-            axis: r.axis,
-            score: r.score,
-            ciLow: r.ciLow,
-            ciHigh: r.ciHigh,
-            nItems: r.nItems,
-          }));
+          .map((r) => {
+            let ciLow = r.ciLow;
+            let ciHigh = r.ciHigh;
+            if (
+              (ciLow === null || ciHigh === null) &&
+              AUTO_AXES.has(r.axis) &&
+              r.nItems > 0
+            ) {
+              const ci = wilsonFromScore(r.score, r.nItems);
+              if (ci) {
+                ciLow = ci.low;
+                ciHigh = ci.high;
+              }
+            }
+            return {
+              track: r.track,
+              axis: r.axis,
+              score: r.score,
+              ciLow,
+              ciHigh,
+              nItems: r.nItems,
+            };
+          });
+
         const mean = (xs: number[]): number | null =>
           xs.length > 0 ? xs.reduce((a, b) => a + b, 0) / xs.length : null;
         const arabicAverage = mean(
@@ -89,6 +124,21 @@ export const leaderboardRouter = router({
           axisScores.filter((r) => r.track === "iraqi").map((r) => r.score),
         );
         const macroAverage = mean(axisScores.map((r) => r.score));
+
+        // Pooled Wilson interval per track over the auto-scored axes:
+        // k = sum of reconstructed correct counts, n = sum of item counts.
+        const pooledCi = (track: "arabic" | "iraqi") => {
+          const rows = axisScores.filter(
+            (r) => r.track === track && AUTO_AXES.has(r.axis) && r.nItems > 0,
+          );
+          if (rows.length === 0) return null;
+          const n = rows.reduce((a, r) => a + r.nItems, 0);
+          const k = rows.reduce((a, r) => a + Math.round(r.score * r.nItems), 0);
+          return wilsonInterval(k, n);
+        };
+        const arabicAutoCi = pooledCi("arabic");
+        const iraqiAutoCi = pooledCi("iraqi");
+
         return {
           model: run.modelName,
           developer: run.developer,
@@ -99,6 +149,10 @@ export const leaderboardRouter = router({
           arabicAverage,
           iraqiAverage,
           macroAverage,
+          arabicAutoCiLow: arabicAutoCi?.low ?? null,
+          arabicAutoCiHigh: arabicAutoCi?.high ?? null,
+          iraqiAutoCiLow: iraqiAutoCi?.low ?? null,
+          iraqiAutoCiHigh: iraqiAutoCi?.high ?? null,
         };
       });
 
@@ -108,4 +162,3 @@ export const leaderboardRouter = router({
       return { entries };
     }),
 });
-

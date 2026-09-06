@@ -1,16 +1,33 @@
+/**
+ * Leaderboard - published results with per-axis tables and the sprint-item-3
+ * visual-analysis package:
+ *   A. Two-track gap chart (MSA vs Iraqi interval per model - Figure 1 shape)
+ *   B. Iraqi track dot plot with 95% Wilson confidence intervals
+ *   C. Iraqi per-axis breakdown (top 8 models)
+ *   D. Saturation-break slope chart (first bank vs current bank)
+ * Replaces the earlier single 0-100 bar chart in which all bars looked
+ * identical. Charts render inside dir="ltr" wrappers (recharts layout math
+ * assumes LTR); all labels flow through the central i18n dictionary.
+ */
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
-  BarChart,
   Bar,
+  BarChart,
+  CartesianGrid,
+  ComposedChart,
+  ErrorBar,
+  Legend,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Scatter,
+  Tooltip,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
 } from "recharts";
-import { Trophy, ShieldCheck } from "lucide-react";
+import { Trophy, ShieldCheck, BarChart3 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { TRACK_AXES, TRACK_ORDER, useLatestVersion } from "@/lib/benchmark";
 import { useI18n, useLabels } from "@/i18n";
@@ -32,6 +49,12 @@ function toPct(score: number): number {
   return Math.round(score * 1000) / 10;
 }
 
+const COLOR_ARABIC = "#2563eb";
+const COLOR_IRAQI = "#059669";
+const COLOR_DOC = "#d97706";
+const COLOR_SPAN = "#94a3b8";
+const COLOR_SLOPE = "#64748b";
+
 export default function Leaderboard() {
   const { t } = useI18n();
   const L = useLabels();
@@ -41,11 +64,118 @@ export default function Leaderboard() {
     { enabled: label !== null },
   );
 
+  // First (oldest) version powers the saturation-break chart.
+  const versions = trpc.benchmark.versions.useQuery();
+  const firstLabel = versions.data?.[0]?.label ?? null;
+  const hasTwoVersions = firstLabel !== null && label !== null && firstLabel !== label;
+  const firstBoard = trpc.leaderboard.table.useQuery(
+    { versionLabel: firstLabel ?? "" },
+    { enabled: hasTwoVersions },
+  );
+
   const entries = board.data?.entries ?? [];
-  const chartData = entries.slice(0, 8).map((e) => ({
-    name: e.model,
-    average: e.macroAverage !== null ? toPct(e.macroAverage) : 0,
-  }));
+
+  // --- Chart A: two-track gap (interval from Iraqi to MSA score) ---
+  const gapData = entries
+    .filter((e) => e.arabicAverage !== null && e.iraqiAverage !== null)
+    .map((e) => {
+      const arabic = toPct(e.arabicAverage as number);
+      const iraqi = toPct(e.iraqiAverage as number);
+      return {
+        name: e.model,
+        arabic,
+        iraqi,
+        base: Math.min(arabic, iraqi),
+        span: Math.abs(arabic - iraqi),
+        gap: Math.round((arabic - iraqi) * 10) / 10,
+      };
+    })
+    .sort((a, b) => b.iraqi - a.iraqi);
+
+  // --- Chart B: Iraqi mean with pooled 95% Wilson interval ---
+  const ciData = entries
+    .filter(
+      (e) =>
+        e.iraqiAverage !== null &&
+        e.iraqiAutoCiLow !== null &&
+        e.iraqiAutoCiHigh !== null,
+    )
+    .map((e) => {
+      const iraqi = toPct(e.iraqiAverage as number);
+      const low = toPct(e.iraqiAutoCiLow as number);
+      const high = toPct(e.iraqiAutoCiHigh as number);
+      return {
+        name: e.model,
+        iraqi,
+        errX: [
+          Math.max(0, Math.round((iraqi - low) * 10) / 10),
+          Math.max(0, Math.round((high - iraqi) * 10) / 10),
+        ] as [number, number],
+        low,
+        high,
+      };
+    })
+    .sort((a, b) => b.iraqi - a.iraqi);
+
+  // --- Chart C: Iraqi per-axis breakdown, top 8 by Iraqi average ---
+  const axisData = entries
+    .filter((e) => e.iraqiAverage !== null)
+    .slice()
+    .sort(
+      (a, b) => (b.iraqiAverage as number) - (a.iraqiAverage as number),
+    )
+    .slice(0, 8)
+    .map((e) => {
+      const byAxis = new Map(
+        e.axisScores
+          .filter((r) => r.track === "iraqi")
+          .map((r) => [r.axis, toPct(r.score)]),
+      );
+      return {
+        name: e.model,
+        comprehension: byAxis.get("comprehension") ?? null,
+        knowledge: byAxis.get("knowledge") ?? null,
+        official_documents: byAxis.get("official_documents") ?? null,
+      };
+    });
+
+  // --- Chart D: saturation break (first bank vs current bank) ---
+  const firstEntries = firstBoard.data?.entries ?? [];
+  const slopeModels = entries
+    .filter(
+      (e) =>
+        e.macroAverage !== null &&
+        firstEntries.some(
+          (f) => f.model === e.model && f.macroAverage !== null,
+        ),
+    )
+    .map((e) => e.model);
+  const slopeData =
+    hasTwoVersions && slopeModels.length > 1
+      ? [
+          Object.fromEntries([
+            ["stage", firstLabel as string],
+            ...slopeModels.map((m) => [
+              m,
+              toPct(
+                firstEntries.find((f) => f.model === m)!
+                  .macroAverage as number,
+              ),
+            ]),
+          ]),
+          Object.fromEntries([
+            ["stage", label as string],
+            ...slopeModels.map((m) => [
+              m,
+              toPct(
+                entries.find((e) => e.model === m)!.macroAverage as number,
+              ),
+            ]),
+          ]),
+        ]
+      : [];
+
+  const chartHeight = Math.max(320, gapData.length * 34 + 60);
 
   return (
     <div className="w-full">
@@ -235,30 +365,207 @@ export default function Leaderboard() {
                   <p className="text-xs text-muted-foreground mt-4">
                     {t("lb.note")}
                   </p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {t("lb2.note.ci")}
+                  </p>
                 </Card>
               </motion.div>
 
+              {/* Visual analysis package (sprint item 3) */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15 }}
+                className="space-y-8"
               >
+                <h2 className="text-2xl font-bold flex items-center gap-2">
+                  <BarChart3 className="w-6 h-6 text-blue-600" />
+                  {t("lb2.analysis.title")}
+                </h2>
+
+                {/* A - two-track gap */}
                 <Card className="p-6">
-                  <h2 className="text-xl font-semibold mb-4">
-                    {t("lb.chart.title")}
-                  </h2>
-                  <div className="h-72">
+                  <h3 className="text-lg font-semibold mb-1">{t("lb2.gap.title")}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {t("lb2.gap.caption")}
+                  </p>
+                  <div dir="ltr" style={{ height: chartHeight }}>
                     <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={chartData}>
+                      <ComposedChart
+                        layout="vertical"
+                        data={gapData}
+                        margin={{ top: 4, right: 24, bottom: 4, left: 8 }}
+                      >
+                        <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+                        <XAxis type="number" domain={[50, 100]} tickCount={6} />
+                        <YAxis
+                          type="category"
+                          dataKey="name"
+                          width={160}
+                          tick={{ fontSize: 11 }}
+                        />
+                        <Tooltip
+                          content={({ payload, label: lbl }) => {
+                            const row = payload?.[0]?.payload;
+                            if (!row) return null;
+                            return (
+                              <div className="rounded-md border bg-background p-2 text-xs shadow">
+                                <p className="font-semibold mb-1">{lbl}</p>
+                                <p style={{ color: COLOR_ARABIC }}>
+                                  {t("track.arabic")}: {row.arabic.toFixed(1)}
+                                </p>
+                                <p style={{ color: COLOR_IRAQI }}>
+                                  {t("track.iraqi")}: {row.iraqi.toFixed(1)}
+                                </p>
+                                <p className="text-muted-foreground">
+                                  Δ {row.gap.toFixed(1)}
+                                </p>
+                              </div>
+                            );
+                          }}
+                        />
+                        <Bar dataKey="base" stackId="g" fill="transparent" isAnimationActive={false} />
+                        <Bar
+                          dataKey="span"
+                          stackId="g"
+                          fill={COLOR_SPAN}
+                          radius={[6, 6, 6, 6]}
+                          barSize={10}
+                        />
+                        <Scatter dataKey="iraqi" fill={COLOR_IRAQI} />
+                        <Scatter dataKey="arabic" fill={COLOR_ARABIC} />
+                      </ComposedChart>
+                    </ResponsiveContainer>
+                  </div>
+                </Card>
+
+                {/* B - Iraqi track with 95% CIs */}
+                <Card className="p-6">
+                  <h3 className="text-lg font-semibold mb-1">{t("lb2.ci.title")}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {t("lb2.ci.caption")}
+                  </p>
+                  <div dir="ltr" style={{ height: Math.max(320, ciData.length * 34 + 60) }}>
+                    <ResponsiveContainer width="100%" height="100%">
+                      <ComposedChart
+                        layout="vertical"
+                        data={ciData}
+                        margin={{ top: 4, right: 24, bottom: 4, left: 8 }}
+                      >
+                        <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+                        <XAxis type="number" domain={[50, 100]} tickCount={6} />
+                        <YAxis
+                          type="category"
+                          dataKey="name"
+                          width={160}
+                          tick={{ fontSize: 11 }}
+                        />
+                        <Tooltip
+                          content={({ payload, label: lbl }) => {
+                            const row = payload?.[0]?.payload;
+                            if (!row) return null;
+                            return (
+                              <div className="rounded-md border bg-background p-2 text-xs shadow">
+                                <p className="font-semibold mb-1">{lbl}</p>
+                                <p>{row.iraqi.toFixed(1)}</p>
+                                <p className="text-muted-foreground">
+                                  [{row.low.toFixed(1)}, {row.high.toFixed(1)}]
+                                </p>
+                              </div>
+                            );
+                          }}
+                        />
+                        <Scatter dataKey="iraqi" fill={COLOR_IRAQI}>
+                          <ErrorBar
+                            dataKey="errX"
+                            direction="x"
+                            width={5}
+                            strokeWidth={1.25}
+                            stroke={COLOR_IRAQI}
+                          />
+                        </Scatter>
+                      </ComposedChart>
+                    </ResponsiveContainer>
+                  </div>
+                </Card>
+
+                {/* C - Iraqi per-axis breakdown */}
+                <Card className="p-6">
+                  <h3 className="text-lg font-semibold mb-1">{t("lb2.axes.title")}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {t("lb2.axes.caption")}
+                  </p>
+                  <div dir="ltr" className="h-80">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <BarChart data={axisData} margin={{ top: 4, right: 16, bottom: 4, left: 0 }}>
                         <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" />
+                        <XAxis
+                          dataKey="name"
+                          tick={{ fontSize: 10 }}
+                          interval={0}
+                          angle={-20}
+                          textAnchor="end"
+                          height={60}
+                        />
                         <YAxis domain={[0, 100]} />
                         <Tooltip />
-                        <Bar dataKey="average" fill="#2563eb" radius={[4, 4, 0, 0]} />
+                        <Legend />
+                        <Bar
+                          dataKey="comprehension"
+                          name={L.axis("comprehension")}
+                          fill={COLOR_IRAQI}
+                          radius={[3, 3, 0, 0]}
+                        />
+                        <Bar
+                          dataKey="knowledge"
+                          name={L.axis("knowledge")}
+                          fill={COLOR_ARABIC}
+                          radius={[3, 3, 0, 0]}
+                        />
+                        <Bar
+                          dataKey="official_documents"
+                          name={L.axis("official_documents")}
+                          fill={COLOR_DOC}
+                          radius={[3, 3, 0, 0]}
+                        />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
                 </Card>
+
+                {/* D - saturation break (only when two versions exist) */}
+                {slopeData.length === 2 && (
+                  <Card className="p-6">
+                    <h3 className="text-lg font-semibold mb-1">{t("lb2.sat.title")}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      {t("lb2.sat.caption")}
+                    </p>
+                    <div dir="ltr" className="h-96">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <LineChart data={slopeData} margin={{ top: 8, right: 24, bottom: 4, left: 0 }}>
+                          <CartesianGrid strokeDasharray="3 3" />
+                          <XAxis dataKey="stage" padding={{ left: 40, right: 40 }} />
+                          <YAxis domain={[60, 100]} />
+                          <Tooltip
+                            itemSorter={(item) => -(item.value as number)}
+                            contentStyle={{ fontSize: 11 }}
+                          />
+                          {slopeModels.map((m) => (
+                            <Line
+                              key={m}
+                              type="linear"
+                              dataKey={m}
+                              stroke={COLOR_SLOPE}
+                              strokeWidth={1.5}
+                              dot={{ r: 3 }}
+                              isAnimationActive={false}
+                            />
+                          ))}
+                        </LineChart>
+                      </ResponsiveContainer>
+                    </div>
+                  </Card>
+                )}
               </motion.div>
             </>
           )}
@@ -267,4 +574,3 @@ export default function Leaderboard() {
     </div>
   );
 }
-
