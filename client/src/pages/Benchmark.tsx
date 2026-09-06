@@ -1,10 +1,12 @@
 /**
  * Benchmark Explorer — the six evaluation axes with live item counts from
  * the platform, plus the two tracks, real metrics, and the real pipeline.
- * This revision makes every tab and description bilingual through the
- * central i18n dictionary, removes the auto-generated filler sentences,
- * and wires the previously dead "View Benchmark Details" button to the
- * Dataset Explorer.
+ *
+ * Fix in this revision: tab contents are unmounted/remounted by the Tabs
+ * component when switching tabs. Motion elements that relied on inherited
+ * parent variants (which animate only once, on first view) remounted in
+ * their hidden state and stayed invisible - notably the Pipeline tab.
+ * Every such element now carries its own initial/animate props.
  */
 import { useState } from "react";
 import { trpc } from "@/lib/trpc";
@@ -94,13 +96,7 @@ export default function Benchmark() {
       {/* Main Content */}
       <section className="py-20 px-4 bg-background">
         <div className="container mx-auto">
-          <motion.div
-            className="space-y-12"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
+          <div className="space-y-12">
             <Tabs defaultValue="axes" className="w-full" dir={dir}>
               <TabsList className="grid w-full max-w-md grid-cols-4">
                 <TabsTrigger value="axes">{t("bench2.tab.axes")}</TabsTrigger>
@@ -147,6 +143,8 @@ export default function Benchmark() {
                 {selectedAxis && (
                   <motion.div
                     variants={itemVariants}
+                    initial="hidden"
+                    animate="visible"
                     className="mt-12 p-8 bg-slate-50 dark:bg-slate-900/50 rounded-lg space-y-4"
                   >
                     <h3 className="text-2xl font-bold">
@@ -207,7 +205,7 @@ export default function Benchmark() {
                     </motion.div>
                   ))}
                 </motion.div>
-                <motion.div variants={itemVariants}>
+                <motion.div variants={itemVariants} initial="hidden" animate="visible">
                   <Button
                     variant="outline"
                     onClick={() => (window.location.href = "/metrics")}
@@ -221,19 +219,24 @@ export default function Benchmark() {
 
               {/* Pipeline Tab - the real path from authoring to publication */}
               <TabsContent value="pipeline" className="space-y-6 mt-8">
-                <motion.div variants={itemVariants} className="space-y-4 max-w-2xl">
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="space-y-4 max-w-2xl"
+                >
                   {pipeline.map((key, i) => (
-                    <div key={key} className="flex items-center gap-4">
+                    <motion.div key={key} variants={itemVariants} className="flex items-center gap-4">
                       <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shrink-0">
                         {i + 1}
                       </div>
                       <h3 className="font-bold leading-relaxed">{t(key)}</h3>
-                    </div>
+                    </motion.div>
                   ))}
                 </motion.div>
               </TabsContent>
             </Tabs>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
