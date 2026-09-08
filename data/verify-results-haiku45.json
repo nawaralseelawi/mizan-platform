@@ -1,0 +1,66 @@
+{
+  "schema_version": "mizan-results-v1",
+  "model": {
+    "name": "claude-haiku-4-5",
+    "developer": "Anthropic",
+    "source": "anthropic API"
+  },
+  "benchmark_version": "pilot-0.2",
+  "run": {
+    "completed_at": "2026-09-07T10:08:22.754Z",
+    "harness_commit": "dda8fa46f7b9b7a36e0143c9570601683ac10bbd",
+    "config": {
+      "provider": "anthropic",
+      "auto_scored_only": true,
+      "human_pending_items": 150,
+      "note": "Mizan runner - deterministic formats auto-scored; open_generation pending human judging"
+    }
+  },
+  "results": [
+    {
+      "track": "iraqi",
+      "axis": "comprehension",
+      "score": 0.98,
+      "ci_low": 0.8950431352816304,
+      "ci_high": 0.9964608319110235,
+      "n_items": 50,
+      "tier": "public_dev"
+    },
+    {
+      "track": "iraqi",
+      "axis": "knowledge",
+      "score": 0.98,
+      "ci_low": 0.8950431352816304,
+      "ci_high": 0.9964608319110235,
+      "n_items": 50,
+      "tier": "public_dev"
+    },
+    {
+      "track": "iraqi",
+      "axis": "official_documents",
+      "score": 0.49599999999999994,
+      "ci_low": 0.36273223320954817,
+      "ci_high": 0.6298385670638461,
+      "n_items": 50,
+      "tier": "public_dev"
+    },
+    {
+      "track": "arabic",
+      "axis": "comprehension",
+      "score": 0.95,
+      "ci_low": 0.7638641064874331,
+      "ci_high": 0.9911187805671268,
+      "n_items": 20,
+      "tier": "public_dev"
+    },
+    {
+      "track": "arabic",
+      "axis": "knowledge",
+      "score": 1,
+      "ci_low": 0.8388698745050667,
+      "ci_high": 1,
+      "n_items": 20,
+      "tier": "public_dev"
+    }
+  ]
+}

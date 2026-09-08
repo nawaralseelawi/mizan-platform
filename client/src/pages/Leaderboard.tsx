@@ -175,6 +175,27 @@ export default function Leaderboard() {
         ]
       : [];
 
+  // Display ranks with tie sharing: entries whose overall AND Iraqi
+  // averages are equal at display precision share the same rank, shown
+  // with an equals sign - the ranking must not fake a settled order the
+  // confidence intervals do not support.
+  const rankOf: number[] = [];
+  const tiedFlag: boolean[] = [];
+  entries.forEach((e, i) => {
+    const same = (x: typeof e, y: typeof e) =>
+      x.macroAverage !== null && y.macroAverage !== null &&
+      toPct(x.macroAverage) === toPct(y.macroAverage) &&
+      toPct(x.iraqiAverage ?? -1) === toPct(y.iraqiAverage ?? -1);
+    if (i > 0 && same(e, entries[i - 1])) {
+      rankOf.push(rankOf[i - 1]);
+      tiedFlag.push(true);
+      tiedFlag[i - 1] = true;
+    } else {
+      rankOf.push(i + 1);
+      tiedFlag.push(false);
+    }
+  });
+
   const chartHeight = Math.max(320, gapData.length * 34 + 60);
 
   return (
@@ -252,12 +273,14 @@ export default function Leaderboard() {
                           className="border-b last:border-0"
                         >
                           <td className="py-3 px-3 text-center">
-                            {i === 0 ? (
+                            {rankOf[i] === 1 ? (
                               <Badge className="bg-amber-500 hover:bg-amber-500">
-                                1
+                                <span dir="ltr">{tiedFlag[i] ? "=1" : "1"}</span>
                               </Badge>
                             ) : (
-                              i + 1
+                              <span dir="ltr">
+                                {tiedFlag[i] ? `=${rankOf[i]}` : rankOf[i]}
+                              </span>
                             )}
                           </td>
                           <td className="py-3 px-3 text-start font-medium">

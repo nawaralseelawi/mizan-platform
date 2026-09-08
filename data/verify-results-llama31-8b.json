@@ -1,0 +1,66 @@
+{
+  "schema_version": "mizan-results-v1",
+  "model": {
+    "name": "meta-llama/llama-3.1-8b-instruct",
+    "developer": "Meta",
+    "source": "openrouter API"
+  },
+  "benchmark_version": "pilot-0.2",
+  "run": {
+    "completed_at": "2026-09-07T07:17:40.698Z",
+    "harness_commit": "dda8fa46f7b9b7a36e0143c9570601683ac10bbd",
+    "config": {
+      "provider": "openrouter",
+      "auto_scored_only": true,
+      "human_pending_items": 150,
+      "note": "Mizan runner - deterministic formats auto-scored; open_generation pending human judging"
+    }
+  },
+  "results": [
+    {
+      "track": "iraqi",
+      "axis": "comprehension",
+      "score": 0.68,
+      "ci_low": 0.5418944286372394,
+      "ci_high": 0.792419559060006,
+      "n_items": 50,
+      "tier": "public_dev"
+    },
+    {
+      "track": "iraqi",
+      "axis": "knowledge",
+      "score": 0.8,
+      "ci_low": 0.6696262789551477,
+      "ci_high": 0.8875637005402612,
+      "n_items": 50,
+      "tier": "public_dev"
+    },
+    {
+      "track": "iraqi",
+      "axis": "official_documents",
+      "score": 0.35466666666666663,
+      "ci_low": 0.2368254554100565,
+      "ci_high": 0.4932469545232787,
+      "n_items": 50,
+      "tier": "public_dev"
+    },
+    {
+      "track": "arabic",
+      "axis": "comprehension",
+      "score": 0.7,
+      "ci_low": 0.4810232237710206,
+      "ci_high": 0.854524726031006,
+      "n_items": 20,
+      "tier": "public_dev"
+    },
+    {
+      "track": "arabic",
+      "axis": "knowledge",
+      "score": 0.9,
+      "ci_low": 0.6989617935882066,
+      "ci_high": 0.9721341060158468,
+      "n_items": 20,
+      "tier": "public_dev"
+    }
+  ]
+}

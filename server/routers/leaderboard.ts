@@ -156,9 +156,24 @@ export const leaderboardRouter = router({
         };
       });
 
-      entries.sort(
-        (a, b) => (b.macroAverage ?? -1) - (a.macroAverage ?? -1),
-      );
+      // Ordering with a DECLARED tie-break rule. Scores are compared at
+      // display precision (one decimal on the 0-100 scale) so the visible
+      // ranking never contradicts the visible numbers. When the rounded
+      // overall is tied, the higher Iraqi-track average leads - the Iraqi
+      // track is Mizan's core measure by ratified design. Any remaining
+      // tie falls back to the raw values and finally to the model name,
+      // keeping the order fully deterministic across imports.
+      const disp = (x: number | null): number =>
+        x === null ? -1 : Math.round(x * 1000);
+      entries.sort((a, b) => {
+        const dMacro = disp(b.macroAverage) - disp(a.macroAverage);
+        if (dMacro !== 0) return dMacro;
+        const dIraqi = disp(b.iraqiAverage) - disp(a.iraqiAverage);
+        if (dIraqi !== 0) return dIraqi;
+        const dRaw = (b.macroAverage ?? -1) - (a.macroAverage ?? -1);
+        if (Math.abs(dRaw) > 1e-12) return dRaw > 0 ? 1 : -1;
+        return a.model.localeCompare(b.model);
+      });
       return { entries };
     }),
 });

@@ -4,6 +4,11 @@
  * Reads one or more JSONL item files, queries a model provider, scores the
  * deterministic formats per (track, axis), and writes a mizan-results-v1
  * JSON file for the platform to import.
+ *
+ * Optional --details <path>: additionally writes a per-item sidecar JSON
+ * (item, raw model response, score) for auto-scored items. This enables
+ * error analysis and grader audits. The sidecar is diagnostic material -
+ * it is never imported into the platform.
  */
 import { execSync } from "node:child_process";
 import { readFile, writeFile } from "node:fs/promises";
@@ -29,6 +34,12 @@ interface Bucket {
   scores: number[];
   autoScored: number;
   humanPending: number;
+}
+
+interface DetailRecord {
+  item: BenchmarkItem;
+  raw_response: string;
+  score: number;
 }
 
 function keyOf(track: Track, axis: Axis): string {
@@ -91,6 +102,7 @@ async function main(): Promise<void> {
       out: { type: "string" },
       parameters: { type: "string" },
       license: { type: "string" },
+      details: { type: "string" },
     },
   });
 
@@ -119,6 +131,8 @@ async function main(): Promise<void> {
     return b;
   };
 
+  const details: DetailRecord[] = [];
+
   console.log(
     `Evaluating ${items.length} items with ${provider}/${values.model}...`,
   );
@@ -144,6 +158,9 @@ async function main(): Promise<void> {
         : scoreExtraction(item, raw);
     bucket.scores.push(score);
     bucket.autoScored++;
+    if (values.details) {
+      details.push({ item, raw_response: raw, score });
+    }
     done++;
     if (done % 5 === 0) console.log(`  ...${done} scored`);
   }
@@ -197,6 +214,26 @@ async function main(): Promise<void> {
   console.log(
     `\nDone. ${results.length} (track, axis) scores written to ${values.out}`,
   );
+  if (values.details) {
+    await writeFile(
+      values.details,
+      JSON.stringify(
+        {
+          schema_version: "mizan-details-v1",
+          model: values.model!,
+          benchmark_version: values.version!,
+          completed_at: new Date().toISOString(),
+          records: details,
+        },
+        null,
+        2,
+      ),
+      "utf8",
+    );
+    console.log(
+      `Per-item details (${details.length} records) written to ${values.details}`,
+    );
+  }
   if (humanPending > 0) {
     console.log(
       `${humanPending} open-generation item(s) skipped - they require human judging.`,
@@ -208,4 +245,3 @@ main().catch((e) => {
   console.error(e instanceof Error ? e.message : e);
   process.exit(1);
 });
-

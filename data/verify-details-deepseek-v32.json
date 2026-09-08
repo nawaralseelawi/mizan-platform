@@ -1,0 +1,4285 @@
+{
+  "schema_version": "mizan-details-v1",
+  "model": "deepseek/deepseek-v3.2",
+  "benchmark_version": "pilot-0.2",
+  "completed_at": "2026-09-07T09:11:49.740Z",
+  "records": [
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0001",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "baghdadi",
+        "contamination_tier": "public_dev",
+        "prompt": "شنو معنى «هسه» بجملة: «هسه أجي، انتظرني شوية»؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "غداً",
+          "أمس",
+          "الآن / حالاً",
+          "بعد أسبوع"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0002",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«خوش» بجملة «هذا خوش رجّال» تعني؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "طويل",
+          "غني",
+          "طيّب / جيّد",
+          "غريب"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0003",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "southern",
+        "contamination_tier": "public_dev",
+        "prompt": "شنو تعني «يمعوّد» بمخاطبة مثل «تعال يمعوّد»؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "اسم شخص",
+          "أداة نداء ومخاطبة ودّية (يا رجل)",
+          "نوع أكل",
+          "مكان"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0004",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "بجملة «راح أروح للسوق باچر»، شنو تفيد «راح»؟",
+        "notes": "sub_type: morphosyntax; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "الماضي",
+          "زمن المستقبل (سوف)",
+          "النفي",
+          "الأمر"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0005",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "baghdadi",
+        "contamination_tier": "public_dev",
+        "prompt": "«شلونچ» موجَّهة لِـ؟",
+        "notes": "sub_type: morphosyntax; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "ذكر مفرد",
+          "أنثى مفردة",
+          "جماعة",
+          "مثنّى"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0006",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "baghdadi",
+        "contamination_tier": "public_dev",
+        "prompt": "واحد يقول «دمّه خفيف» عن شخص. شنو يقصد؟",
+        "notes": "sub_type: idiom_pragmatics; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "مريض",
+          "نحيف",
+          "مرح ولطيف وتحبّه النفس",
+          "بخيل"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0007",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«طلعت روحي» بجملة «طلعت روحي وأنا أشتغل بهالشغلة». المقصود؟",
+        "notes": "sub_type: idiom_pragmatics; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "تعب كثيراً وأُنهك",
+          "مات",
+          "فرح",
+          "سافر"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0008",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "أم تگول لبنتها: «بنيّتي، لا تطلعين هالوكت، الدنيا ظلمة». شنو تقصد؟",
+        "notes": "sub_type: contextual_inference; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "تحذّرها وتمنعها من الخروج لأن الوقت تأخّر وأظلم",
+          "تطلب منها تشغّل الضوء",
+          "تمدح الطقس",
+          "تسألها عن الوقت"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0009",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "بالسوق، البائع گال: «آخر سعر، والله ما أگدر أنزّل أكثر». شنو يفهم الزبون؟",
+        "notes": "sub_type: contextual_inference; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "البائع يريد يرفع السعر",
+          "البائع وصل لأقل سعر وما راح يخفّض أكثر",
+          "البائع سيغلق المحل",
+          "البائع نفد مخزونه"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0010",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "بالعراقي «بعده ما وصل القطار». شنو معنى «بعده» هنا؟",
+        "notes": "sub_type: msa_false_friend; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "من ثمّ / لاحقاً",
+          "قريب",
+          "بعيد",
+          "لا يزال / لحد الآن (لم يصل بعد)"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "A",
+      "score": 0
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0011",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "baghdadi",
+        "contamination_tier": "public_dev",
+        "prompt": "«شگد» بجملة «شگد سعر هذا؟» تعني؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "متى",
+          "كم / ما المقدار",
+          "ليش",
+          "وين"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0012",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«اكو» بجملة «اكو خبز بالبيت؟» تعني؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "هل انتهى",
+          "هل هو حارّ",
+          "يوجد / هل يوجد",
+          "منو سوّاه"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0013",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«وياك» بجملة «آني وياك» تعني؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "ضدّك",
+          "بدالك",
+          "قبلك",
+          "معك"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0014",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«شنو دا تسوي؟» — «دا» هنا تفيد؟",
+        "notes": "sub_type: morphosyntax; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "المستقبل",
+          "الماضي",
+          "الحال المستمر (الآن)",
+          "الأمر"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0015",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«ماكو أحد بالبيت» — «ماكو» تعني؟",
+        "notes": "sub_type: morphosyntax; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "يوجد بكثرة",
+          "يوجد شويّة",
+          "يمكن يوجد",
+          "لا يوجد"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0016",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«إيده طويلة» عن شخص، شنو تعني؟",
+        "notes": "sub_type: idiom_pragmatics; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "يسرق ويمدّ يده على مال غيره",
+          "كريم زايد",
+          "قوي وشجاع",
+          "طويل القامة"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0017",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«گلبه أبيض» عن شخص، شنو تعني؟",
+        "notes": "sub_type: idiom_pragmatics; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "قلبه مريض",
+          "طيّب ونيّته حسنة",
+          "خايف",
+          "بخيل"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0018",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "تشوف واحد يشيل حِمل ثقيل، تگله «الله يعينك». شنو تقصد؟",
+        "notes": "sub_type: contextual_inference; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "تواسيه وتدعو له على التعب",
+          "تسخر منه",
+          "تطلب مساعدته",
+          "تشكره على هدية"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0019",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "southern",
+        "contamination_tier": "public_dev",
+        "prompt": "صاحب المحل يگلك «تدلّل، خذ راحتك». شنو يقصد؟",
+        "notes": "sub_type: contextual_inference; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "يطردك",
+          "يرفض البيع",
+          "يتكرّم ويرحّب بك",
+          "يستعجلك تطلع"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0020",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«صارلي ساعة أنتظر» — «صار» هنا تفيد؟",
+        "notes": "sub_type: msa_false_friend; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "أصبح شيئاً آخر",
+          "ذهب بعيداً",
+          "نجح",
+          "مضى ومرّ (زمن)"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0021",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«شلونك» بجملة «شلونك اليوم، أحسن؟» تعني؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "كيف حالك",
+          "وين رايح",
+          "شنو تريد",
+          "متى جيت"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0022",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«زحمة» بجملة «الشارع زحمة اليوم» تعني؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "فارغ",
+          "مزدحم / مكتظ بالناس والسيارات",
+          "مغلق",
+          "بعيد"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0023",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "southern",
+        "contamination_tier": "public_dev",
+        "prompt": "«جان» بجملة «جان زين لو ما جان؟» — «جان» تفيد؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "مكان",
+          "جاء",
+          "كان (فعل ماضٍ للكينونة)",
+          "جميل"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0024",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«چان راح أروح بس ما گدرت» — «چان راح» تفيد؟",
+        "notes": "sub_type: morphosyntax; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "ذهبت فعلاً",
+          "سأذهب أكيد",
+          "لن أذهب أبداً",
+          "كنت سأذهب (لكن لم يحصل)"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0025",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«خلّي نروح» — «خلّي» هنا تفيد؟",
+        "notes": "sub_type: morphosyntax; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "دعنا / هيّا (حثّ على الفعل)",
+          "اترك المكان",
+          "توقّف",
+          "انتظر"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0026",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«ما يسوى فلس» عن شيء، شنو تعني؟",
+        "notes": "sub_type: idiom_pragmatics; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "بلا قيمة ولا فائدة",
+          "رخيص بفلس واحد",
+          "غالي جداً",
+          "نادر"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0027",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "baghdadi",
+        "contamination_tier": "public_dev",
+        "prompt": "«يبيع الماي بمحلة العطّاشة» — المثل يوصف؟",
+        "notes": "sub_type: idiom_pragmatics; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "شخص كريم يسقي الناس",
+          "شخص يتاجر بشيء عند أهله وفير أصلاً",
+          "بائع فاشل",
+          "رجل غني"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0028",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "واحد يشتكي من غلاء الأسعار، صاحبه يگله «شنسوي، هيچ صارت الدنيا». شنو يقصد الصاحب؟",
+        "notes": "sub_type: contextual_inference; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "يقترح حلاً عملياً",
+          "يلوم صاحبه",
+          "يستسلم للواقع ويعبّر عن العجز أمام الحال",
+          "يفرح بالغلاء"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0029",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "بالعزيمة، صاحب البيت يگلك «هذا بيتك، لا تستحي». شنو يقصد؟",
+        "notes": "sub_type: contextual_inference; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "يطلب منك تنظّف",
+          "يستعجلك تطلع",
+          "يشجّعك تتصرّف على راحتك بلا كلفة",
+          "يسألك عن بيتك"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0030",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«هواي تعبت اليوم» — «هواي» تعني؟",
+        "notes": "sub_type: msa_false_friend; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "قليلاً",
+          "هوايتي",
+          "أبداً",
+          "كثيراً / جداً"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0031",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«كلش» بجملة «الأكل كلش زين» تعني؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "جداً / تماماً",
+          "قليلاً",
+          "أبداً",
+          "أحياناً"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0032",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«شويّة» بجملة «انطني شويّة ماي» تعني؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "كثيراً",
+          "بسرعة",
+          "غداً",
+          "قليلاً"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0033",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«شوكت» بجملة «شوكت تجي؟» تعني؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "كم",
+          "ليش",
+          "كيف",
+          "متى"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "A",
+      "score": 0
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0034",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«گاعد آكل» — «گاعد» هنا تفيد؟",
+        "notes": "sub_type: morphosyntax; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "سآكل لاحقاً",
+          "الآن أتناول الطعام (فعل مستمر)",
+          "أكلت وخلصت",
+          "لن آكل"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0035",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«مو زين هذا» — «مو» هنا تفيد؟",
+        "notes": "sub_type: morphosyntax; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "ليس / غير (نفي)",
+          "جيّد جداً",
+          "ربما جيّد",
+          "جيّد قليلاً"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0036",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«دير بالك» بجملة «دير بالك من السيارة!» تعني؟",
+        "notes": "sub_type: idiom_pragmatics; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "أسرع",
+          "انتبه واحترس",
+          "انسَ الأمر",
+          "نَم"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0037",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«عاش من شافك!» يُقال لِـ؟",
+        "notes": "sub_type: idiom_pragmatics; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "شخص مريض",
+          "طفل صغير",
+          "ضيف غريب",
+          "شخص غاب مدة طويلة ونشتاق له"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0038",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "واحد يطلب منك خدمة ويگلك بإلحاح «الله يخليك، ساعدني». شنو يقصد؟",
+        "notes": "sub_type: contextual_inference; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "يشكرك على هدية",
+          "يودّعك",
+          "يتوسّل ويطلب منك بإلحاح ومودّة",
+          "يعتذر منك"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0039",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "واحد زعلان ويصيح، صاحبه يگله «طوّل بالك». شنو يقصد؟",
+        "notes": "sub_type: contextual_inference; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "استعجل",
+          "اذهب من هنا",
+          "ارفع صوتك أكثر",
+          "اهدأ وتصبّر"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0040",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«الجهال يلعبون بالحوش» — «الجهال» هنا تعني؟",
+        "notes": "sub_type: msa_false_friend; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "الأطفال",
+          "الجهلة / قليلو المعرفة",
+          "الكبار في السن",
+          "الضيوف"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "B",
+      "score": 0
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0041",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "بالعراقي، شنو معنى «إهني» بجملة «تعال إهني»؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "هنا (هذا المكان)",
+          "هناك (مكان بعيد)",
+          "فوق",
+          "تحت"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "B",
+      "score": 0
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0042",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«بس» بجملة «خلص، بس هيچي» تعني؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "أيضاً",
+          "لكن دائماً",
+          "ربما",
+          "فقط / يكفي"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0043",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«يمّ» بجملة «اقعد يمّي» تعني؟",
+        "notes": "sub_type: lexical_meaning; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "أمام",
+          "خلف",
+          "بعيد عن",
+          "بجانب / قرب"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0044",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«راح أشوفك باچر» — «باچر» تعني؟",
+        "notes": "sub_type: morphosyntax; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "الآن",
+          "غداً",
+          "البارحة",
+          "بعد سنة"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0045",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«تعالي لهنا» موجّهة لِـ؟",
+        "notes": "sub_type: morphosyntax; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "أنثى مفردة",
+          "ذكر مفرد",
+          "جماعة",
+          "مثنّى"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0046",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«إيده مفتوحة» عن شخص، شنو تعني؟",
+        "notes": "sub_type: idiom_pragmatics; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "سارق",
+          "كريم وينفق بسخاء",
+          "عاطل عن العمل",
+          "مصاب بيده"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0047",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«راسه يابس» عن شخص، شنو تعني؟",
+        "notes": "sub_type: idiom_pragmatics; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "عنيد لا يسمع الكلام",
+          "ذكي جداً",
+          "مريض",
+          "أصلع"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0048",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "تسأل واحد عن صحته يگلك «الحمدلله، نشكر ربنا». شنو يقصد؟",
+        "notes": "sub_type: contextual_inference; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "يشكو من مرض شديد",
+          "يطلب مساعدة",
+          "حاله جيّد ويعبّر عن الرضا والامتنان",
+          "غاضب منك"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0049",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "واحد يحچي هواية بلا فائدة، صاحبه يگله «خلص، وصّل الزبدة». شنو يقصد؟",
+        "notes": "sub_type: contextual_inference; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "يطلب منه زبدة للأكل",
+          "يطلب منه يسكت نهائياً",
+          "يطلب منه يدخل بصلب الموضوع ويترك الحشو",
+          "يطلب منه يرفع صوته"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-DC-0050",
+        "track": "iraqi",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "mixed",
+        "contamination_tier": "public_dev",
+        "prompt": "«عندي شغلة لازم أخلّصها» — «شغلة» هنا تعني؟",
+        "notes": "sub_type: msa_false_friend; [pending-orthography]; approved by Dr. Nawar (language authority).",
+        "choices": [
+          "وظيفة دائمة",
+          "مَهمّة / أمر يحتاج إنجاز",
+          "آلة",
+          "مشكلة كبيرة"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0001",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "منو أول ملك للعراق بعد تأسيس المملكة سنة 1921؟",
+        "notes": "sub_type: history; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "غازي الأول",
+          "فيصل الأول",
+          "فيصل الثاني",
+          "عبدالكريم قاسم"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0002",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "في 14 تموز 1958 حدث تحوّل سياسي كبير بالعراق، شنو كان؟",
+        "notes": "sub_type: history; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "تأسيس المملكة العراقية",
+          "الاستقلال عن بريطانيا",
+          "سقوط النظام الملكي وقيام الجمهورية",
+          "توحيد العراق"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0003",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "مركز محافظة الأنبار هو مدينة؟",
+        "notes": "sub_type: geography; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "الفلوجة",
+          "هيت",
+          "الرمادي",
+          "حديثة"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0004",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "أي محافظة عراقية لها منفذ بحري على الخليج العربي؟",
+        "notes": "sub_type: geography; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "ميسان",
+          "ذي قار",
+          "واسط",
+          "البصرة"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0005",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "مدينة أور الأثرية (زقورة أور) تقع في محافظة؟",
+        "notes": "sub_type: geography; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "بابل",
+          "نينوى",
+          "ذي قار",
+          "ميسان"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0006",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "العاصمة الرسمية لجمهورية العراق هي مدينة؟",
+        "notes": "sub_type: constitution_institutions; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "البصرة",
+          "الموصل",
+          "بغداد",
+          "أربيل"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0007",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "بحسب دستور 2005، ما اللغتان الرسميتان في العراق؟",
+        "notes": "sub_type: constitution_institutions; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "العربية فقط",
+          "العربية والتركمانية",
+          "العربية والإنكليزية",
+          "العربية والكردية"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0008",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "أكلة «الدولمة» العراقية تتكوّن أساساً من؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "سمك مشوي",
+          "خضار وأوراق محشيّة بالرز واللحم",
+          "حلوى بالتمر",
+          "شوربة عدس"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0009",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«المقام العراقي» هو؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "نوع من الأكل",
+          "فن غنائي تراثي عراقي أصيل",
+          "رقصة شعبية",
+          "لباس تقليدي"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0010",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "آلة «الجوزة» في الموسيقى العراقية التراثية هي؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "آلة موسيقية وترية تُعزف بالقوس",
+          "نوع من الطبول",
+          "آلة نفخ",
+          "أكلة شعبية"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0011",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "مدينة بغداد أسّسها الخليفة أبو جعفر المنصور سنة 762م لتكون عاصمة للدولة؟",
+        "notes": "sub_type: history; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "الأموية",
+          "العباسية",
+          "الفاطمية",
+          "العثمانية"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0012",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "الملك حمورابي، صاحب أقدم شريعة مكتوبة، حكم مدينة؟",
+        "notes": "sub_type: history; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "بابل",
+          "نينوى",
+          "أور",
+          "الحضر"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0013",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "نهر دجلة يمرّ بمدينة الموصل، وأي عاصمة كبرى يمرّ بيها بوسط العراق؟",
+        "notes": "sub_type: geography; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "بغداد",
+          "أربيل",
+          "النجف",
+          "الرمادي"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0014",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "كم عدد محافظات العراق حالياً؟",
+        "notes": "sub_type: geography; approved by Dr. Nawar (domain authority). time_sensitive: updated to 19 after Halabja became a governorate (2025); 18 is the old count (distractor). Verified via recent sources.",
+        "choices": [
+          "18",
+          "19",
+          "15",
+          "21"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0015",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "تُعدّ مدينة أربيل عاصمةً لـ؟",
+        "notes": "sub_type: geography; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "محافظة البصرة",
+          "محافظة الأنبار",
+          "محافظة ذي قار",
+          "إقليم كردستان العراق"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0016",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "العملة الرسمية للعراق هي؟",
+        "notes": "sub_type: constitution_institutions; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "الدينار العراقي",
+          "الريال",
+          "الدرهم",
+          "الليرة"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0017",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "السلطة التشريعية في العراق ممثّلة بـ؟",
+        "notes": "sub_type: constitution_institutions; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "مجلس الوزراء",
+          "مجلس النواب",
+          "المحكمة الاتحادية العليا",
+          "مجلس القضاء الأعلى"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0018",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "تُحضَّر حلوى «الكليجة» العراقية تقليدياً بمناسبة؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "الامتحانات",
+          "الأعياد (كعيد الفطر)",
+          "فصل الصيف",
+          "يوم السوق"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0019",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«الأبوذية» في التراث العراقي هي نوع من؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "الأكل",
+          "الرقص",
+          "الملابس",
+          "الشعر الشعبي الغنائي"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0020",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "أكلة «الپاچة» العراقية تُحضَّر أساساً من؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "رأس وكوارع (أرجل) الخروف",
+          "الدجاج والرز",
+          "السمك",
+          "الخضار"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0021",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "الحضارة اللي اشتهرت بمدينة أور وأوروك ونظام الكتابة المسماري بجنوب العراق هي؟",
+        "notes": "sub_type: history; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "الفرعونية",
+          "الفينيقية",
+          "الرومانية",
+          "السومرية"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0022",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«المتنبّي» أشهر شعراء العربية، في أي مدينة عراقية وُلد؟",
+        "notes": "sub_type: history; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "الكوفة",
+          "البصرة",
+          "الموصل",
+          "بغداد"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0023",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "مركز محافظة نينوى هو مدينة؟",
+        "notes": "sub_type: geography; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "تلعفر",
+          "سنجار",
+          "الموصل",
+          "الحمدانية"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0024",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "الأهوار العراقية (المسجّلة بقائمة التراث العالمي) تقع أساساً ضمن محافظات؟",
+        "notes": "sub_type: geography; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "ميسان وذي قار والبصرة",
+          "الأنبار ونينوى",
+          "أربيل ودهوك",
+          "بغداد وديالى"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0025",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "أعلى سلطة قضائية اتحادية تفصل بالنزاعات الدستورية في العراق هي؟",
+        "notes": "sub_type: constitution_institutions; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "مجلس النواب",
+          "مجلس الوزراء",
+          "الأمانة العامة لمجلس الوزراء",
+          "المحكمة الاتحادية العليا"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0026",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "النظام السياسي في العراق بحسب دستور 2005 هو نظام؟",
+        "notes": "sub_type: constitution_institutions; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "جمهوري نيابي (برلماني) اتحادي",
+          "ملكي",
+          "رئاسي مطلق",
+          "عسكري"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0027",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«المسگوف» أكلة عراقية شهيرة، تُحضَّر بطريقة؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "قلي الدجاج",
+          "شيّ السمك على الحطب/الجمر",
+          "سلق اللحم",
+          "خبز بالتنّور"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0028",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«التمر» من أشهر منتجات العراق الزراعية، ويأتي من شجرة؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "الزيتون",
+          "الرمّان",
+          "العنب",
+          "النخيل"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0029",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«الچايخانة» مصطلح عراقي تراثي (يقابله حديثاً «المقهى/الكوفي»)، وكان يدل على مكان؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority). heritage_term: چايخانة is archaic; modern equivalent مقهى/كوفي. Framed explicitly as heritage.",
+        "choices": [
+          "لبيع الخبز",
+          "لتصليح السيارات",
+          "للصلاة",
+          "يُقدَّم فيه الشاي ويجتمع فيه الناس"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0030",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«الدشداشة» في اللباس العراقي التقليدي هي؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "غطاء رأس نسائي",
+          "لباس رجالي طويل فضفاض",
+          "نوع حلوى",
+          "آلة موسيقية"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0031",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "مدينة البصرة اشتهرت قديماً (زمن الجاحظ وأبي نواس) كمركز؟",
+        "notes": "sub_type: history; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "علمي ولغوي وأدبي",
+          "صناعي عسكري",
+          "للتعدين",
+          "للملاحة الفضائية"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0032",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«بيت الحكمة» الشهير كمركز للترجمة والعلوم في العصر العباسي، كان في مدينة؟",
+        "notes": "sub_type: history; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "سامراء",
+          "بغداد",
+          "الكوفة",
+          "واسط"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0033",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "مدينة «سامرّاء» الأثرية ومنارتها الملوية الشهيرة، تقع في محافظة؟",
+        "notes": "sub_type: geography; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "بغداد",
+          "ديالى",
+          "صلاح الدين",
+          "الأنبار"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0034",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "مدينتا النجف وكربلاء تقعان في؟",
+        "notes": "sub_type: geography; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "وسط العراق (الفرات الأوسط)",
+          "شمال العراق",
+          "أقصى الغرب",
+          "إقليم كردستان"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0035",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "مدة الدورة الانتخابية لمجلس النواب العراقي بحسب الدستور هي؟",
+        "notes": "sub_type: constitution_institutions; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "سنتان",
+          "أربع سنوات",
+          "ست سنوات",
+          "ثماني سنوات"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0036",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "من ينتخب رئيس الجمهورية في العراق بحسب دستور 2005؟",
+        "notes": "sub_type: constitution_institutions; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "الشعب مباشرةً",
+          "مجلس الوزراء",
+          "المحكمة الاتحادية",
+          "مجلس النواب"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0037",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«الگيمر» (القيمر) في الفطور العراقي التقليدي هو؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "قشطة دسمة تُؤكل مع العسل والخبز",
+          "نوع من الشاي",
+          "لحم مشوي",
+          "حلوى جافة"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0038",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«العباية» في اللباس العراقي التقليدي ترتبط أكثر بـ؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "غطاء للطعام",
+          "فراش للنوم",
+          "لباس نسائي يغطّي الجسم",
+          "أداة زراعية"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0039",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«الزفّة» في الأعراس العراقية هي؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "نوع من الطعام",
+          "مهر العروس",
+          "موكب احتفالي مصحوب بالغناء والطبل للعروسين",
+          "عقد الزواج"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0040",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«المربّعة» و«الدارمي» في الأدب الشعبي العراقي أنواع من؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "الرقص",
+          "الأكل",
+          "الألعاب الرياضية",
+          "الشعر الشعبي (الغناء الفلكلوري)"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0041",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«حدائق بابل المعلّقة» إحدى عجائب الدنيا القديمة، تُنسب لحضارة قامت في؟",
+        "notes": "sub_type: history; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "مصر القديمة",
+          "اليونان",
+          "الهند",
+          "بلاد الرافدين (العراق القديم)"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0042",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "مدينة «الحضر» الأثرية (المسجّلة بالتراث العالمي) اشتهرت كمدينة في العصر؟",
+        "notes": "sub_type: history; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "العباسي",
+          "العثماني",
+          "ما قبل الإسلام (مملكة الحضر)",
+          "الحديث"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0043",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "مركز محافظة ذي قار هو مدينة؟",
+        "notes": "sub_type: geography; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "الرفاعي",
+          "الشطرة",
+          "الناصرية",
+          "سوق الشيوخ"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0044",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "نهرا دجلة والفرات ينبعان أساساً من؟",
+        "notes": "sub_type: geography; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "إيران",
+          "السعودية",
+          "تركيا",
+          "سوريا"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0045",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "منصب رئيس مجلس الوزراء (رئيس الحكومة) في العراق مسؤول عن؟",
+        "notes": "sub_type: constitution_institutions; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "إصدار الأحكام القضائية",
+          "تشريع القوانين وحده",
+          "قيادة المعارضة",
+          "السلطة التنفيذية وإدارة الحكومة"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0046",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«البيشمركة» في العراق تشير إلى؟",
+        "notes": "sub_type: constitution_institutions; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "القوات المسلحة لإقليم كردستان",
+          "وزارة المالية",
+          "مجلس المحافظة",
+          "نقابة المعلمين"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0047",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«التنّور» في البيوت العراقية التقليدية يُستخدم لـ؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "غسل الملابس",
+          "خبز الخبز (كالصمون والخبز التنّوري)",
+          "تخزين الماء",
+          "الجلوس"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0048",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«الشاي» في الضيافة العراقية يُقدَّم عادةً؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "بارداً بكوب كبير",
+          "مع الملح",
+          "حاراً في استكانة (كأس صغير)",
+          "مرة واحدة بالسنة"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0049",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«الهوسة» في المناسبات العراقية هي؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "نوع من الحلوى",
+          "إنشاد جماعي حماسي (أهازيج)",
+          "لعبة أطفال",
+          "أداة زراعية"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-I-KNO-0050",
+        "track": "iraqi",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«المشحوف» في أهوار جنوب العراق هو؟",
+        "notes": "sub_type: popular_culture; approved by Dr. Nawar (domain authority).",
+        "choices": [
+          "قارب خشبي طويل ضيّق",
+          "بيت من القصب",
+          "شبكة صيد",
+          "نوع من السمك"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0001",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة ميسان — مكتب رئيس الجامعة\nالعدد: 1/7/2589\nالتاريخ: 2026/2/15\nإلى / عمادة كلية التربية\nم/ تشكيل لجنة امتحانية\nتحية طيبة،\nتقرر تشكيل لجنة امتحانية للإشراف على الامتحانات النهائية للفصل الدراسي الأول، برئاسة السيد عميد الكلية وعضوية رؤساء الأقسام. يُرجى إكمال الإجراءات اللازمة قبل بدء الامتحانات.\nمع التقدير،\nرئيس جامعة ميسان",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة ميسان / مكتب رئيس الجامعة",
+          "document_number": "1/7/2589",
+          "date": "2026-02-15",
+          "recipient": "عمادة كلية التربية",
+          "subject": "تشكيل لجنة امتحانية",
+          "required_action": "إكمال الإجراءات اللازمة قبل بدء الامتحانات"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"جامعة ميسان — مكتب رئيس الجامعة\",\n  \"document_number\": \"1/7/2589\",\n  \"date\": \"2026/2/15\",\n  \"recipient\": \"عمادة كلية التربية\",\n  \"subject\": \"تشكيل لجنة امتحانية\",\n  \"required_action\": \"تشكيل لجنة امتحانية للإشراف على الامتحانات النهائية للفصل الدراسي الأول وإكمال الإجراءات اللازمة قبل بدء الامتحانات\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0002",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التربية\nالمديرية العامة لتربية محافظة ذي قار\nالعدد: 35120\nالتاريخ: 2026/3/3\nإلى / كافة المدارس الابتدائية والثانوية\nم/ تعميم بشأن العطلة الربيعية\nتحية طيبة،\nنعلمكم بأن العطلة الربيعية ستبدأ يوم الأحد الموافق 2026/3/22 ولمدة أسبوعين، على أن يُستأنف الدوام بعدها. يُرجى إعلام الطلبة وأولياء أمورهم.\nمع التقدير،\nالمدير العام لتربية ذي قار",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "المديرية العامة لتربية محافظة ذي قار",
+          "document_number": "35120",
+          "date": "2026-03-03",
+          "recipient": "كافة المدارس الابتدائية والثانوية",
+          "subject": "تعميم بشأن العطلة الربيعية",
+          "required_action": "إعلام الطلبة وأولياء أمورهم ببدء العطلة الربيعية"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"المديرية العامة لتربية محافظة ذي قار، وزارة التربية، جمهورية العراق\",\n  \"document_number\": \"35120\",\n  \"date\": \"2026/3/3\",\n  \"recipient\": \"كافة المدارس الابتدائية والثانوية\",\n  \"subject\": \"تعميم بشأن العطلة الربيعية\",\n  \"required_action\": \"إعلام الطلبة وأولياء أمورهم ببدء العطلة الربيعية يوم 2026/3/22 ولمدة أسبوعين واستئناف الدوام بعدها\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0003",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة الصحة\nدائرة صحة محافظة البصرة\nالعدد: 4471\nالتاريخ: 2026/1/28\nإلى / مستشفى البصرة التعليمي\nم/ تكليف طبيب\nتحية طيبة،\nتقرر تكليف الطبيب المذكور أدناه بالعمل في قسم الطوارئ اعتباراً من 2026/2/1. يُرجى تهيئة مستلزمات المباشرة وإشعارنا بالتاريخ الفعلي للمباشرة.\nمع التقدير،\nمدير عام دائرة صحة البصرة",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "دائرة صحة محافظة البصرة",
+          "document_number": "4471",
+          "date": "2026-01-28",
+          "recipient": "مستشفى البصرة التعليمي",
+          "subject": "تكليف طبيب",
+          "required_action": "تهيئة مستلزمات المباشرة وإشعار الدائرة بتاريخ المباشرة الفعلي"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"دائرة صحة محافظة البصرة - وزارة الصحة - جمهورية العراق\",\n  \"document_number\": \"4471\",\n  \"date\": \"2026/1/28\",\n  \"recipient\": \"مستشفى البصرة التعليمي\",\n  \"subject\": \"تكليف طبيب\",\n  \"required_action\": \"تهيئة مستلزمات المباشرة وإشعارنا بالتاريخ الفعلي للمباشرة\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0004",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nأمانة مجلس الوزراء\nاللجنة الوطنية للتحول الرقمي\nالعدد: ل و/512\nالتاريخ: 2026/4/10\nإلى / السادة أعضاء اللجنة كافة\nم/ دعوة لحضور اجتماع\nتحية طيبة،\nيُرجى حضوركم الاجتماع الدوري للجنة المقرر عقده يوم الثلاثاء الموافق 2026/4/16 الساعة العاشرة صباحاً في مقر الأمانة العامة، لمناقشة خطة العمل للربع القادم.\nمع التقدير،\nرئيس اللجنة الوطنية للتحول الرقمي",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "أمانة مجلس الوزراء / اللجنة الوطنية للتحول الرقمي",
+          "document_number": "ل و/512",
+          "date": "2026-04-10",
+          "recipient": "أعضاء اللجنة كافة",
+          "subject": "دعوة لحضور اجتماع",
+          "required_action": "حضور الاجتماع الدوري يوم الثلاثاء 2026/4/16 الساعة العاشرة صباحاً"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"اللجنة الوطنية للتحول الرقمي - أمانة مجلس الوزراء - جمهورية العراق\",\n  \"document_number\": \"ل و/512\",\n  \"date\": \"2026/4/10\",\n  \"recipient\": \"السادة أعضاء اللجنة كافة\",\n  \"subject\": \"دعوة لحضور اجتماع\",\n  \"required_action\": \"حضور الاجتماع الدوري المقرر يوم الثلاثاء 2026/4/16 الساعة العاشرة صباحاً في مقر الأمانة العامة\"\n}",
+      "score": 0.3333333333333333
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0005",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة بغداد — مكتب رئيس الجامعة\nالعدد: أ.إ/9032\nالتاريخ: 2026/5/6\nم/ أمر إداري\nاستناداً إلى الصلاحيات المخوّلة لنا، تقرر منح التدريسي (الاسم مُحاكى) في كلية الهندسة إجازة دراسية لإكمال دراسة الدكتوراه لمدة ثلاث سنوات اعتباراً من 2026/9/1، على أن يلتزم بالتعليمات النافذة.\nمع التقدير،\nرئيس جامعة بغداد",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة بغداد / مكتب رئيس الجامعة",
+          "document_number": "أ.إ/9032",
+          "date": "2026-05-06",
+          "subject": "أمر إداري (منح إجازة دراسية)",
+          "required_action": "منح التدريسي إجازة دراسية لإكمال الدكتوراه لمدة ثلاث سنوات اعتباراً من 2026/9/1"
+        }
+      },
+      "raw_response": "```json\n{\n    \"issuing_authority\": \"رئيس جامعة بغداد\",\n    \"document_number\": \"أ.إ/9032\",\n    \"date\": \"2026/5/6\",\n    \"subject\": \"منح التدريسي في كلية الهندسة إجازة دراسية لإكمال دراسة الدكتوراه\",\n    \"required_action\": \"منح إجازة دراسية لمدة ثلاث سنوات اعتباراً من 2026/9/1 والالتزام بالتعليمات النافذة\"\n}\n```",
+      "score": 0.2
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0006",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة الموارد المائية\nمديرية موارد مياه محافظة ميسان\nالعدد: 2208\nالتاريخ: 2026/2/9\nإلى / وزارة الموارد المائية / مكتب الوزير\nم/ طلب تخصيص آليات\nتحية طيبة،\nنظراً لحاجة المديرية الماسّة لكري الأنهر والجداول قبل موسم الصيف، نرجو الموافقة على تخصيص آليتي حفر إضافيتين. يُرجى التفضل بالموافقة وإصدار التوجيهات اللازمة.\nمع التقدير،\nمدير موارد مياه ميسان",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "مديرية موارد مياه محافظة ميسان",
+          "document_number": "2208",
+          "date": "2026-02-09",
+          "recipient": "وزارة الموارد المائية / مكتب الوزير",
+          "subject": "طلب تخصيص آليات",
+          "required_action": "الموافقة على تخصيص آليتي حفر إضافيتين وإصدار التوجيهات اللازمة"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"مديرية موارد مياه محافظة ميسان - وزارة الموارد المائية\",\n  \"document_number\": \"2208\",\n  \"date\": \"2026/2/9\",\n  \"recipient\": \"وزارة الموارد المائية / مكتب الوزير\",\n  \"subject\": \"طلب تخصيص آليات\",\n  \"required_action\": \"تخصيص آليتي حفر إضافيتين لكري الأنهر والجداول قبل موسم الصيف\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0007",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nمحافظة النجف الأشرف\nمكتب المحافظ\nالعدد: 771\nالتاريخ: 2026/3/17\nإلى / مديرية بلدية النجف\nم/ كتاب شكر وتقدير\nتحية طيبة،\nتقديراً للجهود المتميزة التي بذلتموها في حملة تنظيف المدينة استعداداً للزيارة، نتوجّه لكم بالشكر والتقدير، راجين الاستمرار بهذا المستوى من الأداء.\nمع التقدير،\nمحافظ النجف الأشرف",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "محافظة النجف الأشرف / مكتب المحافظ",
+          "document_number": "771",
+          "date": "2026-03-17",
+          "recipient": "مديرية بلدية النجف",
+          "subject": "كتاب شكر وتقدير",
+          "required_action": "الاستمرار بالمستوى المتميز من الأداء"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"محافظة النجف الأشرف - مكتب المحافظ\",\n  \"document_number\": \"771\",\n  \"date\": \"2026/3/17\",\n  \"recipient\": \"مديرية بلدية النجف\",\n  \"subject\": \"كتاب شكر وتقدير\",\n  \"required_action\": \"الاستمرار بهذا المستوى من الأداء\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0008",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة العمل والشؤون الاجتماعية\nدائرة العمل والتدريب المهني\nالعدد: 6034\nالتاريخ: 2026/1/12\nإلى / مديرية العمل في محافظة كركوك\nم/ استفسار عن أعداد المتدربين\nتحية طيبة،\nيُرجى تزويدنا بأعداد المتدربين المسجّلين في دورات التدريب المهني للعام الحالي، مبوّبة حسب الاختصاص، وذلك خلال مدة أقصاها أسبوع من تاريخه.\nمع التقدير،\nمدير عام دائرة العمل والتدريب المهني",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "دائرة العمل والتدريب المهني",
+          "document_number": "6034",
+          "date": "2026-01-12",
+          "recipient": "مديرية العمل في محافظة كركوك",
+          "subject": "استفسار عن أعداد المتدربين",
+          "required_action": "تزويد الدائرة بأعداد المتدربين مبوّبة حسب الاختصاص خلال أسبوع"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"دائرة العمل والتدريب المهني - وزارة العمل والشؤون الاجتماعية\",\n  \"document_number\": \"6034\",\n  \"date\": \"2026-01-12\",\n  \"recipient\": \"مديرية العمل في محافظة كركوك\",\n  \"subject\": \"استفسار عن أعداد المتدربين\",\n  \"required_action\": \"تزويد بأعداد المتدربين المسجّلين في دورات التدريب المهني للعام الحالي، مبوّبة حسب الاختصاص، خلال مدة أقصاها أسبوع\"\n}",
+      "score": 0.6666666666666666
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0009",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة البصرة — مكتب رئيس الجامعة\nالعدد: 3/ت/1180\nالتاريخ: 2026/4/2\nإلى / عمادة كلية العلوم\nم/ تشكيل لجنة تحقيقية\nتحية طيبة،\nتقرر تشكيل لجنة تحقيقية للنظر في موضوع فقدان بعض الأجهزة المختبرية، برئاسة معاون العميد للشؤون الإدارية وعضوية اثنين من التدريسيين، على أن ترفع اللجنة تقريرها خلال خمسة عشر يوماً من تاريخ التبليغ.\nمع التقدير،\nرئيس جامعة البصرة",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة البصرة / مكتب رئيس الجامعة",
+          "document_number": "3/ت/1180",
+          "date": "2026-04-02",
+          "recipient": "عمادة كلية العلوم",
+          "subject": "تشكيل لجنة تحقيقية",
+          "required_action": "تشكيل اللجنة ورفع تقريرها خلال خمسة عشر يوماً من تاريخ التبليغ"
+        }
+      },
+      "raw_response": "```json\n{\n  \"issuing_authority\": \"رئيس جامعة البصرة\",\n  \"document_number\": \"3/ت/1180\",\n  \"date\": \"2026/4/2\",\n  \"recipient\": \"عمادة كلية العلوم\",\n  \"subject\": \"فقدان بعض الأجهزة المختبرية\",\n  \"required_action\": \"تشكيل لجنة تحقيقية للنظر في الموضوع وإرفاق تقرير خلال خمسة عشر يوماً\"\n}\n```",
+      "score": 0.3333333333333333
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0010",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة الداخلية\nمديرية الأحوال المدنية والجوازات والإقامة\nالعدد: 88450\nالتاريخ: 2026/5/20\nإلى / كافة مديريات الأحوال المدنية في المحافظات\nم/ تعميم بشأن أوقات الدوام\nتحية طيبة،\nاعتباراً من بداية الشهر القادم، يبدأ الدوام الرسمي الساعة الثامنة صباحاً وينتهي الساعة الثانية ظهراً. يُرجى التقيّد وإعلام المراجعين.\nمع التقدير،\nمدير عام الأحوال المدنية والجوازات والإقامة",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "مديرية الأحوال المدنية والجوازات والإقامة",
+          "document_number": "88450",
+          "date": "2026-05-20",
+          "recipient": "كافة مديريات الأحوال المدنية في المحافظات",
+          "subject": "تعميم بشأن أوقات الدوام",
+          "required_action": "التقيّد بأوقات الدوام الجديدة وإعلام المراجعين"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"وزارة الداخلية - مديرية الأحوال المدنية والجوازات والإقامة\",\n  \"document_number\": \"88450\",\n  \"date\": \"2026/5/20\",\n  \"recipient\": \"كافة مديريات الأحوال المدنية في المحافظات\",\n  \"subject\": \"تعميم بشأن أوقات الدوام\",\n  \"required_action\": \"التقيّد بالدوام الجديد (من 8 صباحاً إلى 2 ظهراً) وإعلام المراجعين به ابتداءً من بداية الشهر القادم\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0011",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة الموصل — مكتب رئيس الجامعة\nالعدد: م/2043\nالتاريخ: 2026/2/24\nإلى / عمادة كلية الطب\nم/ الموافقة على إقامة مؤتمر علمي\nتحية طيبة،\nإشارة إلى كتابكم المرقم 512 في 2026/2/10، نعلمكم بالموافقة على إقامة المؤتمر العلمي السنوي للكلية، على أن تُراعى الضوابط المالية والإدارية النافذة. يُرجى تزويدنا بالبرنامج النهائي قبل أسبوعين من موعد المؤتمر.\nمع التقدير،\nرئيس جامعة الموصل",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة الموصل / مكتب رئيس الجامعة",
+          "document_number": "م/2043",
+          "date": "2026-02-24",
+          "recipient": "عمادة كلية الطب",
+          "subject": "الموافقة على إقامة مؤتمر علمي",
+          "required_action": "تزويد الجامعة بالبرنامج النهائي قبل أسبوعين من موعد المؤتمر"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"جامعة الموصل — مكتب رئيس الجامعة\",\n  \"document_number\": \"م/2043\",\n  \"date\": \"2026/2/24\",\n  \"recipient\": \"عمادة كلية الطب\",\n  \"subject\": \"الموافقة على إقامة مؤتمر علمي\",\n  \"required_action\": \"تزويدنا بالبرنامج النهائي قبل أسبوعين من موعد المؤتمر\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0012",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة الكهرباء\nالمديرية العامة لتوزيع كهرباء الفرات الأوسط\nالعدد: 9917\nالتاريخ: 2026/3/28\nإلى / قسم الصيانة\nم/ صيانة محوّلة\nتحية طيبة،\nيُرجى إيفاد فريق صيانة إلى المحوّلة الواقعة في الحيّ الصناعي لمعالجة انقطاع التيار المتكرر، وذلك بأسرع وقت ممكن.\nمع التقدير،\nمدير عام توزيع كهرباء الفرات الأوسط",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "المديرية العامة لتوزيع كهرباء الفرات الأوسط",
+          "document_number": "9917",
+          "date": "2026-03-28",
+          "recipient": "قسم الصيانة",
+          "subject": "صيانة محوّلة",
+          "required_action": "إيفاد فريق صيانة إلى المحوّلة في الحيّ الصناعي بأسرع وقت"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"المديرية العامة لتوزيع كهرباء الفرات الأوسط\",\n  \"document_number\": \"9917\",\n  \"date\": \"2026/3/28\",\n  \"recipient\": \"قسم الصيانة، م/ صيانة محوّلة\",\n  \"subject\": \"انقطاع التيار المتكرر في المحوّلة بالحيّ الصناعي\",\n  \"required_action\": \"إيفاد فريق صيانة للمعالجة بأسرع وقت ممكن\"\n}",
+      "score": 0.3333333333333333
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0013",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nمجلس القضاء الأعلى\nرئاسة محكمة استئناف بغداد/الرصافة الاتحادية\nالعدد: 2571/ش\nالتاريخ: 2026/1/19\nإلى / محكمة بداءة الرصافة\nم/ إحالة معاملة\nتحية طيبة،\nتُحال إليكم المعاملة المرقمة أعلاه للنظر فيها ضمن اختصاصكم واتخاذ ما يلزم قانوناً، مع إعادة الأوليات بعد الحسم.\nمع التقدير،\nرئيس محكمة استئناف بغداد/الرصافة الاتحادية",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "رئاسة محكمة استئناف بغداد/الرصافة الاتحادية",
+          "document_number": "2571/ش",
+          "date": "2026-01-19",
+          "recipient": "محكمة بداءة الرصافة",
+          "subject": "إحالة معاملة",
+          "required_action": "النظر في المعاملة واتخاذ ما يلزم قانوناً وإعادة الأوليات بعد الحسم"
+        }
+      },
+      "raw_response": "```json\n{\n    \"issuing_authority\": \"رئاسة محكمة استئناف بغداد/الرصافة الاتحادية\",\n    \"document_number\": \"2571/ش\",\n    \"date\": \"2026/1/19\",\n    \"recipient\": \"محكمة بداءة الرصافة\",\n    \"subject\": \"إحالة معاملة\",\n    \"required_action\": \"النظر في المعاملة ضمن الاختصاص واتخاذ ما يلزم قانوناً وإعادة الأوليات بعد الحسم\"\n}\n```",
+      "score": 0.6666666666666666
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0014",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nالجامعة التقنية الوسطى — مكتب رئيس الجامعة\nالعدد: 604\nالتاريخ: 2026/4/27\nإلى / عمادة الكلية التقنية الهندسية\nم/ دعوة لحضور مناقشة رسالة ماجستير\nتحية طيبة،\nتقرر إجراء مناقشة رسالة الماجستير للطالب (الاسم مُحاكى) يوم الأربعاء الموافق 2026/5/6 الساعة العاشرة صباحاً في قاعة المناقشات. يُرجى تسهيل حضور اللجنة والمعنيين.\nمع التقدير،\nرئيس الجامعة التقنية الوسطى",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "الجامعة التقنية الوسطى / مكتب رئيس الجامعة",
+          "document_number": "604",
+          "date": "2026-04-27",
+          "recipient": "عمادة الكلية التقنية الهندسية",
+          "subject": "دعوة لحضور مناقشة رسالة ماجستير",
+          "required_action": "تسهيل حضور اللجنة والمعنيين المناقشة يوم الأربعاء 2026/5/6"
+        }
+      },
+      "raw_response": "```json\n{\n    \"issuing_authority\": \"الجامعة التقنية الوسطى — مكتب رئيس الجامعة\",\n    \"document_number\": \"604\",\n    \"date\": \"2026/4/27\",\n    \"recipient\": \"عمادة الكلية التقنية الهندسية\",\n    \"subject\": \"دعوة لحضور مناقشة رسالة ماجستير\",\n    \"required_action\": \"تسهيل حضور اللجنة والمعنيين\"\n}\n```",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0015",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة المالية\nدائرة المحاسبة\nالعدد: خ/7788\nالتاريخ: 2026/5/11\nإلى / وزارة التربية / قسم الحسابات\nم/ إشعار بتخصيص مالي\nتحية طيبة،\nنعلمكم بتخصيص مبلغ مالي ضمن موازنة العام الجاري لأغراض صيانة المدارس، على أن يُصرف وفق الضوابط وتُرسل المستندات المؤيّدة للصرف أصولياً.\nمع التقدير،\nمدير عام دائرة المحاسبة",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "وزارة المالية / دائرة المحاسبة",
+          "document_number": "خ/7788",
+          "date": "2026-05-11",
+          "recipient": "وزارة التربية / قسم الحسابات",
+          "subject": "إشعار بتخصيص مالي",
+          "required_action": "صرف المبلغ وفق الضوابط وإرسال المستندات المؤيّدة للصرف أصولياً"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"دائرة المحاسبة، وزارة المالية، جمهورية العراق\",\n  \"document_number\": \"خ/7788\",\n  \"date\": \"2026/5/11\",\n  \"recipient\": \"وزارة التربية / قسم الحسابات\",\n  \"subject\": \"إشعار بتخصيص مالي\",\n  \"required_action\": \"تصريف مبلغ مالي لأغراض صيانة المدارس وفق الضوابط وإرسال المستندات المؤيدة للصرف أصولياً\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0016",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التربية\nالمديرية العامة لتربية محافظة بابل\nالعدد: 12903\nالتاريخ: 2026/2/6\nإلى / المديرية العامة لتربية محافظة كربلاء\nم/ طلب نقل موظف\nتحية طيبة،\nبناءً على طلب المذكور أدناه ولوجود الملاك، نطلب الموافقة على نقل المدرّس (الاسم مُحاكى) إلى مديريتكم، مع تزويدنا بموافقتكم لإكمال الإجراءات.\nمع التقدير،\nالمدير العام لتربية بابل",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "المديرية العامة لتربية محافظة بابل",
+          "document_number": "12903",
+          "date": "2026-02-06",
+          "recipient": "المديرية العامة لتربية محافظة كربلاء",
+          "subject": "طلب نقل موظف",
+          "required_action": "الموافقة على النقل وتزويد المديرية بها لإكمال الإجراءات"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"المديرية العامة لتربية محافظة بابل\",\n  \"document_number\": \"12903\",\n  \"date\": \"2026/2/6\",\n  \"recipient\": \"المديرية العامة لتربية محافظة كربلاء\",\n  \"subject\": \"طلب نقل موظف\",\n  \"required_action\": \"نقل المدرّس (الاسم مُحاكى) إلى مديريتكم، مع تزويدنا بموافقتكم لإكمال الإجراءات\"\n}",
+      "score": 0.6666666666666666
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0017",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة القادسية — مكتب رئيس الجامعة\nالعدد: ع/338\nالتاريخ: 2026/3/9\nإلى / عمادة كلية الإدارة والاقتصاد\nم/ تنبيه بشأن المواظبة\nتحية طيبة،\nلوحظ تأخّر تسليم درجات الفصل الأول عن الموعد المحدد. يُرجى التنبيه على التدريسيين بضرورة الالتزام بالمواعيد، وتسليم الدرجات خلال ثلاثة أيام.\nمع التقدير،\nرئيس جامعة القادسية",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة القادسية / مكتب رئيس الجامعة",
+          "document_number": "ع/338",
+          "date": "2026-03-09",
+          "recipient": "عمادة كلية الإدارة والاقتصاد",
+          "subject": "تنبيه بشأن المواظبة",
+          "required_action": "التنبيه على التدريسيين بالالتزام بالمواعيد وتسليم الدرجات خلال ثلاثة أيام"
+        }
+      },
+      "raw_response": "```json\n{\n  \"issuing_authority\": \"جامعة القادسية — مكتب رئيس الجامعة\",\n  \"document_number\": \"ع/338\",\n  \"date\": \"2026/3/9\",\n  \"recipient\": \"عمادة كلية الإدارة والاقتصاد\",\n  \"subject\": \"تنبيه بشأن المواظبة\",\n  \"required_action\": \"التنبيه على التدريسيين بضرورة الالتزام بالمواعيد، وتسليم الدرجات خلال ثلاثة أيام\"\n}\n```",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0018",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة الشباب والرياضة\nمديرية شباب ورياضة محافظة أربيل\nالعدد: 455\nالتاريخ: 2026/4/14\nإلى / الاتحاد الرياضي الفرعي\nم/ المشاركة في بطولة\nتحية طيبة،\nيُرجى ترشيح فِرقكم للمشاركة في البطولة السنوية المقرر إقامتها الشهر القادم، وتزويدنا بأسماء المشاركين قبل نهاية هذا الشهر.\nمع التقدير،\nمدير شباب ورياضة أربيل",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "مديرية شباب ورياضة محافظة أربيل",
+          "document_number": "455",
+          "date": "2026-04-14",
+          "recipient": "الاتحاد الرياضي الفرعي",
+          "subject": "المشاركة في بطولة",
+          "required_action": "ترشيح الفِرق وتزويد المديرية بأسماء المشاركين قبل نهاية الشهر"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"وزارة الشباب والرياضة - مديرية شباب ورياضة محافظة أربيل\",\n  \"document_number\": \"455\",\n  \"date\": \"2026/4/14\",\n  \"recipient\": \"الاتحاد الرياضي الفرعي\",\n  \"subject\": \"المشاركة في بطولة\",\n  \"required_action\": \"ترشيح فرق المشاركة وإرسال أسماء المشاركين قبل نهاية الشهر\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0019",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nمحافظة الأنبار\nمكتب المحافظ\nالعدد: 1602\nالتاريخ: 2026/1/31\nإلى / مديرية بلدية الرمادي\nم/ تشكيل فريق طوارئ\nتحية طيبة،\nاستعداداً لموسم الأمطار، يُرجى تشكيل فريق طوارئ لمعالجة تجمّعات المياه، وتزويد مكتبنا بأسماء أعضاء الفريق وخطة العمل خلال ثلاثة أيام.\nمع التقدير،\nمحافظ الأنبار",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "محافظة الأنبار / مكتب المحافظ",
+          "document_number": "1602",
+          "date": "2026-01-31",
+          "recipient": "مديرية بلدية الرمادي",
+          "subject": "تشكيل فريق طوارئ",
+          "required_action": "تشكيل الفريق وتزويد المكتب بأسماء الأعضاء وخطة العمل خلال ثلاثة أيام"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"مكتب محافظ الأنبار\",\n  \"document_number\": \"1602\",\n  \"date\": \"2026-01-31\",\n  \"recipient\": \"مديرية بلدية الرمادي\",\n  \"subject\": \"تشكيل فريق طوارئ\",\n  \"required_action\": \"تشكيل فريق طوارئ لمعالجة تجمّعات المياه وتقديم أسماء الأعضاء وخطة العمل خلال ثلاثة أيام\"\n}",
+      "score": 0.6666666666666666
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0020",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nدائرة البعثات والعلاقات الثقافية\nالعدد: ب/2290\nالتاريخ: 2026/5/25\nإلى / رئاسات الجامعات كافة\nم/ تبليغ بشأن الزمالات الدراسية\nتحية طيبة،\nنودّ إعلامكم بفتح باب التقديم على الزمالات الدراسية للعام القادم. يُرجى تعميم ذلك على التدريسيين المشمولين وترشيح المستوفين للشروط خلال مدة شهر.\nمع التقدير،\nمدير عام دائرة البعثات والعلاقات الثقافية",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "دائرة البعثات والعلاقات الثقافية",
+          "document_number": "ب/2290",
+          "date": "2026-05-25",
+          "recipient": "رئاسات الجامعات كافة",
+          "subject": "تبليغ بشأن الزمالات الدراسية",
+          "required_action": "تعميم الإعلان وترشيح المستوفين للشروط خلال شهر"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"وزارة التعليم العالي والبحث العلمي - دائرة البعثات والعلاقات الثقافية\",\n  \"document_number\": \"ب/2290\",\n  \"date\": \"2026/5/25\",\n  \"recipient\": \"رئاسات الجامعات كافة\",\n  \"subject\": \"تبليغ بشأن الزمالات الدراسية\",\n  \"required_action\": \"تعميم الإعلام بفتح باب التقديم على الزمالات الدراسية للعام القادم على التدريسيين المشمولين وترشيح المستوفين للشروط خلال مدة شهر\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0021",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة ذي قار — مكتب رئيس الجامعة\nالعدد: ت/1447\nالتاريخ: 2026/2/18\nإلى / وزارة التعليم العالي والبحث العلمي / دائرة الدراسات والتخطيط\nم/ طلب تأييد استحداث قسم علمي\nتحية طيبة،\nنظراً للحاجة العلمية وتوفّر المستلزمات، نطلب تأييد استحداث قسم علمي جديد في كلية العلوم، على أن تُرفع الدراسة الخاصة به عند الموافقة المبدئية.\nمع التقدير،\nرئيس جامعة ذي قار",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة ذي قار / مكتب رئيس الجامعة",
+          "document_number": "ت/1447",
+          "date": "2026-02-18",
+          "recipient": "وزارة التعليم العالي والبحث العلمي / دائرة الدراسات والتخطيط",
+          "subject": "طلب تأييد استحداث قسم علمي",
+          "required_action": "تأييد استحداث القسم ورفع الدراسة الخاصة به عند الموافقة المبدئية"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"جامعة ذي قار — مكتب رئيس الجامعة\",\n  \"document_number\": \"ت/1447\",\n  \"date\": \"2026/2/18\",\n  \"recipient\": \"وزارة التعليم العالي والبحث العلمي / دائرة الدراسات والتخطيط\",\n  \"subject\": \"طلب تأييد استحداث قسم علمي\",\n  \"required_action\": \"تأييد استحداث قسم علمي جديد في كلية العلوم\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0022",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة الصحة\nدائرة صحة محافظة نينوى\nالعدد: 5089\nالتاريخ: 2026/3/12\nإلى / منظمة الهلال الأحمر / فرع نينوى\nم/ شكر وتقدير\nتحية طيبة،\nنتقدّم لكم بجزيل الشكر على تعاونكم في الحملة الصحية الأخيرة، ونتطلّع لاستمرار التعاون في الحملات القادمة.\nمع التقدير،\nمدير عام دائرة صحة نينوى",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "دائرة صحة محافظة نينوى",
+          "document_number": "5089",
+          "date": "2026-03-12",
+          "recipient": "منظمة الهلال الأحمر / فرع نينوى",
+          "subject": "شكر وتقدير",
+          "required_action": "استمرار التعاون في الحملات القادمة"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"دائرة صحة محافظة نينوى\",\n  \"document_number\": \"5089\",\n  \"date\": \"2026/3/12\",\n  \"recipient\": \"منظمة الهلال الأحمر / فرع نينوى\",\n  \"subject\": \"شكر وتقدير\",\n  \"required_action\": null\n}",
+      "score": 0.6666666666666666
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0023",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة الخارجية\nدائرة المراسم\nالعدد: مر/909\nالتاريخ: 2026/4/5\nإلى / السيد المدير المختص\nم/ تكليف بمهمة رسمية\nتحية طيبة،\nتقرر تكليفكم بمرافقة الوفد الرسمي الزائر خلال زيارته المقررة، وتهيئة برنامج الاستقبال والترتيبات اللازمة، ورفع تقرير بالنتائج بعد انتهاء الزيارة.\nمع التقدير،\nمدير عام دائرة المراسم",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "وزارة الخارجية / دائرة المراسم",
+          "document_number": "مر/909",
+          "date": "2026-04-05",
+          "recipient": "السيد المدير المختص",
+          "subject": "تكليف بمهمة رسمية",
+          "required_action": "مرافقة الوفد وتهيئة برنامج الاستقبال ورفع تقرير بالنتائج بعد الزيارة"
+        }
+      },
+      "raw_response": "```json\n{\n    \"issuing_authority\": \"دائرة المراسم، وزارة الخارجية، جمهورية العراق\",\n    \"document_number\": \"مر/909\",\n    \"date\": \"2026/4/5\",\n    \"recipient\": \"السيد المدير المختص\",\n    \"subject\": \"تكليف بمهمة رسمية\",\n    \"required_action\": \"مرافقة الوفد الرسمي الزائر، تهيئة برنامج الاستقبال والترتيبات اللازمة، رفع تقرير بالنتائج بعد انتهاء الزيارة\"\n}\n```",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0024",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة كربلاء — مكتب رئيس الجامعة\nالعدد: 2711\nالتاريخ: 2026/5/4\nإلى / عمادات الكليات كافة\nم/ تعميم بشأن التقويم الجامعي\nتحية طيبة،\nتجدون في أدناه التقويم الجامعي المعتمد للعام الدراسي القادم. يُرجى اعتماده وتعميمه على الأقسام والتقيّد بالمواعيد الواردة فيه.\nمع التقدير،\nرئيس جامعة كربلاء",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة كربلاء / مكتب رئيس الجامعة",
+          "document_number": "2711",
+          "date": "2026-05-04",
+          "recipient": "عمادات الكليات كافة",
+          "subject": "تعميم بشأن التقويم الجامعي",
+          "required_action": "اعتماد التقويم وتعميمه على الأقسام والتقيّد بالمواعيد"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"جامعة كربلاء — مكتب رئيس الجامعة\",\n  \"document_number\": \"2711\",\n  \"date\": \"2026/5/4\",\n  \"recipient\": \"عمادات الكليات كافة\",\n  \"subject\": \"تعميم بشأن التقويم الجامعي\",\n  \"required_action\": \"اعتماده وتعميمه على الأقسام والتقيّد بالمواعيد الواردة فيه\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0025",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التخطيط\nالجهاز المركزي للإحصاء\nالعدد: إح/6650\nالتاريخ: 2026/1/22\nإلى / مديريات الإحصاء في المحافظات كافة\nم/ طلب بيانات إحصائية\nتحية طيبة،\nيُرجى تزويد الجهاز بالبيانات الإحصائية الخاصة بالربع الأخير وفق الاستمارات المرسلة، على أن تصل خلال مدة أقصاها عشرة أيام من تاريخه.\nمع التقدير،\nرئيس الجهاز المركزي للإحصاء",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "وزارة التخطيط / الجهاز المركزي للإحصاء",
+          "document_number": "إح/6650",
+          "date": "2026-01-22",
+          "recipient": "مديريات الإحصاء في المحافظات كافة",
+          "subject": "طلب بيانات إحصائية",
+          "required_action": "تزويد الجهاز بالبيانات وفق الاستمارات خلال عشرة أيام"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"الجهاز المركزي للإحصاء - وزارة التخطيط - جمهورية العراق\",\n  \"document_number\": \"إح/6650\",\n  \"date\": \"2026/1/22\",\n  \"recipient\": \"مديريات الإحصاء في المحافظات كافة\",\n  \"subject\": \"طلب بيانات إحصائية\",\n  \"required_action\": \"تزويد الجهاز بالبيانات الإحصائية الخاصة بالربع الأخير وفق الاستمارات المرسلة خلال مدة أقصاها عشرة أيام\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0026",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة واسط — مكتب رئيس الجامعة\nالعدد: و/1785\nالتاريخ: 2026/2/11\nإلى / عمادة كلية العلوم\nم/ الموافقة على سفر علمي\nإشارة إلى طلبكم، نعلمكم بالموافقة على سفر التدريسي (الاسم مُحاكى) لحضور مؤتمر علمي خارج القطر، على أن تتحمّل الجهة المستضيفة النفقات، ويُقدّم تقريراً بعد عودته.\nمع التقدير،\nرئيس جامعة واسط",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة واسط / مكتب رئيس الجامعة",
+          "document_number": "و/1785",
+          "date": "2026-02-11",
+          "recipient": "عمادة كلية العلوم",
+          "subject": "الموافقة على سفر علمي",
+          "required_action": "تقديم تقرير بعد العودة من المؤتمر"
+        }
+      },
+      "raw_response": "```json\n{\n    \"issuing_authority\": \"جامعة واسط — مكتب رئيس الجامعة\",\n    \"document_number\": \"و/1785\",\n    \"date\": \"2026/2/11\",\n    \"recipient\": \"عمادة كلية العلوم\",\n    \"subject\": \"الموافقة على سفر علمي\",\n    \"required_action\": \"تقرير بعد عودة التدريسي من المؤتمر العلمي\"\n}\n```",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0027",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة المالية\nدائرة الموازنة العامة\nالعدد: ج/4420\nالتاريخ: 2026/3/6\nإلى / قسم الحسابات\nم/ تشكيل لجنة جرد\nتقرر تشكيل لجنة لجرد الموجودات في نهاية السنة المالية، على أن ترفع محضر الجرد خلال أسبوع من تاريخ المباشرة.\nمع التقدير،\nمدير عام دائرة الموازنة العامة",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "وزارة المالية / دائرة الموازنة العامة",
+          "document_number": "ج/4420",
+          "date": "2026-03-06",
+          "recipient": "قسم الحسابات",
+          "subject": "تشكيل لجنة جرد",
+          "required_action": "رفع محضر الجرد خلال أسبوع من المباشرة"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"دائرة الموازنة العامة - وزارة المالية\",\n  \"document_number\": \"ج/4420\",\n  \"date\": \"2026-03-06\",\n  \"recipient\": \"قسم الحسابات\",\n  \"subject\": \"تشكيل لجنة جرد الموجودات في نهاية السنة المالية\",\n  \"required_action\": \"تشكيل لجنة لجرد الموجودات ورفع محضر الجرد خلال أسبوع\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0028",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التربية\nالمديرية العامة لتربية محافظة ديالى\nالعدد: 20714\nالتاريخ: 2026/1/16\nإلى / قسم الأبنية المدرسية\nم/ صيانة مدرسة\nيُرجى الكشف على مدرسة (اسم مُحاكى) الابتدائية ومعالجة تسرّب المياه في سقوفها قبل بدء الفصل الثاني.\nمع التقدير،\nالمدير العام لتربية ديالى",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "المديرية العامة لتربية محافظة ديالى",
+          "document_number": "20714",
+          "date": "2026-01-16",
+          "recipient": "قسم الأبنية المدرسية",
+          "subject": "صيانة مدرسة",
+          "required_action": "الكشف على المدرسة ومعالجة تسرّب المياه قبل الفصل الثاني"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"المديرية العامة لتربية محافظة ديالى\",\n  \"document_number\": \"20714\",\n  \"date\": \"2026/1/16\",\n  \"recipient\": \"قسم الأبنية المدرسية - م/ صيانة مدرسة\",\n  \"subject\": \"مدرسة (اسم مُحاكى) الابتدائية\",\n  \"required_action\": \"الكشف على المدرسة ومعالجة تسرّب المياه في سقوفها قبل بدء الفصل الثاني\"\n}",
+      "score": 0.3333333333333333
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0029",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة الصحة\nدائرة صحة محافظة كركوك\nالعدد: ص/7213\nالتاريخ: 2026/4/1\nإلى / كافة المراكز الصحية\nم/ تعميم بشأن حملة التلقيح\nتبدأ حملة التلقيح الموسمية يوم الأحد القادم. يُرجى تهيئة الكوادر والمستلزمات وإعلام المراجعين بمواعيد الحملة.\nمع التقدير،\nمدير عام دائرة صحة كركوك",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "دائرة صحة محافظة كركوك",
+          "document_number": "ص/7213",
+          "date": "2026-04-01",
+          "recipient": "كافة المراكز الصحية",
+          "subject": "تعميم بشأن حملة التلقيح",
+          "required_action": "تهيئة الكوادر والمستلزمات وإعلام المراجعين بمواعيد الحملة"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"وزارة الصحة - دائرة صحة محافظة كركوك\",\n  \"document_number\": \"ص/7213\",\n  \"date\": \"2026/4/1\",\n  \"recipient\": \"كافة المراكز الصحية\",\n  \"subject\": \"تعميم بشأن حملة التلقيح\",\n  \"required_action\": \"تهيئة الكوادر والمستلزمات وإعلام المراجعين بمواعيد الحملة\"\n}",
+      "score": 0.6666666666666666
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0030",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التربية\nالمديرية العامة لتربية محافظة صلاح الدين\nالعدد: ق/3156\nالتاريخ: 2026/5/13\nإلى / قسم الملاك\nم/ إحالة على التقاعد\nتقرر إحالة الموظف (الاسم مُحاكى) على التقاعد لبلوغه السن القانونية اعتباراً من 2026/6/1. يُرجى إكمال معاملته التقاعدية وتصفية استحقاقاته.\nمع التقدير،\nالمدير العام لتربية صلاح الدين",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "المديرية العامة لتربية محافظة صلاح الدين",
+          "document_number": "ق/3156",
+          "date": "2026-05-13",
+          "recipient": "قسم الملاك",
+          "subject": "إحالة على التقاعد",
+          "required_action": "إكمال المعاملة التقاعدية وتصفية الاستحقاقات"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"المديرية العامة لتربية محافظة صلاح الدين - وزارة التربية - جمهورية العراق\",\n  \"document_number\": \"ق/3156\",\n  \"date\": \"2026/5/13\",\n  \"recipient\": \"قسم الملاك\",\n  \"subject\": \"إحالة على التقاعد\",\n  \"required_action\": \"إكمال معاملة التقاعد وتصفية استحقاقاته للموظف لبلوغه السن القانونية اعتباراً من 2026/6/1\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0031",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة الاتصالات\nدائرة تقنية المعلومات\nالعدد: ت م/882\nالتاريخ: 2026/2/20\nإلى / الأقسام كافة\nم/ دعوة لحضور ورشة تدريبية\nيُرجى ترشيح منتسبٍ من كل قسم لحضور ورشة تدريبية حول أمن المعلومات تُقام يوم الخميس القادم في قاعة التدريب.\nمع التقدير،\nمدير عام دائرة تقنية المعلومات",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "وزارة الاتصالات / دائرة تقنية المعلومات",
+          "document_number": "ت م/882",
+          "date": "2026-02-20",
+          "recipient": "الأقسام كافة",
+          "subject": "دعوة لحضور ورشة تدريبية",
+          "required_action": "ترشيح منتسب من كل قسم لحضور الورشة يوم الخميس"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"دائرة تقنية المعلومات - وزارة الاتصالات - جمهورية العراق\",\n  \"document_number\": \"ت م/882\",\n  \"date\": \"2026/2/20\",\n  \"recipient\": \"الأقسام كافة\",\n  \"subject\": \"دعوة لحضور ورشة تدريبية حول أمن المعلومات\",\n  \"required_action\": \"ترشيح منتسبٍ من كل قسم لحضور ورشة التدريب\"\n}",
+      "score": 0.3333333333333333
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0032",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nمحافظة البصرة\nمكتب المحافظ\nالعدد: 2044\nالتاريخ: 2026/3/24\nإلى / السيد معاون المحافظ للشؤون الإدارية\nم/ تخويل صلاحيات\nتقرر تخويلكم صلاحية التوقيع على المعاملات الإدارية الاعتيادية خلال فترة تواجدنا خارج المحافظة، على أن تُعرض المعاملات المهمة عند العودة.\nمع التقدير،\nمحافظ البصرة",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "محافظة البصرة / مكتب المحافظ",
+          "document_number": "2044",
+          "date": "2026-03-24",
+          "recipient": "معاون المحافظ للشؤون الإدارية",
+          "subject": "تخويل صلاحيات",
+          "required_action": "التوقيع على المعاملات الإدارية الاعتيادية وعرض المهمة عند العودة"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"مكتب المحافظ، محافظة البصرة\",\n  \"document_number\": \"2044\",\n  \"date\": \"2026/3/24\",\n  \"recipient\": \"السيد معاون المحافظ للشؤون الإدارية\",\n  \"subject\": \"تخويل صلاحيات\",\n  \"required_action\": \"تخويل صلاحية التوقيع على المعاملات الإدارية الاعتيادية خلال فترة تواجد المحافظ خارج المحافظة، مع عرض المعاملات المهمة عند العودة\"\n}",
+      "score": 0.3333333333333333
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0033",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة تكريت — مكتب رئيس الجامعة\nالعدد: 918\nالتاريخ: 2026/4/8\nإلى / قسم الخدمات\nم/ تجهيز أثاث\nيُرجى تجهيز قاعات الكلية الجديدة بالأثاث اللازم قبل بدء العام الدراسي.\nمع التقدير،\nرئيس جامعة تكريت",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة تكريت / مكتب رئيس الجامعة",
+          "document_number": "918",
+          "date": "2026-04-08",
+          "recipient": "قسم الخدمات",
+          "subject": "تجهيز أثاث",
+          "required_action": "تجهيز قاعات الكلية الجديدة بالأثاث قبل بدء العام الدراسي"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"جامعة تكريت — مكتب رئيس الجامعة\",\n  \"document_number\": \"918\",\n  \"date\": \"2026/4/8\",\n  \"recipient\": \"قسم الخدمات / م/ تجهيز أثاث\",\n  \"subject\": \"تجهيز قاعات الكلية الجديدة\",\n  \"required_action\": \"تجهيز قاعات الكلية الجديدة بالأثاث اللازم قبل بدء العام الدراسي\"\n}",
+      "score": 0.16666666666666666
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0034",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة الإعمار والإسكان والبلديات والأشغال العامة\nمديرية بلدية الديوانية\nالعدد: ب/5567\nالتاريخ: 2026/1/9\nإلى / الشُّعب البلدية كافة\nم/ تعميم بشأن حملة النظافة\nتُنظّم حملة نظافة شاملة في المدينة نهاية هذا الأسبوع. يُرجى تهيئة الآليات والكوادر والمشاركة الفاعلة.\nمع التقدير،\nمدير بلدية الديوانية",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "مديرية بلدية الديوانية",
+          "document_number": "ب/5567",
+          "date": "2026-01-09",
+          "recipient": "الشُّعب البلدية كافة",
+          "subject": "تعميم بشأن حملة النظافة",
+          "required_action": "تهيئة الآليات والكوادر والمشاركة الفاعلة في الحملة"
+        }
+      },
+      "raw_response": "```json\n{\n  \"issuing_authority\": \"مديرية بلدية الديوانية\",\n  \"document_number\": \"ب/5567\",\n  \"date\": \"2026/1/9\",\n  \"recipient\": \"الشُّعب البلدية كافة\",\n  \"subject\": \"تعميم بشأن حملة النظافة\",\n  \"required_action\": \"تهيئة الآليات والكوادر والمشاركة الفاعلة في حملة نظافة شاملة\"\n}\n```",
+      "score": 0.6666666666666666
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0035",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة الكوفة — مكتب رئيس الجامعة\nالعدد: ن/2380\nالتاريخ: 2026/5/18\nإلى / عمادة كلية الآداب\nم/ اعتماد نتائج الامتحانات\nتقرر اعتماد نتائج امتحانات الفصل الثاني. يُرجى إعلانها للطلبة وتزويدنا بنسخة مصدّقة من الجداول.\nمع التقدير،\nرئيس جامعة الكوفة",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة الكوفة / مكتب رئيس الجامعة",
+          "document_number": "ن/2380",
+          "date": "2026-05-18",
+          "recipient": "عمادة كلية الآداب",
+          "subject": "اعتماد نتائج الامتحانات",
+          "required_action": "إعلان النتائج للطلبة وتزويد الجامعة بنسخة مصدّقة من الجداول"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"جامعة الكوفة — مكتب رئيس الجامعة\",\n  \"document_number\": \"ن/2380\",\n  \"date\": \"2026/5/18\",\n  \"recipient\": \"عمادة كلية الآداب\",\n  \"subject\": \"اعتماد نتائج الامتحانات\",\n  \"required_action\": \"إعلان النتائج للطلبة وتزويد جامعة الكوفة بنسخة مصدّقة من الجداول\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0036",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة النفط\nشركة توزيع المنتجات النفطية\nالعدد: و ق/6001\nالتاريخ: 2026/2/27\nإلى / فرع توزيع محافظة ميسان\nم/ تخصيص حصة وقود\nيُرجى تخصيص حصة وقود إضافية لتشغيل مولّدات المستشفيات خلال أشهر الصيف، وإشعارنا بالكميات الموزّعة.\nمع التقدير،\nمدير عام شركة توزيع المنتجات النفطية",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "وزارة النفط / شركة توزيع المنتجات النفطية",
+          "document_number": "و ق/6001",
+          "date": "2026-02-27",
+          "recipient": "فرع توزيع محافظة ميسان",
+          "subject": "تخصيص حصة وقود",
+          "required_action": "تخصيص حصة وقود إضافية للمستشفيات وإشعار الشركة بالكميات الموزّعة"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"شركة توزيع المنتجات النفطية - وزارة النفط - جمهورية العراق\",\n  \"document_number\": \"و ق/6001\",\n  \"date\": \"2026-02-27\",\n  \"recipient\": \"فرع توزيع محافظة ميسان\",\n  \"subject\": \"تخصيص حصة وقود\",\n  \"required_action\": \"تخصيص حصة وقود إضافية لتشغيل مولّدات المستشفيات خلال أشهر الصيف، وإشعارنا بالكميات الموزّعة.\"\n}",
+      "score": 0.6666666666666666
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0037",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة بابل — مكتب رئيس الجامعة\nالعدد: إ/1263\nالتاريخ: 2026/3/15\nإلى / عمادة كلية التربية للعلوم الصرفة\nم/ تكليف بالإشراف\nتقرر تكليف الأستاذ (الاسم مُحاكى) بالإشراف على طلبة الدراسات العليا للعام الدراسي الحالي. يُرجى التبليغ والمباشرة.\nمع التقدير،\nرئيس جامعة بابل",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة بابل / مكتب رئيس الجامعة",
+          "document_number": "إ/1263",
+          "date": "2026-03-15",
+          "recipient": "عمادة كلية التربية للعلوم الصرفة",
+          "subject": "تكليف بالإشراف",
+          "required_action": "تبليغ الأستاذ المكلّف بالإشراف والمباشرة"
+        }
+      },
+      "raw_response": "```json\n{\n  \"issuing_authority\": \"جامعة بابل — مكتب رئيس الجامعة\",\n  \"document_number\": \"إ/1263\",\n  \"date\": \"2026/3/15\",\n  \"recipient\": \"عمادة كلية التربية للعلوم الصرفة\",\n  \"subject\": \"تكليف بالإشراف\",\n  \"required_action\": \"التبليغ والمباشرة\"\n}\n```",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0038",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة الداخلية\nمديرية المرور العامة\nالعدد: م ع/34120\nالتاريخ: 2026/4/21\nإلى / مديريات المرور في المحافظات كافة\nم/ تعميم بشأن التقاطعات\nيُرجى تكثيف الانتشار في التقاطعات الرئيسية خلال ساعات الذروة، ورفع تقرير أسبوعي بالحالة المرورية.\nمع التقدير،\nمدير المرور العام",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "وزارة الداخلية / مديرية المرور العامة",
+          "document_number": "م ع/34120",
+          "date": "2026-04-21",
+          "recipient": "مديريات المرور في المحافظات كافة",
+          "subject": "تعميم بشأن التقاطعات",
+          "required_action": "تكثيف الانتشار في التقاطعات ورفع تقرير أسبوعي بالحالة المرورية"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"وزارة الداخلية - مديرية المرور العامة\",\n  \"document_number\": \"م ع/34120\",\n  \"date\": \"2026-04-21\",\n  \"recipient\": \"مديريات المرور في المحافظات كافة\",\n  \"subject\": \"تعميم بشأن التقاطعات\",\n  \"required_action\": \"تكثيف الانتشار في التقاطعات الرئيسية خلال ساعات الذروة، ورفع تقرير أسبوعي بالحالة المرورية\"\n}",
+      "score": 0.6666666666666666
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0039",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة الصحة\nدائرة صحة محافظة الديوانية\nالعدد: 4903\nالتاريخ: 2026/1/25\nإلى / الفريق الطبي في مستشفى الديوانية التعليمي\nم/ شكر وتقدير\nتقديراً لجهودكم في إنجاح الحملة الجراحية المجانية، نتوجّه لكم بالشكر والتقدير.\nمع التقدير،\nمدير عام دائرة صحة الديوانية",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "دائرة صحة محافظة الديوانية",
+          "document_number": "4903",
+          "date": "2026-01-25",
+          "recipient": "الفريق الطبي في مستشفى الديوانية التعليمي",
+          "subject": "شكر وتقدير"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"دائرة صحة محافظة الديوانية\",\n  \"document_number\": \"4903\",\n  \"date\": \"2026/1/25\",\n  \"recipient\": \"الفريق الطبي في مستشفى الديوانية التعليمي\",\n  \"subject\": \"شكر وتقدير\"\n}",
+      "score": 0.8
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0040",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nمجلس القضاء الأعلى\nرئاسة محكمة استئناف النجف الاتحادية\nالعدد: 1902/ح\nالتاريخ: 2026/5/7\nإلى / محكمة الأحوال الشخصية في النجف\nم/ إحالة معاملة\nتُحال إليكم المعاملة أعلاه للنظر فيها ضمن اختصاصكم واتخاذ ما يلزم قانوناً، وإعادة الأوليات بعد الحسم.\nمع التقدير،\nرئيس محكمة استئناف النجف الاتحادية",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "رئاسة محكمة استئناف النجف الاتحادية",
+          "document_number": "1902/ح",
+          "date": "2026-05-07",
+          "recipient": "محكمة الأحوال الشخصية في النجف",
+          "subject": "إحالة معاملة",
+          "required_action": "النظر في المعاملة واتخاذ ما يلزم قانوناً وإعادة الأوليات بعد الحسم"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"رئاسة محكمة استئناف النجف الاتحادية\",\n  \"document_number\": \"1902/ح\",\n  \"date\": \"2026/5/7\",\n  \"recipient\": \"محكمة الأحوال الشخصية في النجف\",\n  \"subject\": \"إحالة معاملة\",\n  \"required_action\": \"النظر فيها ضمن اختصاصكم واتخاذ ما يلزم قانوناً، وإعادة الأوليات بعد الحسم\"\n}",
+      "score": 0.6666666666666666
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0041",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة سومر — مكتب رئيس الجامعة\nالعدد: ع ن/775\nالتاريخ: 2026/2/3\nإلى / وزارة التعليم العالي والبحث العلمي / دائرة الشؤون الإدارية\nم/ طلب موافقة على تعيين\nيُرجى الموافقة على تعيين حملة الشهادات العليا على الملاك الشاغر في الجامعة، وتزويدنا بالموافقة الأصولية لإكمال الإجراءات.\nمع التقدير،\nرئيس جامعة سومر",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة سومر / مكتب رئيس الجامعة",
+          "document_number": "ع ن/775",
+          "date": "2026-02-03",
+          "recipient": "وزارة التعليم العالي والبحث العلمي / دائرة الشؤون الإدارية",
+          "subject": "طلب موافقة على تعيين",
+          "required_action": "الموافقة على التعيين وتزويد الجامعة بها لإكمال الإجراءات"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"جامعة سومر - مكتب رئيس الجامعة\",\n  \"document_number\": \"ع ن/775\",\n  \"date\": \"2026/2/3\",\n  \"recipient\": \"وزارة التعليم العالي والبحث العلمي - دائرة الشؤون الإدارية\",\n  \"subject\": \"طلب موافقة على تعيين\",\n  \"required_action\": \"الموافقة على تعيين حملة الشهادات العليا على الملاك الشاغر في الجامعة\"\n}",
+      "score": 0.3333333333333333
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0042",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nمحافظة ميسان\nمكتب المحافظ\nالعدد: 1330\nالتاريخ: 2026/3/19\nإلى / مدراء الدوائر الخدمية كافة\nم/ دعوة لاجتماع طارئ\nنظراً لموجة الحرّ المتوقعة، يُرجى حضوركم اجتماعاً طارئاً غداً الساعة التاسعة صباحاً في ديوان المحافظة لمناقشة خطة الطوارئ.\nمع التقدير،\nمحافظ ميسان",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "محافظة ميسان / مكتب المحافظ",
+          "document_number": "1330",
+          "date": "2026-03-19",
+          "recipient": "مدراء الدوائر الخدمية كافة",
+          "subject": "دعوة لاجتماع طارئ",
+          "required_action": "حضور الاجتماع الطارئ غداً الساعة التاسعة صباحاً في ديوان المحافظة"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"مكتب محافظ ميسان\",\n  \"document_number\": \"1330\",\n  \"date\": \"2026/3/19\",\n  \"recipient\": \"مدراء الدوائر الخدمية كافة\",\n  \"subject\": \"دعوة لاجتماع طارئ\",\n  \"required_action\": \"حضور اجتماع طارئ غداً الساعة التاسعة صباحاً في ديوان المحافظة لمناقشة خطة الطوارئ\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0043",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nدائرة البحث والتطوير\nالعدد: ب ت/2050\nالتاريخ: 2026/4/29\nإلى / رئاسات الجامعات كافة\nم/ تبليغ بقرار\nنبلّغكم بقرار اعتماد ضوابط النشر العلمي الجديدة. يُرجى تعميمها على التدريسيين والتقيّد بها في الترقيات العلمية.\nمع التقدير،\nمدير عام دائرة البحث والتطوير",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "وزارة التعليم العالي والبحث العلمي / دائرة البحث والتطوير",
+          "document_number": "ب ت/2050",
+          "date": "2026-04-29",
+          "recipient": "رئاسات الجامعات كافة",
+          "subject": "تبليغ بقرار",
+          "required_action": "تعميم ضوابط النشر العلمي والتقيّد بها في الترقيات"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"دائرة البحث والتطوير - وزارة التعليم العالي والبحث العلمي\",\n  \"document_number\": \"ب ت/2050\",\n  \"date\": \"2026/4/29\",\n  \"recipient\": \"رئاسات الجامعات كافة\",\n  \"subject\": \"تبليغ بقرار اعتماد ضوابط النشر العلمي الجديدة\",\n  \"required_action\": \"تعميم الضوابط على التدريسيين والتقيّد بها في الترقيات العلمية\"\n}",
+      "score": 0.3333333333333333
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0044",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nأمانة بغداد\nدائرة الأملاك\nالعدد: أ م/9980\nالتاريخ: 2026/1/14\nإلى / بلديات المناطق كافة\nم/ إحصاء الأملاك البلدية\nيُرجى تزويد الدائرة بإحصاء محدّث للأملاك البلدية ضمن مناطقكم خلال مدة خمسة عشر يوماً من تاريخه.\nمع التقدير،\nمدير دائرة الأملاك",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "أمانة بغداد / دائرة الأملاك",
+          "document_number": "أ م/9980",
+          "date": "2026-01-14",
+          "recipient": "بلديات المناطق كافة",
+          "subject": "إحصاء الأملاك البلدية",
+          "required_action": "تزويد الدائرة بإحصاء محدّث للأملاك خلال خمسة عشر يوماً"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"دائرة الأملاك - أمانة بغداد - جمهورية العراق\",\n  \"document_number\": \"أ م/9980\",\n  \"date\": \"2026/1/14\",\n  \"recipient\": \"بلديات المناطق كافة\",\n  \"subject\": \"إحصاء الأملاك البلدية\",\n  \"required_action\": \"تزويد الدائرة بإحصاء محدّث للأملاك البلدية ضمن مناطقكم خلال مدة خمسة عشر يوماً من تاريخه\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0045",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة المثنى — مكتب رئيس الجامعة\nالعدد: 1102\nالتاريخ: 2026/5/2\nإلى / عمادة كلية الزراعة\nم/ تكليف بتدريس\nتقرر تكليف التدريسي (الاسم مُحاكى) بتدريس مادة إضافية للفصل الحالي. يُرجى التبليغ.\nمع التقدير،\nرئيس جامعة المثنى",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة المثنى / مكتب رئيس الجامعة",
+          "document_number": "1102",
+          "date": "2026-05-02",
+          "recipient": "عمادة كلية الزراعة",
+          "subject": "تكليف بتدريس",
+          "required_action": "تبليغ التدريسي بتكليفه بتدريس المادة الإضافية"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"جامعة المثنى — مكتب رئيس الجامعة\",\n  \"document_number\": \"1102\",\n  \"date\": \"2026/5/2\",\n  \"recipient\": \"عمادة كلية الزراعة\",\n  \"subject\": \"تكليف بتدريس\",\n  \"required_action\": \"التكليف بالتبليغ\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0046",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التجارة\nالشركة العامة لتجارة الحبوب\nالعدد: ح/7420\nالتاريخ: 2026/2/16\nإلى / فرع الشركة في محافظة واسط\nم/ إشعار باستلام كميات\nنُشعركم باستلام الكميات المرسلة من الحنطة وإدخالها المخزن. يُرجى تدقيق السجلات ومطابقتها.\nمع التقدير،\nمدير عام الشركة العامة لتجارة الحبوب",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "وزارة التجارة / الشركة العامة لتجارة الحبوب",
+          "document_number": "ح/7420",
+          "date": "2026-02-16",
+          "recipient": "فرع الشركة في محافظة واسط",
+          "subject": "إشعار باستلام كميات",
+          "required_action": "تدقيق السجلات ومطابقتها"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"الشركة العامة لتجارة الحبوب، وزارة التجارة، جمهورية العراق\",\n  \"document_number\": \"ح/7420\",\n  \"date\": \"2026-02-16\",\n  \"recipient\": \"فرع الشركة في محافظة واسط\",\n  \"subject\": \"إشعار باستلام كميات الحنطة وإدخالها المخزن\",\n  \"required_action\": \"تدقيق السجلات ومطابقتها\"\n}",
+      "score": 0.6666666666666666
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0047",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nأمانة مجلس الوزراء\nالدائرة الإدارية\nالعدد: ع ط/220\nالتاريخ: 2026/3/1\nإلى / الوزارات والجهات غير المرتبطة بوزارة كافة\nم/ تعميم بشأن عطلة رسمية\nنعلمكم بأن يوم الخميس القادم عطلة رسمية بمناسبة وطنية. يُرجى التقيّد وتنظيم الدوام بما يضمن استمرار الخدمات الأساسية.\nمع التقدير،\nالأمين العام لمجلس الوزراء",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "أمانة مجلس الوزراء / الدائرة الإدارية",
+          "document_number": "ع ط/220",
+          "date": "2026-03-01",
+          "recipient": "الوزارات والجهات غير المرتبطة بوزارة كافة",
+          "subject": "تعميم بشأن عطلة رسمية",
+          "required_action": "التقيّد بالعطلة وتنظيم الدوام بما يضمن استمرار الخدمات الأساسية"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"أمانة مجلس الوزراء - الدائرة الإدارية\",\n  \"document_number\": \"ع ط/220\",\n  \"date\": \"2026/3/1\",\n  \"recipient\": \"الوزارات والجهات غير المرتبطة بوزارة كافة\",\n  \"subject\": \"تعميم بشأن عطلة رسمية\",\n  \"required_action\": \"التقيّد بالعطلة وتنظيم الدوام لضمان استمرار الخدمات الأساسية\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0048",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة الإعمار والإسكان والبلديات والأشغال العامة\nدائرة المشاريع\nالعدد: م ش/3390\nالتاريخ: 2026/4/17\nإلى / قسم التنفيذ\nم/ تشكيل لجنة استلام أوّلي\nتقرر تشكيل لجنة لاستلام مشروع تبليط الطرق أوّلياً، على أن تُنظّم محضراً بالملاحظات وترفعه خلال أسبوع.\nمع التقدير،\nمدير عام دائرة المشاريع",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "وزارة الإعمار والإسكان والبلديات والأشغال العامة / دائرة المشاريع",
+          "document_number": "م ش/3390",
+          "date": "2026-04-17",
+          "recipient": "قسم التنفيذ",
+          "subject": "تشكيل لجنة استلام أوّلي",
+          "required_action": "استلام المشروع أوّلياً وتنظيم محضر بالملاحظات ورفعه خلال أسبوع"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"دائرة المشاريع - وزارة الإعمار والإسكان والبلديات والأشغال العامة\",\n  \"document_number\": \"م ش/3390\",\n  \"date\": \"2026/4/17\",\n  \"recipient\": \"قسم التنفيذ\",\n  \"subject\": \"تشكيل لجنة استلام أوّلي لمشروع تبليط الطرق\",\n  \"required_action\": \"تشكيل اللجنة وتنظيم محضر بالملاحظات ورفعه خلال أسبوع\"\n}",
+      "score": 0.3333333333333333
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0049",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة ديالى — مكتب رئيس الجامعة\nالعدد: د/1495\nالتاريخ: 2026/1/8\nإلى / العمادات والأقسام كافة\nم/ تنبيه بشأن التوقيع الإلكتروني\nيُرجى التقيّد بنظام التوقيع الإلكتروني للحضور والانصراف اعتباراً من بداية الأسبوع القادم، وإعلام المنتسبين بذلك.\nمع التقدير،\nرئيس جامعة ديالى",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة ديالى / مكتب رئيس الجامعة",
+          "document_number": "د/1495",
+          "date": "2026-01-08",
+          "recipient": "العمادات والأقسام كافة",
+          "subject": "تنبيه بشأن التوقيع الإلكتروني",
+          "required_action": "التقيّد بنظام التوقيع الإلكتروني وإعلام المنتسبين"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"رئيس جامعة ديالى\",\n  \"document_number\": \"د/1495\",\n  \"date\": \"2026/1/8\",\n  \"recipient\": \"العمادات والأقسام كافة\",\n  \"subject\": \"تنبيه بشأن التوقيع الإلكتروني\",\n  \"required_action\": \"التقيّد بنظام التوقيع الإلكتروني للحضور والانصراف اعتباراً من بداية الأسبوع القادم، وإعلام المنتسبين بذلك\"\n}",
+      "score": 0.5
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DOC-0050",
+        "track": "iraqi",
+        "axis": "official_documents",
+        "question_format": "extraction",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "استخرج الحقول التالية من الكتاب الرسمي: الجهة المُصدِرة، رقم الكتاب، التاريخ، الجهة المُرسَل إليها، الموضوع، المطلوب.",
+        "context": "جمهورية العراق\nوزارة التعليم العالي والبحث العلمي\nجامعة الأنبار — مكتب رئيس الجامعة\nالعدد: ت ر/2600\nالتاريخ: 2026/5/22\nم/ أمر إداري\nاستناداً إلى الصلاحيات المخوّلة لنا، تقرر ترفيع الموظف (الاسم مُحاكى) إلى الدرجة الوظيفية الأعلى استحقاقاً اعتباراً من تاريخ صدور الأمر، مع تدوين ذلك في أوّليّاته.\nمع التقدير،\nرئيس جامعة الأنبار",
+        "notes": "synthetic document; fictional names; Iraqi official conventions; approved by Dr. Nawar.",
+        "ground_truth": {
+          "issuing_authority": "جامعة الأنبار / مكتب رئيس الجامعة",
+          "document_number": "ت ر/2600",
+          "date": "2026-05-22",
+          "subject": "أمر إداري (ترفيع موظف)",
+          "required_action": "ترفيع الموظف إلى الدرجة الأعلى وتدوين ذلك في أوّليّاته"
+        }
+      },
+      "raw_response": "{\n  \"issuing_authority\": \"رئيس جامعة الأنبار\",\n  \"document_number\": \"ت ر/2600\",\n  \"date\": \"2026/5/22\",\n  \"subject\": \"ترفيع الموظف (الاسم مُحاكى) إلى الدرجة الوظيفية الأعلى\",\n  \"required_action\": \"تدوين الترفيع في أوّليّاته\"\n}",
+      "score": 0.2
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0001",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«اشترى الرجل سيارة باهظة الثمن» — معنى «باهظة»؟",
+        "notes": "MSA auto supplement; sub_type: lexical_meaning; approved by Dr. Nawar.",
+        "choices": [
+          "رخيصة",
+          "متوسطة",
+          "مرتفعة / غالية",
+          "مجهولة"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0002",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«تحدّث الخطيب بإسهاب» — معنى «بإسهاب»؟",
+        "notes": "MSA auto supplement; sub_type: lexical_meaning; approved by Dr. Nawar.",
+        "choices": [
+          "باختصار",
+          "بتردد",
+          "بتفصيل وإطالة",
+          "بصوت منخفض"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0003",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«هذا أمر محال» — تعني:",
+        "notes": "MSA auto supplement; sub_type: lexical_meaning; approved by Dr. Nawar.",
+        "choices": [
+          "مؤكد",
+          "سهل",
+          "مؤجل",
+          "مستحيل"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0004",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "أي جملة صحيحة نحوياً؟",
+        "notes": "MSA auto supplement; sub_type: grammar; approved by Dr. Nawar.",
+        "choices": [
+          "كان الطالبان مجتهدان",
+          "كان الطالبين مجتهدين",
+          "كان الطالبين مجتهدان",
+          "كان الطالبان مجتهدَين"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0005",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«لن يذهبَ أحمد» — لماذا نُصب الفعل؟",
+        "notes": "MSA auto supplement; sub_type: grammar; approved by Dr. Nawar.",
+        "choices": [
+          "لأنه فاعل",
+          "لأنه مبتدأ",
+          "لأن «لن» حرف نصب",
+          "لأنه مجزوم"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0006",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«رغم قلة موارده، استطاع الفريق أن يحقق إنجازاً كبيراً.» — ماذا نفهم؟",
+        "notes": "MSA auto supplement; sub_type: reading_inference; approved by Dr. Nawar.",
+        "choices": [
+          "الموارد كانت وفيرة",
+          "الفريق فشل",
+          "الإنجاز كان صغيراً",
+          "الإنجاز تحقق رغم ضعف الإمكانات"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0007",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«يضرب أخماساً في أسداس» — تعني:",
+        "notes": "MSA auto supplement; sub_type: idiom; approved by Dr. Nawar.",
+        "choices": [
+          "يفكر بحيرة واضطراب",
+          "يجري عمليات حسابية",
+          "يلعب لعبة قديمة",
+          "يمشي بسرعة"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "B",
+      "score": 0
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0008",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«رجلٌ هُمام» — تعني:",
+        "notes": "MSA auto supplement; sub_type: lexical_meaning; approved by Dr. Nawar.",
+        "choices": [
+          "كسول",
+          "كثير الكلام",
+          "عالي الهمة عظيم الشأن",
+          "بخيل"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0009",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "جمع «امرأة» في الفصحى:",
+        "notes": "MSA auto supplement; sub_type: grammar; approved by Dr. Nawar.",
+        "choices": [
+          "امرآت",
+          "نساء / نسوة",
+          "مرائي",
+          "أمرة"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0010",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«ما إن أشرقت الشمس حتى غادر المسافرون» — متى غادروا؟",
+        "notes": "MSA auto supplement; sub_type: reading_inference; approved by Dr. Nawar.",
+        "choices": [
+          "فور شروق الشمس",
+          "قبل الشروق بوقت طويل",
+          "عند الغروب",
+          "لم يغادروا"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0011",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«وصل الضيف على حين غِرّة» — تعني:",
+        "notes": "MSA auto supplement; sub_type: idiom; approved by Dr. Nawar.",
+        "choices": [
+          "في الموعد المحدد",
+          "فجأة وعلى غير انتظار",
+          "متأخراً جداً",
+          "مع مجموعة"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0012",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«كلامٌ مُبهَم» — تعني:",
+        "notes": "MSA auto supplement; sub_type: lexical_meaning; approved by Dr. Nawar.",
+        "choices": [
+          "واضح صريح",
+          "غامض غير واضح",
+          "جميل منمّق",
+          "طويل مفصّل"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0013",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«اقتفى أثره» — تعني:",
+        "notes": "MSA auto supplement; sub_type: lexical_meaning; approved by Dr. Nawar.",
+        "choices": [
+          "محاه وأزاله",
+          "تتبّعه وسار خلفه",
+          "تجاهله",
+          "سبقه"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0014",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "أي جملة صحيحة؟",
+        "notes": "MSA auto supplement; sub_type: grammar; approved by Dr. Nawar.",
+        "choices": [
+          "رأيتُ أخاك في السوق",
+          "رأيتُ أخوك في السوق",
+          "رأيتُ أخيك في السوق",
+          "رأيتُ أخُك في السوق"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0015",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«المعلمون مخلصون» — عند دخول «إنّ»:",
+        "notes": "MSA auto supplement; sub_type: grammar; approved by Dr. Nawar.",
+        "choices": [
+          "إنّ المعلمون مخلصون",
+          "إنّ المعلمين مخلصين",
+          "إنّ المعلمين مخلصون",
+          "إنّ المعلمون مخلصين"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "B",
+      "score": 0
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0016",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«لولا اجتهادُك لما نجحت.» — ماذا نفهم؟",
+        "notes": "MSA auto supplement; sub_type: reading_inference; approved by Dr. Nawar.",
+        "choices": [
+          "النجاح تحقق بلا اجتهاد",
+          "الاجتهاد كان سبب النجاح",
+          "لم يتحقق النجاح",
+          "الاجتهاد لم يكن مهماً"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0017",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«عاد بخُفَّي حُنَين» — تعني:",
+        "notes": "MSA auto supplement; sub_type: idiom; approved by Dr. Nawar.",
+        "choices": [
+          "رجع خائباً بلا نتيجة",
+          "عاد منتصراً",
+          "عاد بهدايا كثيرة",
+          "اشترى حذاءً جديداً"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0018",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«جهدٌ مُضنٍ» — تعني:",
+        "notes": "MSA auto supplement; sub_type: lexical_meaning; approved by Dr. Nawar.",
+        "choices": [
+          "يسير سهل",
+          "مُتعِب مُرهِق",
+          "مثمر مفيد",
+          "قليل محدود"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0019",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«كتابُه مفيد» — الهاء هنا:",
+        "notes": "MSA auto supplement; sub_type: grammar; approved by Dr. Nawar.",
+        "choices": [
+          "حرف زائد",
+          "فاعل",
+          "مفعول به",
+          "ضمير متصل في محل جر بالإضافة"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-DC-0020",
+        "track": "arabic",
+        "axis": "comprehension",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«لم يكد يصل حتى بدأ العمل.» — ماذا نفهم؟",
+        "notes": "MSA auto supplement; sub_type: reading_inference; approved by Dr. Nawar.",
+        "choices": [
+          "تأخر كثيراً قبل بدء العمل",
+          "بدأ العمل فور وصوله تقريباً",
+          "لم يبدأ العمل",
+          "لم يصل أصلاً"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0021",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "عاصمة المملكة العربية السعودية؟",
+        "notes": "MSA auto supplement; sub_type: geography; approved by Dr. Nawar.",
+        "choices": [
+          "جدة",
+          "الرياض",
+          "الدمام",
+          "أبها"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0022",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "النهر الذي يمر بمصر ويصب في البحر المتوسط؟",
+        "notes": "MSA auto supplement; sub_type: geography; approved by Dr. Nawar.",
+        "choices": [
+          "الفرات",
+          "الأردن",
+          "النيل",
+          "السنغال"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0023",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "عدد أيام السنة الميلادية البسيطة (غير الكبيسة)؟",
+        "notes": "MSA auto supplement; sub_type: science; approved by Dr. Nawar.",
+        "choices": [
+          "360",
+          "366",
+          "365",
+          "350"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0024",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "الكوكب الملقّب بـ«الكوكب الأحمر»؟",
+        "notes": "MSA auto supplement; sub_type: science; approved by Dr. Nawar.",
+        "choices": [
+          "الزهرة",
+          "المشتري",
+          "عطارد",
+          "المريخ"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0025",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«المقدمة» الشهيرة في علم العمران والتاريخ من تأليف؟",
+        "notes": "MSA auto supplement; sub_type: literature_history; approved by Dr. Nawar.",
+        "choices": [
+          "الجاحظ",
+          "ابن سينا",
+          "الفارابي",
+          "ابن خلدون"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0026",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "قائل «على قدرِ أهلِ العزمِ تأتي العزائمُ»؟",
+        "notes": "MSA auto supplement; sub_type: literature_history; approved by Dr. Nawar.",
+        "choices": [
+          "المتنبي",
+          "أبو نواس",
+          "امرؤ القيس",
+          "أحمد شوقي"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0027",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "الغاز الذي يحتاجه الإنسان أساساً في التنفس للبقاء؟",
+        "notes": "MSA auto supplement; sub_type: science; approved by Dr. Nawar.",
+        "choices": [
+          "الأوكسجين",
+          "النيتروجين",
+          "الهيدروجين",
+          "ثاني أوكسيد الكربون"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0028",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "البحر الذي يفصل بين مصر والسعودية؟",
+        "notes": "MSA auto supplement; sub_type: geography; approved by Dr. Nawar.",
+        "choices": [
+          "البحر الأحمر",
+          "البحر المتوسط",
+          "الخليج العربي",
+          "بحر العرب"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0029",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "أكبر قارات العالم مساحةً؟",
+        "notes": "MSA auto supplement; sub_type: geography; approved by Dr. Nawar.",
+        "choices": [
+          "أفريقيا",
+          "آسيا",
+          "أوروبا",
+          "أمريكا الجنوبية"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0030",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "الكتاب الذي نقله ابن المقفع إلى العربية وفيه حكايات على ألسنة الحيوانات؟",
+        "notes": "MSA auto supplement; sub_type: literature_history; approved by Dr. Nawar.",
+        "choices": [
+          "كليلة ودمنة",
+          "ألف ليلة وليلة",
+          "البخلاء",
+          "العقد الفريد"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0031",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "أكبر دولة عربية من حيث المساحة؟",
+        "notes": "MSA auto supplement; sub_type: geography; approved by Dr. Nawar.",
+        "choices": [
+          "السعودية",
+          "مصر",
+          "ليبيا",
+          "الجزائر"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0032",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "عدد سور القرآن الكريم؟",
+        "notes": "MSA auto supplement; sub_type: general_culture; approved by Dr. Nawar.",
+        "choices": [
+          "100",
+          "120",
+          "114",
+          "110"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0033",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "الدولة العربية التي تُلقَّب بـ«أم الدنيا»؟",
+        "notes": "MSA auto supplement; sub_type: general_culture; approved by Dr. Nawar.",
+        "choices": [
+          "المغرب",
+          "لبنان",
+          "تونس",
+          "مصر"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0034",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "hard",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "الغاز الأكثر وفرةً في الغلاف الجوي للأرض؟",
+        "notes": "MSA auto supplement; sub_type: science; approved by Dr. Nawar.",
+        "choices": [
+          "الأوكسجين",
+          "ثاني أوكسيد الكربون",
+          "النيتروجين",
+          "الهيدروجين"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0035",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "مدينة «فاس» التاريخية تقع في؟",
+        "notes": "MSA auto supplement; sub_type: geography; approved by Dr. Nawar.",
+        "choices": [
+          "تونس",
+          "المغرب",
+          "الجزائر",
+          "موريتانيا"
+        ],
+        "correct_answer": 1
+      },
+      "raw_response": "B",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0036",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "صاحب نظرية النسبية؟",
+        "notes": "MSA auto supplement; sub_type: science; approved by Dr. Nawar.",
+        "choices": [
+          "أينشتاين",
+          "نيوتن",
+          "غاليليو",
+          "أديسون"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0037",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "«المعلّقات» في الأدب العربي هي؟",
+        "notes": "MSA auto supplement; sub_type: literature_history; approved by Dr. Nawar.",
+        "choices": [
+          "كتب فقهية",
+          "رسائل نثرية",
+          "أمثال شعبية",
+          "قصائد جاهلية طوال مشهورة"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0038",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "عملة اليابان؟",
+        "notes": "MSA auto supplement; sub_type: general_culture; approved by Dr. Nawar.",
+        "choices": [
+          "اليوان",
+          "الوون",
+          "الروبية",
+          "الين"
+        ],
+        "correct_answer": 3
+      },
+      "raw_response": "D",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0039",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "easy",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "العضو المسؤول عن ضخ الدم في جسم الإنسان؟",
+        "notes": "MSA auto supplement; sub_type: science; approved by Dr. Nawar.",
+        "choices": [
+          "الكبد",
+          "الرئة",
+          "القلب",
+          "الكلية"
+        ],
+        "correct_answer": 2
+      },
+      "raw_response": "C",
+      "score": 1
+    },
+    {
+      "item": {
+        "item_id": "MZN-A-KNO-0040",
+        "track": "arabic",
+        "axis": "knowledge",
+        "question_format": "multiple_choice",
+        "difficulty": "medium",
+        "dialect_region": "msa",
+        "contamination_tier": "public_dev",
+        "prompt": "أصغر وحدة بنائية في جسم الكائن الحي؟",
+        "notes": "MSA auto supplement; sub_type: science; approved by Dr. Nawar.",
+        "choices": [
+          "الخلية",
+          "الذرّة",
+          "العضو",
+          "النسيج"
+        ],
+        "correct_answer": 0
+      },
+      "raw_response": "A",
+      "score": 1
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "mizan-results-v1",
+  "model": {
+    "name": "anthropic/claude-sonnet-5",
+    "developer": "Anthropic",
+    "source": "openrouter API"
+  },
+  "benchmark_version": "pilot-0.2",
+  "run": {
+    "completed_at": "2026-09-07T11:05:46.245Z",
+    "harness_commit": "dda8fa46f7b9b7a36e0143c9570601683ac10bbd",
+    "config": {
+      "provider": "openrouter",
+      "auto_scored_only": true,
+      "human_pending_items": 150,
+      "note": "Mizan runner - deterministic formats auto-scored; open_generation pending human judging"
+    }
+  },
+  "results": [
+    {
+      "track": "iraqi",
+      "axis": "comprehension",
+      "score": 1,
+      "ci_low": 0.9286499658256813,
+      "ci_high": 1,
+      "n_items": 50,
+      "tier": "public_dev"
+    },
+    {
+      "track": "iraqi",
+      "axis": "knowledge",
+      "score": 0.98,
+      "ci_low": 0.8950431352816304,
+      "ci_high": 0.9964608319110235,
+      "n_items": 50,
+      "tier": "public_dev"
+    },
+    {
+      "track": "iraqi",
+      "axis": "official_documents",
+      "score": 0.5133333333333333,
+      "ci_low": 0.37886896973437256,
+      "ci_high": 0.6458950293543122,
+      "n_items": 50,
+      "tier": "public_dev"
+    },
+    {
+      "track": "arabic",
+      "axis": "comprehension",
+      "score": 1,
+      "ci_low": 0.8388698745050667,
+      "ci_high": 1,
+      "n_items": 20,
+      "tier": "public_dev"
+    },
+    {
+      "track": "arabic",
+      "axis": "knowledge",
+      "score": 1,
+      "ci_low": 0.8388698745050667,
+      "ci_high": 1,
+      "n_items": 20,
+      "tier": "public_dev"
+    }
+  ]
+}

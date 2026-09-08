@@ -1,0 +1,161 @@
+﻿=== FILE: runner\providers.ts ===
+/**
+ * Model providers for the evaluation runner. Each provider takes a prompt
+ * and returns raw text. Keep this file dependency-light: only fetch.
+ */
+export type ProviderName = "anthropic" | "openai" | "openrouter" | "echo";
+
+export interface CallOptions {
+  model: string;
+  prompt: string;
+  system?: string;
+  maxTokens?: number;
+}
+
+async function callAnthropic(opts: CallOptions): Promise<string> {
+  const key = process.env.ANTHROPIC_API_KEY;
+  if (!key) throw new Error("ANTHROPIC_API_KEY is not set");
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "x-api-key": key,
+      "anthropic-version": "2023-06-01",
+    },
+    body: JSON.stringify({
+      model: opts.model,
+      max_tokens: opts.maxTokens ?? 2048,
+      system: opts.system,
+      messages: [{ role: "user", content: opts.prompt }],
+    }),
+  });
+  if (!res.ok) {
+    throw new Error(`Anthropic API error ${res.status}: ${await res.text()}`);
+  }
+  const data = (await res.json()) as {
+    content: { type: string; text?: string }[];
+  };
+  return data.content
+    .filter((c) => c.type === "text")
+    .map((c) => c.text ?? "")
+    .join("");
+}
+
+async function callOpenAI(opts: CallOptions): Promise<string> {
+  // OPENAI_BASE_URL enables any OpenAI-compatible endpoint (vLLM, Ollama,
+  // LM Studio, self-hosted gateways). Local servers rarely check the key,
+  // so a placeholder is used when only a custom base URL is configured.
+  const baseUrl = (process.env.OPENAI_BASE_URL ?? "https://api.openai.com/v1").replace(/\/+$/, "");
+  const key = process.env.OPENAI_API_KEY ?? (process.env.OPENAI_BASE_URL ? "local-no-key" : undefined);
+  if (!key) throw new Error("OPENAI_API_KEY is not set (or set OPENAI_BASE_URL for a local endpoint)");
+  const res = await fetch(`${baseUrl}/chat/completions`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      authorization: `Bearer ${key}`,
+    },
+    body: JSON.stringify({
+      model: opts.model,
+      max_tokens: opts.maxTokens ?? 2048,
+      messages: [
+        ...(opts.system ? [{ role: "system", content: opts.system }] : []),
+        { role: "user", content: opts.prompt },
+      ],
+    }),
+  });
+  if (!res.ok) {
+    throw new Error(`OpenAI API error ${res.status}: ${await res.text()}`);
+  }
+  const data = (await res.json()) as {
+    choices?: { message?: { content?: string } }[];
+    error?: { message?: string };
+  };
+  if (data.error) {
+    throw new Error(`OpenAI model error: ${data.error.message ?? "unknown"}`);
+  }
+  const content = data.choices?.[0]?.message?.content;
+  if (content == null) {
+    throw new Error("OpenAI returned no content (empty choices)");
+  }
+  return content;
+}
+
+/**
+ * OpenRouter: a single API key that routes to dozens of models (GPT,
+ * Llama, Qwen, Gemma, Jais, and more) via an OpenAI-compatible endpoint.
+ * The model string is the full OpenRouter id, e.g.
+ * "openai/gpt-4o", "meta-llama/llama-3.1-70b-instruct",
+ * "qwen/qwen-2.5-72b-instruct", "google/gemma-2-27b-it",
+ * "inceptionai/jais-30b-chat".
+ */
+async function callOpenRouter(opts: CallOptions): Promise<string> {
+  const key = process.env.OPENROUTER_API_KEY;
+  if (!key) throw new Error("OPENROUTER_API_KEY is not set");
+  const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      authorization: `Bearer ${key}`,
+      // Optional attribution headers OpenRouter recommends.
+      "HTTP-Referer": "https://github.com/nawaralseelawi/mizan-platform",
+      "X-Title": "Mizan (IraqLLM-Bench)",
+    },
+    body: JSON.stringify({
+      model: opts.model,
+      max_tokens: opts.maxTokens ?? 2048,
+      messages: [
+        ...(opts.system ? [{ role: "system", content: opts.system }] : []),
+        { role: "user", content: opts.prompt },
+      ],
+    }),
+  });
+  if (!res.ok) {
+    throw new Error(`OpenRouter API error ${res.status}: ${await res.text()}`);
+  }
+  const data = (await res.json()) as {
+    choices?: { message?: { content?: string } }[];
+    error?: { message?: string };
+  };
+  // Some models occasionally return an error object or an empty choices
+  // array (rate limit, content filter, or a malformed reply) with HTTP 200.
+  // Surface that clearly instead of crashing on choices[0].
+  if (data.error) {
+    throw new Error(`OpenRouter model error: ${data.error.message ?? "unknown"}`);
+  }
+  const content = data.choices?.[0]?.message?.content;
+  if (content == null) {
+    throw new Error("OpenRouter returned no content (empty choices)");
+  }
+  return content;
+}
+
+/**
+ * Deterministic offline stub. Answers MC by returning the FIRST choice
+ * letter and echoes a fixed extraction shape. Used to exercise the full
+ * pipeline without network or keys - never for real scoring.
+ */
+function callEcho(opts: CallOptions): string {
+  if (opts.prompt.includes("Answer with the letter")) return "A";
+  return "{}";
+}
+
+export async function callModel(
+  provider: ProviderName,
+  opts: CallOptions,
+): Promise<string> {
+  switch (provider) {
+    case "anthropic":
+      return callAnthropic(opts);
+    case "openai":
+      return callOpenAI(opts);
+    case "openrouter":
+      return callOpenRouter(opts);
+    case "echo":
+      return callEcho(opts);
+    default:
+      throw new Error(`Unknown provider: ${provider}`);
+  }
+}
+
+
+

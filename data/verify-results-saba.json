@@ -1,0 +1,66 @@
+{
+  "schema_version": "mizan-results-v1",
+  "model": {
+    "name": "mistralai/mistral-saba",
+    "developer": "Mistral",
+    "source": "openrouter API"
+  },
+  "benchmark_version": "pilot-0.2",
+  "run": {
+    "completed_at": "2026-09-07T07:22:01.838Z",
+    "harness_commit": "dda8fa46f7b9b7a36e0143c9570601683ac10bbd",
+    "config": {
+      "provider": "openrouter",
+      "auto_scored_only": true,
+      "human_pending_items": 150,
+      "note": "Mizan runner - deterministic formats auto-scored; open_generation pending human judging"
+    }
+  },
+  "results": [
+    {
+      "track": "iraqi",
+      "axis": "comprehension",
+      "score": 0.92,
+      "ci_low": 0.8116149745493629,
+      "ci_high": 0.9684509967442093,
+      "n_items": 50,
+      "tier": "public_dev"
+    },
+    {
+      "track": "iraqi",
+      "axis": "knowledge",
+      "score": 0.98,
+      "ci_low": 0.8950431352816304,
+      "ci_high": 0.9964608319110235,
+      "n_items": 50,
+      "tier": "public_dev"
+    },
+    {
+      "track": "iraqi",
+      "axis": "official_documents",
+      "score": 0.5273333333333333,
+      "ci_low": 0.39201141708667614,
+      "ci_high": 0.6587547810451277,
+      "n_items": 50,
+      "tier": "public_dev"
+    },
+    {
+      "track": "arabic",
+      "axis": "comprehension",
+      "score": 0.9,
+      "ci_low": 0.6989617935882066,
+      "ci_high": 0.9721341060158468,
+      "n_items": 20,
+      "tier": "public_dev"
+    },
+    {
+      "track": "arabic",
+      "axis": "knowledge",
+      "score": 1,
+      "ci_low": 0.8388698745050667,
+      "ci_high": 1,
+      "n_items": 20,
+      "tier": "public_dev"
+    }
+  ]
+}
