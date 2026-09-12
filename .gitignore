@@ -17,3 +17,8 @@ data/results-*.json
 Thumbs.db
 .vscode/
 .idea/
+
+mizan-dump.sql
+mizan-public-audit.txt
+mizan-*-dump.txt
+mizan-item*-recon.txt
